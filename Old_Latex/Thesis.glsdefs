@@ -1,0 +1,30 @@
+\ifglsentryexists{bears}{}%
+{%
+\gls@defglossaryentry{bears}%
+{%
+name={BEARSz},%
+sort={BEARSz},%
+type={main},%
+first={Building stupid\glsspace (BEARSz)},%
+firstplural={Building stupids\glsspace (BEARSzs)},%
+text={BEARSz},%
+plural={BEARSzs},%
+description={Building stupid},%
+descriptionplural={Building stupid\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Building stupid},%
+longplural={Building stupids},%
+short={BEARSz},%
+shortplural={BEARSzs},%
+counter={page},%
+parent={},%
+%
+}%
+}%

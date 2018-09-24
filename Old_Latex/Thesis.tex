@@ -1,0 +1,96 @@
+\documentclass{ou-thesis}
+\usepackage{graphics}
+\usepackage{amsmath}
+\usepackage{rotating}
+\usepackage[english]{babel}
+\usepackage{morefloats}
+\usepackage{todonotes}
+\usepackage{chemformula}
+\usepackage{pdfpages}
+\usepackage{float}
+
+\usepackage{listings}
+\renewcommand{\floatpagefraction}{1}
+\lstloadlanguages{bash}
+\lstset{breaklines=true,breakindent=0pt,
+        basicstyle=\ttfamily\small,
+         prebreak=\mbox{\tiny$\searrow$},
+         postbreak=\mbox{{\color{blue}\tiny$\rightarrow$}}}
+\newtheorem{theorem}{Theorem}
+\setcounter{page}{1} \pagenumbering{arabic}
+\ifpdf
+    \pdfinfo {
+      /Title (CHABs)
+      /Subject (Environmental Science)
+      /Author (Hamzah D. Ansari)
+      /Keywords (HABs)
+   }
+\fi
+\makeatletter
+
+\begin{document}
+
+\graphicspath{{./figures/}}
+\title{Predictive Modeling of Harmful Algal Blooms of Michigan Inland Lakes}
+\author{Hamzah D. Ansari}
+\degree{Master of Science in}
+\department{Chemistry}
+\degreeyear{2018}
+\chairperson{Roman Dembinski}
+\committeetwo{Linda Schweitzer}
+\committeeone{David C. Szlag}
+\committeethree{Thomas Raffel}
+\dedication{I dedicate this thesis to Carl Sagan who greatly inspired my ambition to think critically and meticulous, ultimately leading me to hone my skills in the pursuit of science. The memory of his voice will forever echo within my conscious}
+\acknowledgmentfile{Acknowledgment}
+\abstractfile{Abstract}
+\makefrontmatter
+\renewcommand{\bibname}{REFERENCES}
+\chapter{INTRODUCTION}
+\setlength{\parindent}{.5 in}
+\raggedright\setlength{\parindent}{.5 in}
+
+\input{ch1}
+
+\chapter{SURVEY METHODS AND DESIGN}
+\setlength{\parindent}{.5 in}
+\raggedright\setlength{\parindent}{.5 in}
+
+\input{ch2}
+
+\chapter{RESULTS AND DISCUSSIONS}
+\setlength{\parindent}{.5 in}
+\raggedright\setlength{\parindent}{.5 in}
+
+\input{ch3}
+
+\chapter{CONCLUSION}
+\setlength{\parindent}{.5 in}
+\raggedright\setlength{\parindent}{.5 in}
+
+\input{ch4}
+
+\clearpage
+\newpage
+
+\bibliographystyle{biochem.bst}
+\bibliography{sources}
+\begin{appendix}
+\appendixchapter{Solid Phase Adsorption Toxin Tracking} \label{spattss}
+
+\input{spatts}
+
+\appendixchapter{Data Collection Using Open Data Kit}
+
+\input{odk}
+
+%\appendixchapter{R Code}
+
+%\input{rcode}
+
+\appendixchapter{Lake Atlas}
+
+%\input{atlas}
+
+\end{appendix}
+
+\end{document}

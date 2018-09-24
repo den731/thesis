@@ -1,0 +1,175 @@
+% Class options:
+% 3 font choices currently:
+%  - Times New Roman (default)
+%  - Palantino ('palantino')
+%  - Bookman ('bookman')
+% Dissertation or Thesis:
+%  - Thesis (default)
+%  - Dissertation ('dissertation')
+% Include bookmarks in compilied pdf
+%  - No bookmarks (default)
+%  - Bookmarks ('bookmarks')
+
+\documentclass[dissertation, bookmarks]{grizz_thesis}
+
+% Uncomment this to only compile a subset of the document.  List each of the separate include
+% files with a comma
+%\includeonly{front_matter, chapter1, chapter2}
+
+% Add extra packages here
+\usepackage[utf8]{inputenc}
+\usepackage{ccicons}
+\usepackage{chemformula}
+\usepackage{graphics}
+\usepackage{listings}
+\usepackage{longtable}
+\usepackage{lscape}
+\usepackage{chemexec}
+%\usepackage[table]{xcolor}
+\usepackage[left]{lineno} % Line numbers
+% Uncomment this to force a particular year in the preliminary pages
+% If left commented out, the current year will be used instead
+%\year=2015
+
+% Define custom macros here
+%\def\ihat{\hat{\imath}}
+%\def\jhat{\hat{\jmath}}
+%\def\khat{\hat{k}}
+
+
+
+% Add all abbreviations here - Necessary for LIST OF ABBREVIATIONS
+\newacronym{hab}{HABs}{Harmful Algal Blooms}
+\newacronym{chab}{cHABs}{Cyanobacterial Harmful Algal Blooms}
+\newacronym{epa}{EPA}{Environmental Protection Agency}
+\newacronym{mdeq}{MDEQ}{Michigan Department of Environmental Quality}
+\newacronym{lcmsms}{LC-MS/MS}{Liquid Chromatography/Tandem Mass Spectrometry}
+
+\newacronym{ghcn}{GHCN}{Global Historical Climatology Network}
+\newacronym{noaa}{NOAA}{National Oceanic and Atomospheric Administration}
+\newacronym{huc}{HUC}{Hydrological Unit}
+
+\newacronym{qgis}{QGIS}{Quantum Geographic Information System}
+\newacronym{uhplc}{UHPLC }{Ultra-High Performance Liquid Chromatography}
+
+\newacronym{petg}{PETG}{Polyetheylene Terephthalate}
+\newacronym{hpde}{HPDE}{High-Density Polyetheylene}
+\newacronym{spatts}{SPATT}{Solid Phase Adsorbtion Toxin Tracking}
+\newacronym{ntu}{NTU}{Nephelometric Turbidity Unit}
+\newacronym{rfu}{RFU}{Relative Fluorescence Units}
+\newacronym{mc}{MC}{Microcystin}
+\newacronym{mcla}{MC-LA}{Microcystin-LA}
+\newacronym{mclr}{MC-LR}{Microcystin-LR}
+\newacronym{mcrr}{MC-RR}{Microcystin-RR}
+\newacronym{mcly}{MC-RR}{Microcystin-LY}
+\newacronym{mcyr}{MC-LR}{Microcystin-YR}
+\newacronym{mclf}{MC-LR}{Microcystin-LF}
+\newacronym{who}{WHO}{World Health Organization}
+\newacronym{dmeasp}{D-MeAsp}{D-erythro$\beta$-methylaspatric acid}
+\newacronym{adda}{ADDA}{3-amino-9-methoxy-10-phenyl-2,6,8-trimethyl-deca-4,6-dienoic acid}
+\newacronym{mdha}{Mdha}{\textit{N}-methyldehydro-alanine}
+\newacronym{pks}{PKS}{Polyketide synthase}
+\newacronym{nrps}{NRPS}{Nonribosomal peptide synthetase}
+\newacronym{mdl}{MDL}{Minimum Detection Limit}
+\newacronym{pcr}{PCR}{Polymerase Chain Reaction}
+\newacronym{qpcr}{QPCR}{Quantitative Polymerase Chain Reaction}
+\newacronym{grass}{GRASS}{Geographic Resources Analysis Support System}
+\newacronym{elisa}{ELISA}{Enzyme-linked Immunosorbent Assay}
+\newacronym{bic}{BIC}{Bayesian Information Criterion}
+
+\newacronym{tsq}{TSQ}{Triple-Stage Quadrupole}
+\newacronym{odk}{ODK}{Open Data Kit}
+\newacronym{vps}{VPS}{Virtual Private Server}
+\newacronym{rsa}{RSA}{Rivest-Shamir-Adleman}
+
+\begin{document}
+% Word wrapping on linux commands
+
+\lstset{
+basicstyle=\small\ttfamily,
+columns=flexible,
+breaklines=true
+}
+
+
+% Figure relative path
+\graphicspath{{./figures/}}
+
+\def\thesistitle{Predictive Modeling of Harmful Algal Blooms of Michigan Inland Lakes}
+\def\studentname{Hamzah Danyal Ansari}
+\def\degreename{Master of Science in Chemistry}
+\def\CommitteeChair{Roman Dembinski}
+\def\AdvisorOne{David C. Szlag}
+\def\AdvisorTwo{Linda Schweitzer}
+\def\AdvisorThree{Thomas Raffel}
+
+%%% Start preliminary pages
+%------------------------------------------
+% Formatting code -- DO NOT EDIT
+%------------------------------------------
+\singlespacing
+\pagenumbering{roman}
+\titleformat
+	{\chapter}
+	[display]
+	{\normalfont\filcenter\singlespacing}
+	{}
+	{0pc}
+	{#1}
+	[\vspace*{3pc}]
+%------------------------------------------
+
+\GrizzCoverPage
+\include{front_matter}
+\include{lists}
+
+%%% Start main body
+%------------------------------------------
+% Formatting code -- DO NOT EDIT
+%------------------------------------------
+\pagenumbering{gobble}
+\pagenumbering{arabic}
+\newpage
+\titleformat
+	{\chapter}
+	[display]
+	{\normalfont\filcenter\singlespacing}
+	{\vspace{0.77in}\MakeUppercase{\chaptertitlename~\thechapter}}
+	{1pc}
+	{#1}
+	[\vspace*{2pc}]
+\doublespacing
+
+% Equation spacing - adjust if necessary
+\setlength{\abovedisplayskip}{0.5pc}
+\setlength{\belowdisplayskip}{0.5pc}
+\setlength{\abovedisplayshortskip}{0pc}
+\setlength{\belowdisplayshortskip}{0.5pc}
+%------------------------------------------
+
+% Include each separate chapter source file here
+
+\linenumbers
+\include{chapter1}
+\include{chapter2}
+\include{chapter3}
+\include{chapter4}
+
+% The \StartGrizzAppendices command switches the formatting for the
+% remainder of the document -- Leave this alone
+\StartGrizzAppendices
+
+% Include each separate appendix source file here
+\include{tables}
+\include{spatts}
+\include{atlas}
+%\include{atlas1}
+\include{odk}
+% References -- DO NOT EDIT
+\phantomsection
+\addcontentsline{toc}{chapter}{REFERENCES}
+\singlespacing
+\renewcommand{\bibname}{\vspace*{36pt}REFERENCES}
+\bibliography{references}
+
+\end{document}

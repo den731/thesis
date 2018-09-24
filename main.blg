@@ -1,0 +1,65 @@
+This is BibTeX, Version 0.99d (TeX Live 2018/Arch Linux)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: main.aux
+The style file: ieeetr.bst
+A level-1 auxiliary file: front_matter.aux
+A level-1 auxiliary file: lists.aux
+A level-1 auxiliary file: chapter1.aux
+A level-1 auxiliary file: chapter2.aux
+A level-1 auxiliary file: chapter3.aux
+A level-1 auxiliary file: chapter4.aux
+A level-1 auxiliary file: tables.aux
+A level-1 auxiliary file: spatts.aux
+A level-1 auxiliary file: atlas.aux
+A level-1 auxiliary file: odk.aux
+Database file #1: references.bib
+Warning--empty publisher in wickham_dplyr:_2017
+Warning--empty publisher in robinson_broom:_2018
+Warning--empty publisher in schloerke_ggally:_2017
+Warning--empty publisher in garnier_viridis:_2018
+Warning--empty publisher in wei_r_2017
+Warning--empty publisher in wickham_tidyverse:_2017
+Warning--empty publisher in zhu_kableextra:_2018
+Warning--empty publisher in miller_leaps:_2017
+You've used 73 entries,
+            1876 wiz_defined-function locations,
+            873 strings with 19317 characters,
+and the built_in function-call counts, 20706 in all, are:
+= -- 2042
+> -- 949
+< -- 0
++ -- 349
+- -- 276
+* -- 1551
+:= -- 2962
+add.period$ -- 95
+call.type$ -- 73
+change.case$ -- 52
+chr.to.int$ -- 0
+cite$ -- 81
+duplicate$ -- 984
+empty$ -- 1802
+format.name$ -- 276
+if$ -- 4962
+int.to.chr$ -- 0
+int.to.str$ -- 73
+missing$ -- 91
+newline$ -- 244
+num.names$ -- 74
+pop$ -- 209
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 725
+stack$ -- 0
+substring$ -- 1398
+swap$ -- 443
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 8
+while$ -- 208
+width$ -- 75
+write$ -- 703
+(There were 8 warnings)

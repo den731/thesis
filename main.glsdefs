@@ -1,0 +1,120 @@
+\ifglsentryexists{tsq}{}%
+{%
+\gls@defglossaryentry{tsq}%
+{%
+name={TSQ},%
+sort={TSQ},%
+type={main},%
+first={Triple-Stage Quadrupole\glsspace (TSQ)},%
+firstplural={Triple-Stage Quadrupoles\glsspace (TSQs)},%
+text={TSQ},%
+plural={TSQs},%
+description={Triple-Stage Quadrupole},%
+descriptionplural={Triple-Stage Quadrupole\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Triple-Stage Quadrupole},%
+longplural={Triple-Stage Quadrupoles},%
+short={TSQ},%
+shortplural={TSQs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{odk}{}%
+{%
+\gls@defglossaryentry{odk}%
+{%
+name={ODK},%
+sort={ODK},%
+type={main},%
+first={Open Data Kit\glsspace (ODK)},%
+firstplural={Open Data Kits\glsspace (ODKs)},%
+text={ODK},%
+plural={ODKs},%
+description={Open Data Kit},%
+descriptionplural={Open Data Kit\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Open Data Kit},%
+longplural={Open Data Kits},%
+short={ODK},%
+shortplural={ODKs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{vps}{}%
+{%
+\gls@defglossaryentry{vps}%
+{%
+name={VPS},%
+sort={VPS},%
+type={main},%
+first={Virtual Private Server\glsspace (VPS)},%
+firstplural={Virtual Private Servers\glsspace (VPSs)},%
+text={VPS},%
+plural={VPSs},%
+description={Virtual Private Server},%
+descriptionplural={Virtual Private Server\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Virtual Private Server},%
+longplural={Virtual Private Servers},%
+short={VPS},%
+shortplural={VPSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{rsa}{}%
+{%
+\gls@defglossaryentry{rsa}%
+{%
+name={RSA},%
+sort={RSA},%
+type={main},%
+first={Rivest-Shamir-Adleman\glsspace (RSA)},%
+firstplural={Rivest-Shamir-Adlemans\glsspace (RSAs)},%
+text={RSA},%
+plural={RSAs},%
+description={Rivest-Shamir-Adleman},%
+descriptionplural={Rivest-Shamir-Adleman\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Rivest-Shamir-Adleman},%
+longplural={Rivest-Shamir-Adlemans},%
+short={RSA},%
+shortplural={RSAs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
