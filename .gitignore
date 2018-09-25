@@ -12,4 +12,6 @@
 *.latexmain
 *.toc
 *.fls
-
+*.bbl
+*.blg
+*.doc
