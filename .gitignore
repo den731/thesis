@@ -1,3 +1,15 @@
 *.log
 *.zip
+*.dvi
+*.aux
+*.fls
+*.glo
+*.ist
+*.lof
+*.glsdefs
+*.lot
+*.out
+*.latexmain
+*.toc
+*.fls
 
