@@ -451,15 +451,6 @@ INPUT chapter1.tex
 INPUT chapter1.tex
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
-INPUT ./figures/Microcystin-LR.eps
-INPUT ./figures/Microcystin-LR.eps
-INPUT ./figures/Microcystin-LR.eps
-INPUT ./figures/Microcystin-LR-eps-converted-to.pdf
-INPUT ./figures/Microcystin-LR-eps-converted-to.pdf
-INPUT ./figures/Microcystin-LR.eps
-INPUT ./figures/Microcystin-LR-eps-converted-to.pdf
-INPUT ./figures/Microcystin-LR-eps-converted-to.pdf
-INPUT ./figures/Microcystin-LR-eps-converted-to.pdf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
