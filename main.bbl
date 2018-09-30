@@ -19,14 +19,28 @@ G.~A. CODD, S.~G. BELL, K.~KAYA, and C.~J. WARD, ``Cyanobacterial toxins,
   exposure routes and human health,'' {\em European Journal of Phycology},
   vol.~34, pp.~405--415, Oct. 1999.
 
-\bibitem{mann_toledo_2014}
-P.~Mann, ``Toledo, parts of {Monroe} {County} under do not use water
-  advisory,'' Aug. 2014.
+\bibitem{welker_cyanobacterial_2006}
+M.~Welker and H.~von Dohren, ``Cyanobacterial peptides - nature's own
+  combinatorial biosynthesis,'' {\em FEMS Microbiol Rev}, vol.~30, pp.~530--63,
+  July 2006.
 
-\bibitem{carmichael_health_2016}
-W.~W. Carmichael and G.~L. Boyer, ``Health impacts from cyanobacteria harmful
-  algae blooms: {Implications} for the {North} {American} {Great} {Lakes},''
-  {\em Harmful Algae}, vol.~54, pp.~194--212, Apr. 2016.
+\bibitem{davis_phylogenies_2014}
+T.~W. Davis, S.~B. Watson, M.~J. Rozmarynowycz, J.~J.~H. Ciborowski, R.~M.
+  McKay, and G.~S. Bullerjahn, ``Phylogenies of {Microcystin}-{Producing}
+  {Cyanobacteria} in the {Lower} {Laurentian} {Great} {Lakes} {Suggest}
+  {Extensive} {Genetic} {Connectivity},'' {\em PLOS ONE}, vol.~9, p.~e106093,
+  Sept. 2014.
+
+\bibitem{world_health_organization_guidelines_2003}
+W.~H. Organization, ed., {\em Guidelines for safe recreational water
+  environments}.
+\newblock Geneva: World Health Organization, 2003.
+
+\bibitem{usepa_draft_2016}
+{USEPA}, ``Draft {Human} {Health} {Recreational} {Ambient} {Water} {Quality}
+  {Criteria} and/or {Swimming} {Advisories} for {Microcystins} and
+  {Cylindrospermopsin} {Documents},'' {\em Office of Water}, Dec. 2016.
+\newblock EPA 822-P-16-002.
 
 \bibitem{anderson_harmful_2002}
 D.~M. Anderson, P.~M. Glibert, and J.~M. Burkholder, ``Harmful algal blooms and
@@ -63,17 +77,10 @@ J.~L. Graham, K.~A. Loftin, M.~T. Meyer, and A.~C. Ziegler, ``Cyanotoxin
   from the {Midwestern} {United} {States},'' {\em Environmental Science \&
   Technology}, vol.~44, pp.~7361--7368, Oct. 2010.
 
-\bibitem{welker_cyanobacterial_2006}
-M.~Welker and H.~von Dohren, ``Cyanobacterial peptides - nature's own
-  combinatorial biosynthesis,'' {\em FEMS Microbiol Rev}, vol.~30, pp.~530--63,
-  July 2006.
-
-\bibitem{davis_phylogenies_2014}
-T.~W. Davis, S.~B. Watson, M.~J. Rozmarynowycz, J.~J.~H. Ciborowski, R.~M.
-  McKay, and G.~S. Bullerjahn, ``Phylogenies of {Microcystin}-{Producing}
-  {Cyanobacteria} in the {Lower} {Laurentian} {Great} {Lakes} {Suggest}
-  {Extensive} {Genetic} {Connectivity},'' {\em PLOS ONE}, vol.~9, p.~e106093,
-  Sept. 2014.
+\bibitem{carmichael_health_2016}
+W.~W. Carmichael and G.~L. Boyer, ``Health impacts from cyanobacteria harmful
+  algae blooms: {Implications} for the {North} {American} {Great} {Lakes},''
+  {\em Harmful Algae}, vol.~54, pp.~194--212, Apr. 2016.
 
 \bibitem{tillett_structural_2000}
 D.~Tillett, E.~Dittmann, M.~Erhard, H.~von Döhren, T.~Börner, and B.~A.
@@ -105,17 +112,6 @@ J.~Puddick, M.~R. Prinsep, S.~A. Wood, S.~C. Cary, and D.~P. Hamilton,
   ``Modulation of microcystin congener abundance following nitrogen depletion
   of a {Microcystis} batch culture,'' {\em Aquatic Ecology}, vol.~50,
   pp.~235--246, June 2016.
-
-\bibitem{world_health_organization_guidelines_2003}
-W.~H. Organization, ed., {\em Guidelines for safe recreational water
-  environments}.
-\newblock Geneva: World Health Organization, 2003.
-
-\bibitem{usepa_draft_2016}
-{USEPA}, ``Draft {Human} {Health} {Recreational} {Ambient} {Water} {Quality}
-  {Criteria} and/or {Swimming} {Advisories} for {Microcystins} and
-  {Cylindrospermopsin} {Documents},'' {\em Office of Water}, Dec. 2016.
-\newblock EPA 822-P-16-002.
 
 \bibitem{vannote_river_1980}
 R.~L. Vannote, G.~W. Minshall, K.~W. Cummins, J.~R. Sedell, and C.~E. Cushing,

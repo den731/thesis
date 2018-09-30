@@ -198,7 +198,7 @@
 		\studentname \vspace{1pc}
 	\end{center}
 
-	\noindent Adviser: \CommitteeChair, Ph.D.\vspace{2pc}
+	\noindent Adviser: \AdvisorOne, Ph.D.\vspace{2pc}
 
 	\doublespacing
 	\input{abstract}
