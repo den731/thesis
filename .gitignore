@@ -16,4 +16,11 @@
 *.blg
 *.doc
 main.synctex.gz
+main.glg
+main.gls
+main.glsdefs
+main.fls
+pdflatex12727.fls
+main.fdb_latexmk
+
 
