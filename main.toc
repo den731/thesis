@@ -1,0 +1,45 @@
+\babel@toc {english}{}
+\contentsline {chapter}{ACKNOWLEDGMENTS}{iv}{section*.1}
+\contentsline {chapter}{ABSTRACT}{v}{section*.2}
+\contentsline {chapter}{LIST OF TABLES}{ix}{section*.3}
+\contentsline {chapter}{LIST OF FIGURES}{x}{section*.4}
+\contentsline {chapter}{LIST OF ABBREVIATIONS}{xv}{section*.5}
+\contentsline {chapter}{\numberline {1}INTRODUCTION}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Harmful Algal Blooms}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Goals and Aims}{7}{section.1.2}
+\contentsline {chapter}{\numberline {2}METHODS}{9}{chapter.2}
+\contentsline {section}{\numberline {2.1}Water Sampling}{9}{section.2.1}
+\contentsline {section}{\numberline {2.2}Analysis}{15}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Liquid Chromatography Mass Spectrometry}{15}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Enzyme Linked Immunosorbant Assay}{15}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Nutrients}{16}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Quantitative Polymerase Chain Reaction}{18}{subsection.2.2.4}
+\contentsline {section}{\numberline {2.3}Geographic Information System Analysis}{19}{section.2.3}
+\contentsline {section}{\numberline {2.4}Statistical Analysis}{21}{section.2.4}
+\contentsline {chapter}{\numberline {3}RESULTS AND DISCUSSIONS}{28}{chapter.3}
+\contentsline {section}{\numberline {3.1}Toxins}{28}{section.3.1}
+\contentsline {section}{\numberline {3.2}\emph {A Priori} Hypothesis Test}{35}{section.3.2}
+\contentsline {section}{\numberline {3.3}Exploratory Analysis}{38}{section.3.3}
+\contentsline {section}{\numberline {3.4}Feature Selection}{40}{section.3.4}
+\contentsline {section}{\numberline {3.5}Discussions}{46}{section.3.5}
+\contentsline {chapter}{\numberline {4}CONCLUSION}{47}{chapter.4}
+\vspace {\baselineskip }APPENDICES
+\contentsline {section}{\makebox [0.3in][l]{A.} Statistical Summary Tables and Figures}{48}{section*.27}
+\contentsline {section}{\makebox [0.3in][l]{B.} Solid Phase Adsorption Toxin Tracking}{55}{section*.35}
+\contentsline {subsection}{\makebox [0.45in][l]{B.1.} SPATT}{56}{section*.36}
+\contentsline {subsection}{\makebox [0.45in][l]{B.2.} Methods}{56}{section*.37}
+\contentsline {subsection}{\makebox [0.45in][l]{B.3.} Results and Discussion}{57}{section*.38}
+\contentsline {subsection}{\makebox [0.45in][l]{B.4.} Conclusion}{61}{section*.42}
+\contentsline {section}{\makebox [0.3in][l]{C.} Lake Atlas}{62}{section*.43}
+\contentsline {section}{\makebox [0.3in][l]{D.} Geospatial Data Collection Guide Using Open Data Kit}{92}{section*.73}
+\contentsline {subsection}{\makebox [0.45in][l]{D.1.} Introduction}{93}{section*.74}
+\contentsline {subsection}{\makebox [0.45in][l]{D.2.} Required Components}{93}{section*.75}
+\contentsline {subsection}{\makebox [0.45in][l]{D.3.} Syntax}{94}{section*.76}
+\contentsline {subsection}{\makebox [0.45in][l]{D.4.} Setup}{94}{section*.77}
+\contentsline {subsection}{\makebox [0.45in][l]{D.5.} Secure Server}{96}{section*.78}
+\contentsline {subsection}{\makebox [0.45in][l]{D.6.} Install ODK Aggregate}{98}{section*.79}
+\contentsline {subsection}{\makebox [0.45in][l]{D.7.} Survey Forms}{103}{section*.80}
+\contentsline {subsection}{\makebox [0.45in][l]{D.8.} ODK Collect App}{104}{section*.81}
+\contentsline {subsection}{\makebox [0.45in][l]{D.9.} Conclusion}{104}{section*.82}
+\contentsline {chapter}{REFERENCES}{106}{section*.83}
+\contentsfinish 
