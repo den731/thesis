@@ -1,7 +1,11 @@
-This is my LaTeX source file. Template for Oakland University's format was used from [Micho Radovnikovich](https://bitbucket.org/robustify/grizz_thesis_tex)
+To see the final thesis, click [here](/main.pdf) and either view in the browser or download it.
+Template for Oakland University's format was used from [Micho Radovnikovich](https://bitbucket.org/robustify/grizz_thesis_tex)
 
-Root LaTeX file:
-- [Main](/main.tex)
+LaTeX file:
+- [Root LaTeX File](/main.tex)
+- [Acknowledment](/acknowledgements.tex)
+- [Dedication Statement](/dedication.tex)
+- [Abstract](/abstract.tex)
 
 Each chapter is seperated:
 - [Chapter One](/chapter1.tex)
@@ -10,7 +14,7 @@ Each chapter is seperated:
 - [Chapter Four](/chapter4.tex)
 
 Appendix:
-- [Statistica Tables](/tables.tex)
+- [Statistical Tables](/tables.tex)
 - [SPATTs](/spatts.tex)
 - [Atlas](/atlas.tex)
 - [Open Data Kit Guide](/odk.tex) 
