@@ -1,30 +1,16 @@
-% This line adds the main appendix heading to the table of contents.
-% This needs to be here to ensure proper placement in the TOC
-% If someone can figure out how to put this in the main tex source without
-% resorting to putting it between the last two chapter includes, I'll give
-% them a high five.
-
-
 \GrizzAppendix{Geospatial Data Collection Guide Using Open Data Kit}
-
-
 
 \GrizzAppendixSection{Introduction}
 
-\indent Data aggregation and structural collection is one of the few key factors that determines the quality of the study. Large scale studies are often done by a team of multiple groups and organizations. There are available commercial tools which can aid in data collection and aggregation automatically. ArcGIS \footnote{ESRI 2017. ArcGIS Desktop: Release 10.5.1 Redlands, CA: Environmental Systems Research Institute.} coupled with their Android/IOS app called Collector for ArcGIS \footnote{https://www.esri.com/products/collector-for-arcgis}.
+Collaborative work is the fundamental part of a large scale research project.  Data aggregation and structural collection is one of the few key factors that determines the quality of the study. Large scale studies are often done by a team of multiple groups and organizations. There are available commercial tools which can aid in data collection and aggregation automatically. ArcGIS \footnote{ESRI 2017. ArcGIS Desktop: Release 10.5.1 Redlands, CA: Environmental Systems Research Institute.} coupled with their Android/IOS app called Collector for ArcGIS \footnote{https://www.esri.com/products/collector-for-arcgis}.
 
 From my experience I found a viable alternative which does not require an expensive license. I wish to help other research studies with a cheaper alternative and greatly facilitate their pursuit. I have written this guide to allow anyone to build from the ground up on setting a database and providing a viable way to organize an enterprise. This guide is aimed to initially setup a database for non-profit organization and academic research with a limited budget. The initial cost is \$5 per month for a virtual private server (VPS) which has enough storage for a small database.  The software tool is from an open-source software by \gls{odk}\footnote{Open Data Kit 2.0: Expanding and Refining Information Services for Developing Regions \url{http://www.hotmobile.org/2013/papers/full/2.pdf} Waylon Brunette, Mitchell Sundt, Nicola Dell, Rohit Chaudhri, Nathan Breit, Gaetano Borriello In HotMobile, 2013. \url{http://dl.acm.org/citation.cfm?id=2444790}}.
-
-
 
 \GrizzAppendixSection{Required Components}
 
 Here you must setup a server that stores you data and be accessible through the Internet. Having your own computer machine as a server is a viable solution but it requires more extensive networking knowledge. An alternative solution is to purchase a rent a server from a third party which automatically sets up and quickly gets connected to the Internet. A Virtual Private Server (VPS) are cheap and flexible servers to set up a database up on the cloud. For as little as \$5 dollars a month one can have a server with everything they need to start collecting data.
 
 DigitalOcean, Amazon (free trial for a year), Google VPS can work. I suggest anyone of them, but in this guide we will choose to setup from DigitalOcean as its the cheapest available server. I recommend Debian or Ubuntu linux distribution to setup your database. In this guide, we will choose Debian 9 (Stretch).
-
-
-
 
 \GrizzAppendixSection{Syntax}
 \noindent
@@ -34,18 +20,10 @@ In the terminal, you will need bash commands to setup the server's configuration
   $ run this command   # This is a comment
 \end{lstlisting}
 
-
-
-
-
 \noindent
 Note that the first line starts with a\#. This is not a command but a comment. In bash language, this is usually ignored. In this guide, a line starting with \$ designates a command. Do not include the \$ as its merely a symbol to designate a command. Running lines will not have \$ as its indented to be one line of code.
 
-
-
-
-
-\GrizzAppendixSection{Setup}
+\GrizzAppendixSection{Server Setup}
 
 \noindent
 You must get an SSH client to access the server for setting up ODK Aggregate. For Linux or Mac, use the native terminal application to access the server. For windows users, I recommended program is PuTTy \url{https://www.putty.org/}. Install this program for windows. With PuTTy, open up PuTTy and enter in the IP address and click ``Open''. You will enter ``root'' and the password given by the online service or by the user installation setup.  Usually when using VPS services, the IP address and the password for user \emph{root} information is given by email.
@@ -55,8 +33,6 @@ The command for linux or mac users, they can use Terminal and use this command:
   $  ssh root@[EnterYourIp]   # SSH with root as user
   #  replace [EnterYourIp] with the given IP address
 \end{lstlisting}
-
-
 
 \noindent
 From a fresh installation, the first prompt when accessing the server will be to change your password. Choose a good strong password for the root username and have it written down.  After setting the password, preform any upgrades and install sudo which allows a normal user to have elevated privileges and install nano, a text editor. This may be already installed but some distributions might not have them. To do this, follow these commands.
@@ -78,19 +54,11 @@ Next, we will set a separate username. The \emph{root} user is only used to admi
 \noindent
 You will be prompted to create a password. When asked for name and other user information, hit ``Enter'' to leave it blank. This does not need to be filled out.
 
-
 \noindent Here, we will also assign this new user as a sudo user. This will enable the new user to have elevated privileges. This will allow to run command lines with root access if ``sudo'' is run before the line of command. Be cautious with commands with sudo.
 
 \begin{lstlisting}[language=bash]
   $  usermod -a -G sudo dummy # Add the user dummy to sudo group
 \end{lstlisting}
-
-
-
-
-\GrizzAppendixSection{Secure Server}
-
-
 
 \noindent
 Its highly advisable to setup a pubic/private \gls{rsa} key pair for more secure login setup. This prevents unauthorized access to the server and prevents the basic brute-force attacks. Here are the steps necessary to secure the server against malicious attacks. We will also setup a firewall called ufw (Uncomplicated Firewall) which is very simple to setup and secure your server. We will also generate a key-pair for this user. You can have a passphrase which is an additional layer of security, or leave it blank. When generated, the public key will be located at \path{/home/dummy/.ssh/id_rsa.pub}. Follow this command:
@@ -168,10 +136,8 @@ Next restart ssh:
   $  sudo service ssh restart
 \end{lstlisting}
 
-\GrizzAppendixSection{Install ODK Aggregate}
-
 \noindent
-ODK Aggregate is a Java web applet that handles the data and stores into a database. The web applet is hosted as a website and can be accessed through any web browser. On the host machine, we will need to setup tomcat server that hosts ODK Aggregate along with an SQL server. PostgreSQL is used as we can also extend this to work with spatial data and be accessible from QGIS. As of writing this guide, ODK Aggregate is version 1.5.0. You may need to find the current version. Go to \url{https://github.com/opendatakit/aggregate}. If the version is different than 1.5.0, change the link following after the ``wget'' command.
+Next, you will install ODK Aggregate. ODK Aggregate is a Java web applet that handles the data and stores into a database. The web applet is hosted as a website and can be accessed through any web browser. On the host machine, we will need to setup tomcat server that hosts ODK Aggregate along with an SQL server. PostgreSQL is used as we can also extend this to work with spatial data and be accessible from QGIS. As of writing this guide, ODK Aggregate is version 1.5.0. You may need to find the current version. Go to \url{https://github.com/opendatakit/aggregate}. If the version is different than 1.5.0, change the link following after the ``wget'' command.
 
 \begin{lstlisting}
   $  sudo apt install tomcat8 unzip
@@ -294,18 +260,19 @@ ODK Aggregate run file from the previous step generated a .war file that needs t
 Now you should have the ODK Aggregate server running. You can simply access the server by going to your web browser on your local computer and access it by replacing your given ip address of the server in this form: \url{http://xxx.xxx.xxx.xxx:8080/ODKAggregate} Log into your super user login and click ``Site Admin''. Here you can add more users to administer the site or be a data collector. Site administrators have the ability to create more users and have all other power as a data collector. For a simple user who is just collecting data, you can have them set as ``Data Collector'' and not be able to change any data that has already been collected. Next, we must create a form for the data collectors to use.
 
 
-\GrizzAppendixSection{Survey Forms}
-
+\noindent
 Before you start collecting data, you must set up a predefined form which consists of variables of interest. The ODK Collect app can collect spatial data in a form of GPS points, path of coordinates or trace a spatial polygon. ODK Aggregate can accept .xml files which needs to be created. The ODK Suite provides an online tool to create a desired form \url{https://build.opendatakit.org/}. When you first go to the site, you will be asked to sign up for a login. You do not have to create an account and can simply click cancel.
 
+\noindent
 Here you can design your survey form. On the top-right hand corner, you must name this form. This will be displayed for the user, so choose something that pertains to what kind of data is being collected. Next, you will choose what kind of data are going to be collected. The most important are usually the date/time and GPS coordinates. On the bottom, there is an option to select location. When selected, a configuration window will appear on your right-hand side. For the name, name it location. You can have it configured to be a single point, a path which creates a polyline, or a shape which creates a polygon shape. For the date and time, you can configure the full date and time or just the date. Depending on your project, you can select a variety of data ranging from audio or video data or a design questionnaire. For audio or video there is a media option. You can collect audio, video and picture or have all three options if you wish. The questionnaires can be designed by clicking the select multiple option. Here you can have options for the data collector to choose from. This can be configured to have a follow-up questions depending on what options the data collector initially selects. More information can be found by clicking help for more advance configurations.
 
+\noindent
 Once you have a satisfied form, you must save the form as an .xml file. On the top-right hand side, click File and select Export to XML. Once saved, head over you your ODK Aggregate website and click on ``Form Management''. Click ``Add New Form'' and select the .xml file to upload to the server.
 
-\GrizzAppendixSection{ODK Collect App}
-
+\noindent
 Next, the data collectors need to have the ODK Collect app to start collecting data. Android users can download the ODK Collect app either through the Google Play store or directly download the .apk file from \url{https://github.com/opendatakit/collect/releases/tag/v1.15.1}. Unfortunately there is no app for the IOS platform.
 
+\noindent
 First, you must set the settings. Go to the ``general settings'' and tap on ``server'' settings. For the option ``Type'' choose the \emph{ODK Aggregate} option. The URL will be the the same as the ODK Aggregate web address. Username and password will be the users that are created from ODK Aggregate website, or the super user. Head back to the main menu and click on ``Get Blank Form''. This will download the forms you have uploaded to the ODK Aggregate server. The app can collect data offline and send the filled forms once connected online. For each entry of data, tap the ``Fill Blank Form'' option and select the appropriate form. Here you will start filling out the form. Once completed, you will save the form offline. If you are connected to the Internet, you will have to upload the filled forms to the ODK Aggregate server. To do so, head to the main menu and select the ``Send Finalized Form'' option and simply tap on the form that is saved. This will now upload the data to your server.
 
 \GrizzAppendixSection{Conclusion}
