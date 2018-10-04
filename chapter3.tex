@@ -1,37 +1,43 @@
 % !TEX root = main.tex
 \chapter{RESULTS AND DISCUSSIONS}
  
-\section{Toxins}
+\section{General Trends}
 % from xiao explain the peaks and variability, how they avoided overfitting, and maybe k-fold validation...maybe...
 % from chaffin "accuracy of data bouy" 
 % Temporal trends, peaks, which sites had the highest, variablility of each site? Trends in other variables, patterns allign? 
 % Beggining of spring, lake is mixed, summer its stable, fall its mixed.
-In our sampled lakes for the summer season of 2017, $log10$(MC) concentration and \emph{16s rRNA} were slighly different between each monthly sample (see figure \ref{fig:time3}). We found the MC concentrations to be the highest in the month of August with an average of 1.13 $\mu$g/L compared to 0.182, 0.357 and 0.326 $\mu$g/L for the months of July, September and October. The pattern for the concentration of \emph{16s rRNA} followed similarly, but peaking in September with an average of 6.72x$10^5$ cp/L compared to 2.37x$10^4$, 5.30x$10^5$ and 4.01x$10^5$ cp/L for July, August and October. Water temperature when measured both at the time of sampling and the HOBO loggers we observe a steady decline with each month, however, we did not observe a noticable fluctuation with light intensity (see figure \ref{fig:hobo}). With our sampling regime, we did not sample in the spring or early summer months and did not sample frequently to observe a temporal trend. 
+In our sampled lakes for the summer season of 2017, $log10$(MC) concentration and \emph{16s rRNA} were slighly different between each monthly sample (see figure \ref{fig:time3}). We found the MC concentrations to be the highest in the month of August with an average of 1.13 $\mu$g/L compared to 0.182, 0.357 and 0.326 $\mu$g/L for the months of July, September and October. The pattern for the concentration of \emph{16s rRNA} followed similarly, but peaking in September with an average of 6.72x$10^5$ cp/L compared to 2.37x$10^4$, 5.30x$10^5$ and 4.01x$10^5$ cp/L for July, August and October. Water temperature when measured both at the time of sampling and the HOBO loggers we observe a steady decline with each month, however, we did not observe a noticable fluctuation with light intensity (see figure \ref{fig:hobo}). With our sampling regime, we did not sample in the spring or early summer months and did not sample frequently to observe a clear temporal trend. 
 
 % Climate and Temperature
 
 \begin{figure}[!h]
- \includegraphics[width=\textwidth]{figures/time4}
- \caption{Boxplot summary of the average total MC (A) and \emph{16s rRNA} (B) for each month.}
- \label{fig:time3}
+\includegraphics[width=\textwidth]{figures/time4}
+\caption{
+(A): Boxplot summary of the average total MC for each month. 
+(B): Boxplot summary of average \emph{16s rRNA} genecopies for each month.
+}
+\label{fig:time3}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=\textwidth]{figures/hobo}
-\caption{Boxplot summary of the average lake temperature measured at the time of sampling with hand-held multimeter (A), average lake temprature from HOBO loggers (B) and light intensity also measured by HOBO loggers} 
+\caption{
+(A): Boxplot summary of the average lake temperature measured at the time of sampling with hand-held multimeter 
+(B): Boxplot summary of average lake temprature from HOBO loggers. 
+(C): Boxplot summary of light intensity also measured by HOBO loggers.
+} 
 \label{fig:hobo}
 \end{figure}
 
-
 Of all the sampled lakes, we did not detect any cylindrospermonsin in our surveyed lakes. Moreover,  QPCR analysis did detect genes responsible for producing cylindrospermonsin (\emph{cyrA}) and saxitoxin (\emph{sxtA}). We detected varying amounts of \emph{mcyE} gene copies in each lake.  From the \gls{lcmsms} we found one instance of anatoxin-a detected at Brighton lake in August 2017 which was sampled during an visible bloom (2.80 $\mu$g/L of Anantoxin-a).
 
-In our analysis of MC, MC-RR, MC-LR and MC-LA were the most detected congeners throughout the summer.  MC-RR was found with the highest concentrations 8.55 $\mu$g/L at Brighton Lake in August (see figure \ref{fig:congenerbar}).  Majority of our samples were below the EPA guidance level. From our sampled lake sites, Belleville, Brighton, Ford, Hudson, and Wixom Lake had instances of MC concentrations that exceeded the EPA guidance level of 4 $\mu$g/L both from \gls{lcmsms} and ELISA analysis (see figure \ref{fig:microcystin}). When  \gls{lcmsms} and ELISA are compared there are discprenancies between the two, analysis from ELISA tends to be report higher values than \gls{lcmsms}. The difference is more apparent in the month of September and October, where the difference can be quite large (see figure \ref{fig:month}). However, our analysis in the month of August had good agreement between \gls{lcmsms} and ELISA.  
-
-
+In our analysis of MC, MC-RR, MC-LR and MC-LA were the most detected congeners throughout the summer.  MC-RR was found with the highest concentrations 8.55 $\mu$g/L at Brighton Lake in August (see figure \ref{fig:congenerbar}).  Majority of our samples were below the EPA guidance level. From our sampled lake sites, Belleville, Brighton, Ford, Hudson, and Wixom Lake had instances of MC concentrations that exceeded the EPA guidance level of 4 $\mu$g/L both from \gls{lcmsms} and ELISA analysis (see figure \ref{fig:microcystin}).
 
 \begin{figure}[!h]
  \includegraphics[width=\textwidth]{figures/congenerbar}
- \caption{Average MC found at each lake in all four months. The height of each bar represents the total average of MC. The proportion of each congener is represented by color in each bar (A). Average error bars represents one standard deviation of the mean for each MC congener (B)}
+ \caption{
+ (A): Average MC found at each lake in all four months. The height of each bar represents the total average of MC. The proportion of each congener is represented by color in each bar  
+(B): Average MC congener with the included error bars represents one standard deviation of the mean}
  \label{fig:congenerbar}
 \end{figure}
 
@@ -42,9 +48,19 @@ In our analysis of MC, MC-RR, MC-LR and MC-LA were the most detected congeners t
  \label{fig:microcystin}
 \end{figure}
 
+\section{Comparison of Enzyme-linked Immunosorbent Assay and Liquid Chromatography/Mass-spectometry in Tandum}
+
+\gls{lcmsms} and ELISA are compared there are discprenancies between the two, analysis from ELISA tends to be report higher values than \gls{lcmsms}. The difference is more apparent in the month of September and October, where the difference can be quite large (see figure \ref{fig:month}). The ELISA generally presents a higher result than \gls{lcmsms}. This is in part due to the detection limit and reportable limits being much higher for the ELISA, 0.15 and 0.1 $\mu$g/L. However, our analysis in the month of August had good agreement between \gls{lcmsms} and ELISA.  
+
 \begin{sidewaysfigure}[!h] 
-	\includegraphics[width=\textwidth]{figures/month}
-	\caption{Barplots of MC and their congeners from LC-MS/MS and ELISA  for each lake and the month of July (A), August(B), September (C) and October (D)}
+\includegraphics[width=\textwidth]{figures/month}
+\caption{
+Barplots of MC and their congeners from LC-MS/MS and ELISA  for each lake and the each month:
+(A): July 
+(B): August
+(C): September
+(D): October 
+}
 	\label{fig:month} 
 \end{sidewaysfigure}
 
@@ -56,12 +72,8 @@ In our analysis of MC, MC-RR, MC-LR and MC-LA were the most detected congeners t
 %\end{figure}
 
 
-% Nutrients
-
-% Sonde readings (pH, Turbidity, chloro, Conductance)
-
-
-
+% Should I include nutrients?
+% Sonde readings (pH, Turbidity, chloro, Conductance)?
 \clearpage
 
 
@@ -69,7 +81,6 @@ In our analysis of MC, MC-RR, MC-LR and MC-LA were the most detected congeners t
 
 
 \section{\emph{A Priori} Hypothesis Test}
-
 
 In my hypothesis, I expected developed land-use percentage to have a positive influence on MC concentrations. Much of the southern lakes were vastly dominated by developed land such as Belleville, Ore, Brighton, Ford and Bogie Lake. 
 Developed land-use percentage plotted had a slight positive effect with $log10$(MC) concentration , however the relationship was not significant  ($\beta=0.59$, $F_{{1,27}}=1.75$ , $p=0.20$)(see figure \ref{fig:developed}) . There were no significant relationship with developed land-use percentage in predicting $log10$(\emph{16s rRNA}) gene copies ($\beta=0.48$, $F_{{1,25}}=1.75$ , $p=0.27$). However, developed land-use had a positive significant relationship with log10(nitrate+nitrite) ($\beta=0.75$, $F_{{1,27}}=1.08$, $p=0.018$)
@@ -94,15 +105,12 @@ With the surveyed lakes, 17 out of 29 had Zebra mussels found in the month of Oc
 
 \section{Exploratory Analysis}
 
-With our model selection, a correlation matrix analysis was done to observe any possible collinear relationships between our predictor variables. The correlation matrix analysis showing only significant relationships and arranged by the anglular order of eigenvectors, we identified few correlated variables  (see \ref{matrix}, and see \ref{fig:matrixfull} for the full correlation values). In our correlation matrix analysis, we observed a few relationships that may be meaningful. We found turbidity positively correlated with orthophosphate, total phosphorus, total Kejldahl nitrogen, water temperature, phycocyaninin and chloraphyll. Chlorophyll is positively correlated with \emph{mcye}, phycocyanin, \emph{16S rRNA}, total Kejldahl nitrogen and orthophosphate. Conductance was found to have negative relationship with precipitation.
+With our model selection, a correlation matrix analysis was done to observe any possible collinear relationships between our predictor variables. The correlation matrix analysis showing only significant relationships and arranged by the anglular order of eigenvectors and identified few correlated variables  (see \ref{matrix}, and see \ref{fig:matrixfull} for the full correlation values). In our correlation matrix analysis, we observed a few relationships that may be meaningful. We found turbidity positively correlated with orthophosphate, total phosphorus, total Kejldahl nitrogen, water temperature, phycocyaninin and chloraphyll. Chlorophyll is positively correlated with \emph{mcye}, phycocyanin, \emph{16S rRNA}, total Kejldahl nitrogen and orthophosphate. Conductance was found to have negative relationship with precipitation.
 Developed land-use is positively correlated with nitrate+nitrite, total nitrogen and conductance.
 Watershed area was positive correlated with Zebra mussel mass.
 Agriculture had a positive relationship with nitrate+nitrite,
 Forest land-use had negative correlation with total Kejldahl nitrogen, total nitrogen, conductivity, ammonia, nitrate+nitrite and total nitrogen to total phosphorus ratio.
-Precipitation had negative correlation with total nitrogen, orthophosphate and conductivity. Upon selecting our feature variables, we will further test if the correlation is significant or not by F-test if chosen in our subset analysis.
-
-
-
+Precipitation had negative correlation with total nitrogen, orthophosphate and conductivity.
 
 \begin{sidewaysfigure}[!hp]
 
@@ -139,19 +147,21 @@ For predicting the $log10$(\emph{16s rRNA}) gene copies, chloraphyll, agricultur
 
 \begin{figure}
 \includegraphics[width=\textwidth, height=11cm]{figures/plot1}
-\caption{Positive relationship with average $log10$(OP) with average $log10(turb)$ ($\beta=0.57$, $F_{{1,26}}=3.13$, $p=0.08$) (A) . With two outliers removed, the relationship between $log10(OP)$ and $log10(turb)$ was signifigant  ($\beta=0.17$, $F_{{1,25}}$, $p=0.01$)(B) . }
+\caption{
+(A): Positive relationship with average $log10$(OP) with average $log10(turb)$ ($\beta=0.57$, $F_{{1,26}}=3.13$, $p=0.08$).
+(B): With two outliers removed, the relationship between $log10(OP)$ and $log10(turb)$ was signifigant  ($\beta=0.17$, $F_{{1,25}}$, $p=0.01$).
+}
 \label{fig:plot1}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=\textwidth, height=11cm]{figures/plot2}
-\caption{Positive relationship between average $log10$(MC) with average $log10(turb)$ (A) ($\beta=0.55$, $F_{{1,27}}=5.90$, $p=0.02$) and between average $log10(MC)$ and average  $log10$(OP) (B) ($\beta=0.35$, $F_{{1,26}}=3.13$, $p=0.07$). Turbidity is our best predictor variable for MC. Orthophosphate is nearly significant predictor}
+\caption{
+(A): Positive relationship between average $log10$(MC) with average $log10(turb)$ ($\beta=0.55$, $F_{{1,27}}=5.90$, $p=0.02$)
+(B): Positive relationship between average $log10(MC)$ and average  $log10$(OP) ($\beta=0.35$, $F_{{1,26}}=3.13$, $p=0.07$). 
+Turbidity is our best predictor variable for MC. Orthophosphate is nearly significant predictor}
 \label{fig:plot2}
 \end{figure}
-
-
-
-
 
 \begin{figure}[!ht]
   \includegraphics[angle=90,height=8cm, width=\textwidth]{Subset1}
@@ -168,10 +178,7 @@ For predicting the $log10$(\emph{16s rRNA}) gene copies, chloraphyll, agricultur
 
 \section{Discussions}
 
-
-
-
-Comparing the results between our response variable, we can see a difference in figure \ref{fig:resbar}.
+Comparing the results between MC concentrations and \emph{16s rRNA}, we can see a difference in figure \ref{fig:resbar}.
 Lake turnover, winter stable, spring mix, summer stable, fall mix. 
 Microcystin concentration tells a different story compared to \emph{16s rRNA}. This curve is to be expected due to warmer temperature as our data does follow this pattern (see figure \ref{fig:hobo}).
 
