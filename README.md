@@ -1,17 +1,18 @@
-To see the final thesis, click [here](/main.pdf) and either view in the browser or download it.
-Template for Oakland University's format was used from [Micho Radovnikovich](https://bitbucket.org/robustify/grizz_thesis_tex)
+**To see the final thesis**, click **[here](/main.pdf)** and either view in the browser or download it.
+
+---
+
+Each **chapter** is seperated:
+- [Chapter One](/chapter1.tex)
+- [Chapter Two](/chapter2.tex)
+- [Chapter Three](/chapter3.tex)
+- [Chapter Four](/chapter4.tex)
 
 LaTeX file:
 - [Root LaTeX File](/main.tex)
 - [Acknowledment](/acknowledgements.tex)
 - [Dedication Statement](/dedication.tex)
 - [Abstract](/abstract.tex)
-
-Each chapter is seperated:
-- [Chapter One](/chapter1.tex)
-- [Chapter Two](/chapter2.tex)
-- [Chapter Three](/chapter3.tex)
-- [Chapter Four](/chapter4.tex)
 
 Appendix:
 - [Statistical Tables](/tables.tex)
@@ -24,3 +25,9 @@ For all figures:
 
 References:
 - [BibTex File](/references.bib)
+
+
+---
+Template for Oakland University's format was used from [Micho Radovnikovich](https://bitbucket.org/robustify/grizz_thesis_tex)
+
+
