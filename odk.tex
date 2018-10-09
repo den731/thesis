@@ -64,7 +64,6 @@ Its highly advisable to setup a pubic/private \gls{rsa} key pair for more secure
   $  sudo ufw allow 8080  # Allow aggregate server
   $  sudo ufw allow 5432  # Allow PostgreSQL server
   $  ssh-keygen           # Generate the keys for SSH
-
 \end{lstlisting}
 
 Next, we will move the generate public key to the authorized key folder. We will also limit the permissions of the authorized keys for only the user dummy to access, install putty tools and use it to convert the private key for windows client to use:
@@ -75,7 +74,6 @@ Next, we will move the generate public key to the authorized key folder. We will
   $  sudo apt install putty-tools
   $  cd ~/.ssh
   $  puttygen id_rsa -o id_rsa.ppk
-
 \end{lstlisting}
 
 Next, you have to retrieve the converted key file from the server to your own local machine. With windows, I recommend using WinSCP for secure file transfer \url{https://winscp.net/eng/index.php}. When prompted, enter the IP address in host name, port 22, and enter the new username and password (dummy). In WinSCP, hidden files are not shown by default. Hit Ctrl+Alt+H to show hidden files. On the right side panel, you will find the servers directory. The left side is the local computer's directory. Here we can transfer files between the machines securely. On the right side, locate .ssh folder and find the id\_rsa.ppk file and download it to your document folder. Simply double-click the file to download it to your local machine.
