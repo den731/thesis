@@ -3,10 +3,10 @@
 ---
 
 Each **chapter** is seperated:
-- [Chapter One](/chapter1.tex)
-- [Chapter Two](/chapter2.tex)
-- [Chapter Three](/chapter3.tex)
-- [Chapter Four](/chapter4.tex)
+- [Chapter One](/chapter1.tex) Introduction
+- [Chapter Two](/chapter2.tex) Harmful Algal Bloom and Correlation to Geo-chemical Features
+- [Chapter Three](/chapter3.tex) Assessment of Solid Phase Adsorbtion Toxin Tracking
+- [Chapter Four](/chapter4.tex) Conclusion and Future Works
 
 LaTeX file:
 - [Root LaTeX File](/main.tex)
