@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1539691568 "defense.tex" "defense.pdf" "defense" 1539691569
+["pdflatex"] 1540103751 "defense.tex" "defense.pdf" "defense" 1540103751
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1536122179 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr10.tfm" 1536122179 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmss10.tfm" 1536122179 1316 b636689f1933f24d1294acdf6041daaa ""
@@ -154,15 +154,15 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1536122179 33301 a3134070eacafb10b1f371612ce2650d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1536269999 2756227 3af771b8c7802fcc4de3c67a29c4e776 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1536269991 7908118 b3725f0b461032fb6fe690a9513d6b63 ""
-  "defense.aux" 1539691569 1868 2efdd51db821971899f60ccc5d9e8aa1 ""
-  "defense.nav" 1539691569 777 65e3c79f1c2e5c426b83e35de13fb614 ""
-  "defense.out" 1539691569 85 7bb6f6bda1860046b9014221d21f9086 ""
-  "defense.tex" 1539691566 431 13542c61730e40af55ea34975155ae54 ""
+  "defense.aux" 1540103751 2369 3bf6208ed10b66ca2d843d904aa02b66 ""
+  "defense.nav" 1540103751 1091 1ab91479ef8a4bc737d9af785703f86d ""
+  "defense.out" 1540103751 153 8848552f59cea7e015edda3cf3248480 ""
+  "defense.tex" 1540103749 735 4c28cc184b60518c7d187ea30fc5c07e ""
   (generated)
-  "defense.out"
   "defense.pdf"
-  "defense.snm"
   "defense.nav"
+  "defense.snm"
+  "defense.out"
+  "defense.aux"
   "defense.log"
   "defense.toc"
-  "defense.aux"
