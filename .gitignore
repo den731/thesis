@@ -25,5 +25,3 @@ main.fdb_latexmk
 *.log
 *.syncthing.main.synctex(busy).tmp
 *.synctex(busy)
-defense.pdf
-defense.md
