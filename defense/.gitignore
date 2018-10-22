@@ -1,0 +1,8 @@
+*.aux
+*.log
+*.out
+*.lot
+*.snm
+*.nav
+defense.tex
+*.xml

@@ -1,11 +1,19 @@
-\documentclass{beamer} 
+\documentclass{beamer}
 \usetheme{Berkeley} 
+\usepackage{chemformula}
+% Slide number in lower right
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[style=authortitle]{biblatex}
+\addbibresource{../references.bib}
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+
 
 \title{Harmful Algal Blooms} 
 \author{Hamzah D. Ansari} 
 \institute{Oakland University} 
 \date{\today} 
-
+\def\tightlist{}
 
 \begin{document}
 
@@ -15,95 +23,15 @@
 
 \begin{frame}
 	\frametitle{Outline}
-
 	\tableofcontents
-
 \end{frame}
 
-\section{Introduction}
-\subsection{Harmful Algal Blooms}
-\begin{frame}
-	\frametitle{What are they?}
+\input{"defense.tex"}
 
-	\begin{itemize}
-		\item Cyanobacteria grown in excess
-		\item Large biomass
-			\begin{itemize}
-			\item Decrease biodiversity
-			\item Anoxic
-			\item Ugly
-		\end{itemize}
-
-	\item Red tides
-	\item Toxin producing generas
-	
-	\end{itemize}
-
-	
-
+\begin{frame}[allowframebreaks]
+	\frametitle{References}
+	\printbibliography
 \end{frame}
-
-\begin{frame}
-	\frametitle{Harm}
-
-	\begin{itemize}
-		\item Irritant
-			\begin{itemize}
-				\item Lipopolysacharides
-			\end{itemize}a
-		\item Toxins
-			\begin{itemize}
-				\item Microcystin and nodularin
-				\item Cylindrospermopsin
-				\item Anatoxin
-			\end{itemize}
-		
-	\end{itemize}
-\end{frame}
-\subsection{Law and Regulations}
-\begin{frame}
-	\frametitle{Law and Regulation}
-
-	\begin{itemize}
-		\item Safe Drinking Water Act
-		\item Maximum Contaminant Level
-		\item Contaminant Candidate List
-			\begin{itemize}
-				\item "More like guidelines"
-			\end{itemize}
-
-		\item Recreational and drinking water
-	\end{itemize}
-
-		
-
-\end{frame}
-\subsection{Research Survey}
-\begin{frame}
-	\frametitle{Research Survey}
-	\begin{itemize}
-		\item Sampled 29 inland lakes
-		\item Measured Toxins
-			\begin{itemize}
-				\item Microcystin 
-				\item Cylindrospermopsin 
-				\item Anatoxin 
-				\item Saxitoxin
-			\end{itemize}
-
-			
-	\end{itemize}
-
-	
-
-	
-
-\end{frame}
-
-
-
-
-
 
 
 
