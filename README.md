@@ -1,5 +1,17 @@
-**To see the final thesis**, click **[here](/main.pdf)** and either view in the browser or download it.
-For the source file for the document, see below. 
+# Thesis 
+
+**To see the final thesis**, click **[here](/main.pdf)** and either view in the browser or download the PDF.
+
+---
+# Defense presentation
+
+Click [here](/defense/main.pdf) for the slideshow.
+
+
+# Source
+
+My thesis is compiled by XeLateX. Defense is written up in Markdown, then converted to LaTeX with pandoc and compiled.
+
 ---
 
 Each **chapter** is seperated *.tex* file:
