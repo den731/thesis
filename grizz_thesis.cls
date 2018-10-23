@@ -45,15 +45,15 @@
 \RequirePackage[nonumberlist, nopostdot]{glossaries}
 \RequirePackage{booktabs}
 \RequirePackage{amsmath}
-\RequirePackage{amsfonts}
-\RequirePackage{amssymb}
+%\RequirePackage{amsfonts}
+%\RequirePackage{amssymb}
 \RequirePackage{indentfirst}
 \RequirePackage{caption}
 \RequirePackage{subcaption}
 \RequirePackage{rotating}
 \RequirePackage[all]{nowidow}
 \RequirePackage{fancyhdr}
-\RequirePackage[english]{babel}
+%\RequirePackage[english]{babel}
 \RequirePackage{blindtext}
 \RequirePackage[normalem]{ulem}
 \blindmathtrue
@@ -198,7 +198,7 @@
 		\studentname \vspace{1pc}
 	\end{center}
 
-	\noindent Adviser: \AdvisorOne, Ph.D.\vspace{2pc}
+	\noindent Adviser: \CommitteeChair, Ph.D.\vspace{2pc}
 
 	\doublespacing
 	\input{abstract}

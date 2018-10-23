@@ -4,6 +4,54 @@
 \renewcommand{\thetable}{\Alph{chapter}\arabic{table}}
 \GrizzAppendix{Tables and Figures} \label{ch:extra}
 
+\begin{table}[]
+	\caption{QPCR Standard Curve Quality Parameters}
+	\label{tab:qpcr}
+\begin{tabular}{llllll}
+Date     & Target   & Slope  & Intercept & $R^2$ & \% Efficiency \\
+20170812 & 16s rRNA & -3.182 & 36.225    & 0.925 & 106.199        \\
+20170713 & 16s rRNA & -3.382 & 38.225    & 0.916 & 92.877         \\
+20170918 & 16s rRNA & -3.835 & 39.687    & 0.999 & 82.284         \\
+20171011 & 16s rRNA & -3.961 & 39.121    & 0.963 & 78.841         \\
+20170714 & cyraA    & -4.34  & 41.35     & 0.931 & 69.788         \\
+20170812 & cyraA    & -4.126 & 41.001    & 0.93  & 74.734         \\
+20170918 & cyraA    & -3.116 & 37.538    & 0.978 & 109.35         \\
+20171011 & cyraA    & -3.219 & 36.793    & 0.951 & 104.5          \\
+20170714 & mcyE     & -3.279 & 36.131    & 0.999 & 101.832        \\
+20170812 & mcyE     & -3.486 & 38.108    & 0.977 & 93.573         \\
+20170918 & mcyE     & -3.541 & 37.72     & 0.944 & 91.608         \\
+20171011 & mcyE     & -3.398 & 36.844    & 0.974 & 96.94          \\
+20170714 & sxtA     & -4.591 & 42.602    & 0.92  & 65.13          \\
+20170812 & sxtA     & -3.262 & 37.913    & 0.965 & 102.568        \\
+20170918 & sxtA     & -3.236 & 37.905    & 0.966 & 103.715        \\
+20171011 & sxtA     & -3.205 & 37.757    & 0.958 & 105.118       
+\end{tabular}
+\end{table}
+
+\newpage
+
+\begin{table}[]
+	\caption{AQ1 Standard Curve Quality Parameters}
+	\label{tab:aq1}
+\begin{tabular}{llllll}
+Date     & $R^2$  & Slope & Intercept & Carryover & Analysis        \\
+20170707 & 0.9993 & 2.61  & 0.00      & 0.20      & Orthophosphate  \\
+20170711 & 0.9996 & 1.63  & -0.29     & -0.90     & Ammonia         \\
+20170711 & 1      & 15.99 & -0.51     & 0.30      & Nitrate+nitrite \\
+20170711 & 1      & 16.49 & -0.51     & 0.10      & Nitrate+nitrite \\
+20170807 & 0.9993 & 2.43  & 0.00      & 0.20      & Orthophosphate  \\
+20170808 & 0.9993 & 47.36 & -0.90     & 0.80      & Nitrate+nitrite \\
+20170808 & 1      & 16.57 & -0.47     & 0.40      & Nitrate+nitrite \\
+20170809 & 0.9998 & 1.70  & -0.20     & -1.80     & Ammonia         \\
+20170814 & 0.9998 & 2.35  & 0.00      & 0.60      & Nitrate+nitrite \\
+20170814 & 0.999  & 18.50 & -0.43     & 0.20      & Nitrate+nitrite \\
+20170817 & 0.9995 & 1.59  & -0.33     & 0.30      & Ammonia         \\
+20170909 & 0.9996 & 2.94  & -0.01     & -0.20     & Orthophosphate  \\
+20170912 & 0.9996 & 1.67  & -0.09     & 0.70      & Ammonia         \\
+20170913 & 0.9997 & 17.72 & -0.53     & -0.90     & Nitrate+nitrite \\
+20170913 & 0.9996 & 1.67  & -0.09     & 0.70      & Ammonia        
+\end{tabular}
+\end{table}
 
 
 \begin{figure}
@@ -28,8 +76,10 @@
 
 
 \begin{figure}[!ht]
-\scalebox{1.14}{
-\includegraphics[width=\textwidth]{figures/matrixfull}}
+\vspace*{-15mm}
+\scalebox{1.0}{
+\includegraphics[width=1.1\textwidth,height=1.1\textheight]{figures/matrixfull}}
+\vspace*{-15mm}
 \caption{Correlation matrix displaying Pearson's coefficient on the full data.}
 \label{fig:matrixfull}
 \end{figure}
