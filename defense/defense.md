@@ -1,6 +1,9 @@
+%---------------------------------
 \section{Introduction}
+%---------------------------------
 
 # Harmful Algal Blooms
+
 
 - Increase in primary productivity and growth of microspopic algae and cyanobacteria
 - Toxin-producing genera
@@ -31,11 +34,15 @@
 - Contaminant Candidate List
   - "More like guidelines"
 
-\section{Research Survey}
 
-\subsection{Goals}
 
 # Objectives
+
+%---------------------------------
+\section{Research Survey}
+%---------------------------------
+
+\subsection{Goals}
 
 - a
 - b
@@ -44,11 +51,12 @@
 
 # Surveyed Lakes
 
-![Sampled Lakes](/home/numen/Sync/Thesis_LateX/figures/Overview.png){width=80%}
+![Sampled Lakes](../figures/Overview.png){width=80%}
 
-\subsection{Methods}
 
 # Methods
+
+\subsection{Methods}
 
 # Water Sampling
 
@@ -78,15 +86,18 @@
 
 - a
 
+%---------------------------------
 \section{Results}
+%---------------------------------
 
 # Results
 
 - a
 
 
-
+%---------------------------------
 \section{Discussion}
+%---------------------------------
 
 # Could we predict HABs?
 
@@ -94,8 +105,9 @@
 
 
 
-
+%---------------------------------
 \section{Conclusion}
+%---------------------------------
 
 - a
 
