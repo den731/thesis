@@ -6,6 +6,7 @@ In our analysis of MC in the monthly grab samples, the majority of our samples w
 
 Of all the sampled lakes, we did not detect cylindrospermonsin in our surveyed lakes from \gls{lcmsms}. Moreover, the QPCR analysis did detect genes responsible for producing cylindrospermonsin (\emph{cyrA}) and saxitoxin (\emph{sxtA}). All sampled lakes shown to have detectable amounts of $log10$ \emph{16s rRNA} and $log10$ \emph{mcyE} genes (see figure \ref{fig:gene}). The \gls{qpcr} analysis did not have distinct variation throughout each month.  From the \gls{lcmsms} we found one instance of anatoxin-a detected at Brighton lake in August 2017 which was sampled during an visible bloom (2.80 $\mu$g/L of Anantoxin-a). %EPA Graph
 
+%TODO phyco and chloro
 
 \begin{figure}[!h]
 	\includegraphics[width=\textwidth]{figures/Microcystin}
@@ -53,11 +54,12 @@ Barplots of \emph{16s rRNA} and \emph{mcyE} results for each month of:
 
 \begin{figure}[!h]
 	\includegraphics[width=\textwidth]{figures/floro}
+	\vspace*{-15mm}
 	\caption{
 Barplots of chloraphyll and phycocyanin	for each month of:
-(A) July, 
+(A) July with missing data from Bear, Cadillac, Codlwater, Deer, Houghton, Intermediate, Little Glen, Lake Margareth, Platte, Sanford, Silver, Wixom and West Twin Lake. 
 (B) August,
-(C) September, and
+(C) September with missing data from Lake Paradise, and
 (D) October. 
 }
 	\label{fig:floro}
@@ -71,18 +73,12 @@ Barplots of chloraphyll and phycocyanin	for each month of:
 \section{Statistical Modeling}
 \subsection{Exploratory Analysis}
 
-With our model selection, a correlation matrix analysis was done to observe any possible collinear relationships between our predictor variables. The correlation matrix analysis showing only significant relationships and arranged by the anglular order of eigenvectors and identified few correlated variables  (see \ref{matrix}, and see \ref{fig:matrixfull} for the full correlation values). In our correlation matrix analysis, we observed a few relationships that may be meaningful. We found turbidity positively correlated with orthophosphate, total phosphorus, total Kejldahl nitrogen, water temperature, phycocyaninin and chloraphyll. Chlorophyll is positively correlated with \emph{mcye}, phycocyanin, \emph{16S rRNA}, total Kejldahl nitrogen and orthophosphate. Conductance was found to have negative relationship with precipitation.
-Developed land-use is positively correlated with nitrate+nitrite, total nitrogen and conductance.
-Watershed area was positive correlated with Zebra mussel mass.
-Agriculture had a positive relationship with nitrate+nitrite,
-Forest land-use had negative correlation with total Kejldahl nitrogen, total nitrogen, conductivity, ammonia, nitrate+nitrite and total nitrogen to total phosphorus ratio.
-Precipitation had negative correlation with total nitrogen, orthophosphate and conductivity.
+A correlation matrix analysis was done to observe any possible collinear relationships between our predictor variables. In our correlation matrix analysis, we observed a few relationships that may be meaningful. The correlation matrix analysis showing only significant relationships and arranged by the anglular order of eigenvectors and identified few correlated variables  (see \ref{matrix}, and see \ref{fig:matrixfull} for the full correlation values). From our best subset analysis with the largest subset size of 3 (nvmax=3),  orthophosphate, \emph{mcyE}, turbidity, max depth,  lake area to watershed ratio, barren land-use and precipitation 3 days prior to sampling were frequently chosen  predictor variables for MC concentration (see figure \ref{subset}).
 
-From our best subset analysis with the largest subset size of 3 (nvmax=3),  orthophosphate, \emph{mcyE}, turbidity, max depth,  lake area to watershed ratio, barren land-use and precipitation 3 days prior to sampling were frequently chosen  predictor variables for MC concentration (see figure \ref{subset}).
-
+% We found turbidity positively correlated with orthophosphate, total phosphorus, total Kejldahl nitrogen, water temperature, phycocyaninin and chloraphyll. Chlorophyll is positively correlated with \emph{mcye}, phycocyanin, \emph{16S rRNA}, total Kejldahl nitrogen and orthophosphate. Conductance was found to have negative relationship with precipitation. Developed land-use is positively correlated with nitrate+nitrite, total nitrogen and conductance. Watershed area was positive correlated with Zebra mussel mass. Agriculture had a positive relationship with nitrate+nitrite, Forest land-use had negative correlation with total Kejldahl nitrogen, total nitrogen, conductivity, ammonia, nitrate+nitrite and total nitrogen to total phosphorus ratio.Precipitation had negative correlation with total nitrogen, orthophosphate and conductivity.
 
 %Proper way to assess collinearity by linear regression? A caused by B and B caused by A?
-From our data, $log10$(Orthophosphate) was shown to be positively correlated with $log10$(turbidity) from our exploratory analysis, with a simple linear regression analysis, the relationship is slightly significant ($\beta=0.57$, $F_{{1,26}}=3.13$, $p=0.08$). The regression did have outliers, with the two data points removed the relationship is significant ($\beta=0.17$, $F_{{1,25}}$, $p=0.01$) (see \ref{fig:plot1}). We avoid including either $log10$(orthophosphate) or $log10$(turbidity) in our models together.
+With our model selection from our data, $log10$(Orthophosphate) was shown to be positively correlated with $log10$(turbidity) from our exploratory analysis, with a simple linear regression analysis, the relationship is slightly significant ($\beta=0.57$, $F_{{1,26}}=3.13$, $p=0.08$). The regression did have outliers, with the two data points removed the relationship is significant ($\beta=0.17$, $F_{{1,25}}$, $p=0.01$) (see \ref{fig:plot1}). We avoid including either $log10$(orthophosphate) or $log10$(turbidity) in our models together.
 %All other variables did not have any significant correlations with eachother.
 %From backward stepwise regression, eliminated  contained 3 variables, orthophosphate, max depth and turbidity.
 With $log10$(\emph{mcyE}) as a single predictor in a linear mixed model shown to have a significant relationship with $log10$(MC), however we are missing data from July ($N=91$) which does not allow us to use the full dataset ($\beta=0.15$, $F_{{1,72}}$, $p=0.002$).
@@ -91,12 +87,9 @@ We found $log10$(turbidity) as the best single predictor. The relationship was s
 
 For predicting the $log10$(\emph{16s rRNA}) gene copies, chloraphyll, agriculture land-use and average temperature 3 and 30 days prior to sampling and precipitation 5 days before sampling were investigated for building our model (see figure \ref{subset2}). Precipitation and temperature data did not have significant relationship and was eliminated from the model. Agriculture percent land-use found to be the best predictor for \emph{16s rRNA} ($\beta=0.70$, $F_{{1,26}}=5.10$, $p=0.03$)(figure \ref{fig:agriculture})
 
-
-
 \subsection{\emph{A Priori} Hypothesis Test}
 
-In my hypothesis, I expected developed land-use percentage to have a positive influence on MC concentrations. Much of the southern lakes were vastly dominated by developed land such as Belleville, Ore, Brighton, Ford and Bogie Lake. 
-Developed land-use percentage plotted had a slight positive effect with $log10$(MC) concentration , however the relationship was not significant  ($\beta=0.59$, $F_{{1,27}}=1.75$ , $p=0.20$)(see figure \ref{fig:developed}) . There were no significant relationship with developed land-use percentage in predicting $log10$(\emph{16s rRNA}) gene copies ($\beta=0.48$, $F_{{1,25}}=1.75$ , $p=0.27$). However, developed land-use had a positive significant relationship with log10(nitrate+nitrite) ($\beta=0.75$, $F_{{1,27}}=1.08$, $p=0.018$)
+In my hypothesis, I expected developed land-use percentage to have a positive influence on MC concentrations. Developed land-use percentage plotted had a slight positive effect with $log10$(MC) concentration , however the relationship was not significant  ($\beta=0.59$, $F_{{1,27}}=1.75$ , $p=0.20$)(see figure \ref{fig:developed}) . There were no significant relationship with developed land-use percentage in predicting $log10$(\emph{16s rRNA}) gene copies ($\beta=0.48$, $F_{{1,25}}=1.75$ , $p=0.27$). However, developed land-use had a positive significant relationship with log10(nitrate+nitrite) ($\beta=0.75$, $F_{{1,27}}=1.08$, $p=0.018$).
 
 Forest land-use percentage had a significant negative relationship with $log10$(\emph{16s rRNA}) gene copies ($\beta=-1.42$, $F_{{1,25}}=7.08$, $p=0.013$)(see figure \ref{fig:forest}). Albiet, forest land use did not have a significant effect on $log10$(MC) concentrations ($\beta=-0.34$, $F_{{1,26}}=0.32$, $p=0.57$).
 
@@ -173,19 +166,12 @@ Turbidity is our best predictor variable for MC. Orthophosphate is nearly signif
 
 \section{Discussions}
 
-When \gls{lcmsms} and ELISA are compared in our grab samples, there are discprenancies between the two. Analysis from ELISA tends to be report higher values than \gls{lcmsms}. The difference is more apparent in the month of September and October, where the difference can be quite large (see figure \ref{fig:compare}). The ELISA generally presents a higher result than \gls{lcmsms}. This is in part due to the detection limit and reportable limits being much higher for the ELISA, 0.15 and 0.1 $\mu$g/L. However, our analysis in the month of August had good agreement between \gls{lcmsms} and ELISA.  
-
-\begin{figure}[!h]
-	\includegraphics[width=\textwidth]{figures/compare}
-	\caption{TODO}
-	\label{fig:compare}
-\end{figure}
-
 % Comparing the results between MC concentrations and \emph{16s rRNA}, we can see a difference in figure \ref{fig:resbar}.
 % Lake turnover, winter stable, spring mix, summer stable, fall mix. 
 % Microcystin concentration tells a different story compared to \emph{16s rRNA}. This curve is to be expected due to warmer temperature as our data does follow this pattern (see figure \ref{fig:hobo}).
 
-In our first hypothesis, I tested if disturbance from developed land is associated with \gls{hab} and if it has an affect on nutrient concentration.  From our data, we did not find a significant relationship between developed land use and MC concentrations or \emph{16s rRNA}. However, we did find developed land use having some effect with nitrate+nitrite.
+In my first hypothesis, I tested if disturbance from developed land is associated with \gls{hab} and if it has an affect on nutrient concentration.  From our data, we did not find a significant relationship between developed land use and MC concentrations or \emph{16s rRNA}. However, we did find developed land use having some effect with nitrate+nitrite. 
+Much of the southern lakes were vastly dominated by developed land such as Belleville, Ore, Brighton, Ford and Bogie Lake. 
 
 Forest has negative correlation with NUTRIENTS
 
@@ -199,9 +185,14 @@ Mostly all of our sampled lakes were mostly alkaline conditions averaging around
 Wixom lake is very unique, it has the largest watershed amongst all our surveyed lake and has visually one of the largest extent
 
 
+
+When \gls{lcmsms} and ELISA are compared in our grab samples, there are discprenancies between the two. Analysis from ELISA tends to be report higher values than \gls{lcmsms}. The difference is more apparent in the month of September and October, where the difference can be quite large (see figure \ref{fig:compare}). The ELISA generally presents a higher result than \gls{lcmsms}. This is in part due to the detection limit and reportable limits being much higher for the ELISA, 0.15 and 0.1 $\mu$g/L. However, our analysis in the month of August had good agreement between \gls{lcmsms} and ELISA.  
+
+
 %Dissolved oxygen averaged around 12.98$\pm$20.8 mg/L of \ch{O2}.
 
 % FORMS OF NUTRIENTS TODO revise this, expand it
+In our approach in trying to understand what drives \gls{hab} is still unclear. Identifying turbidity could help predicting or atleast asigning a risk factor as to the likelihood in becoming a problematic lake. Nutrient concentrations, especially orthophospate did not show a viable paramter to identify and predict \gls{hab}. In other studies, many have emphasized nutrients to be a limiting factor in \gls{hab} growth.  which is long believed to be a useful paramter to measure 
 In controlled lab experiments, nutrients such as inorganic nitrogen or phosphorus are found to be limiting growth factors. In a  when \emph{Microcystis aereginosa} grown in the laboratory \cite{xiao_colony_2018, yema_role_2016}.
 
 % revise this and put more work into this TODO
@@ -236,6 +227,14 @@ Comparing the average results from SPATT to the grab sample, we identified a maj
 The results from SPATT seemed to suggest the lakes we found to have low microcystin from our grab sample missed other \gls{hab}. When lakes were ordered by latitude, it also suggest lakes found in the upper latitude of Michigan may had higher frequency of \gls{hab}.
 
 We suggest there is another factor that explains the higher magnitude of microcystin. We started to observe biofilm to accumulate on the SPATT bags. The biofilm was more notable in lakes that had significant blooms such as Brighton, Pontiac, and Wixom Lake. Initially we did not expect this would effect the capacity of the SPATT, but this data may suggest this. In our next year of survey we will test the hypothesis if the biofilm has a negative effect of microcystin adsorption. We may need to dispatch the SPATT bags more often to prevent biofilm to encase and clog the Nitex mesh bag.
+
+\begin{figure}[!h]
+	\includegraphics[width=\textwidth]{figures/compare}
+	\caption{TODO}
+	\label{fig:compare}
+\end{figure}
+
+
 
 \begin{figure}[!hp]
 \includegraphics[width=\textwidth]{figures/spatttboxplotlake}
