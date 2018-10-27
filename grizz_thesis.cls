@@ -134,7 +134,7 @@
 \noindent\CommitteeChair, Ph.D., Chair \\
 \noindent\AdvisorOne, Ph.D. \\
 \noindent\AdvisorTwo, Ph.D. \\
-\noindent\AdvisorThree, Ph.D.
+%\noindent\AdvisorThree, Ph.D.
 \newpage
 }
 

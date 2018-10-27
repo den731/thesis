@@ -2,9 +2,11 @@
 
 \GrizzAppendixSection{Introduction}
 
-Collaborative work is the fundamental part of a large scale research project.  Data aggregation and structural collection is one of the few key factors that determines the quality of the study. Large scale studies are often done by a team of multiple groups and organizations. There are available commercial tools which can aid in data collection and aggregation automatically. ArcGIS \footnote{ESRI 2017. ArcGIS Desktop: Release 10.5.1 Redlands, CA: Environmental Systems Research Institute.} coupled with their Android/IOS app called Collector for ArcGIS \footnote{https://www.esri.com/products/collector-for-arcgis}.
+Collaborative work is a fundamental part of any large scale research project. Data aggregation and structural collection can be a daunting task. It is most often an overlooked part of a project as it is one of the few key factors that determines the quality of the study. Large scale studies are often done by a team of multiple groups and organizations which needs dedicated time for compiling data from multiple people or source. There are available commercial tools which can aid in data collection and aggregation automatically and seamlessly. ArcGIS \footnote{ESRI 2017. ArcGIS Desktop: Release 10.5.1 Redlands, CA: Environmental Systems Research Institute.} coupled with their Android/IOS app called Collector for ArcGIS \footnote{https://www.esri.com/products/collector-for-arcgis} is a very powerful tool for the task. The app allows multiple users to collect data with their mobile device and push data to a centralized database which natively can be imported into ArcGIS. However for small research groups or non-profit organizations, this may be too costly and not fit their budget
 
-From my experience I found a viable alternative which does not require an expensive license. I wish to help other research studies with a cheaper alternative and greatly facilitate their pursuit. I have written this guide to allow anyone to build from the ground up on setting a database and providing a viable way to organize an enterprise. This guide is aimed to initially setup a database for non-profit organization and academic research with a limited budget. The initial cost is \$5 per month for a virtual private server (VPS) which has enough storage for a small database.  The software tool is from an open-source software by \gls{odk}\footnote{Open Data Kit 2.0: Expanding and Refining Information Services for Developing Regions \url{http://www.hotmobile.org/2013/papers/full/2.pdf} Waylon Brunette, Mitchell Sundt, Nicola Dell, Rohit Chaudhri, Nathan Breit, Gaetano Borriello In HotMobile, 2013. \url{http://dl.acm.org/citation.cfm?id=2444790}}.
+From my experience I found a viable alternative which does not require an expensive license.  The software tool is from an open-source software by \gls{odk}\footnote{Open Data Kit 2.0: Expanding and Refining Information Services for Developing Regions \url{http://www.hotmobile.org/2013/papers/full/2.pdf} Waylon Brunette, Mitchell Sundt, Nicola Dell, Rohit Chaudhri, Nathan Breit, Gaetano Borriello In HotMobile, 2013. \url{http://dl.acm.org/citation.cfm?id=2444790}}.  The initial cost is \$5 per month for a virtual private server (VPS) which has enough storage for a decent size database. If more storage is needed, one can scale their VPS to accommodate easily. Alternatively one can use the Google App Engine which provides a free instance for light useage\footnote{\url{https://docs.opendatakit.org/aggregate-app-engine/}}.
+
+I wish to help other research studies with a cheaper alternative and greatly facilitate their pursuit. I have written this guide to allow anyone to build from the ground up on setting a database and providing a viable way to organize an enterprise. This guide is aimed to initially setup a database for non-profit organization and academic research with a limited budget.
 
 \GrizzAppendixSection{Required Components}
 
@@ -17,7 +19,8 @@ DigitalOcean, Amazon (free trial for a year), Google VPS can work. I suggest any
 In the terminal, you will need bash commands to setup the server's configuration. In this guide, bash commands will be represented the \$ symbol. Each line of code is represented with a single \$ at the beginning. Enter the text following anything after the \$. With some lines of code, there will be included comments which will be represented by the \#.
 
 \begin{lstlisting}
-  $ run this command   # This is a comment
+# This is a comment
+	$ run this command   
 \end{lstlisting}
 
 Note that the first line starts with a\#. This is not a command but a comment. In bash language, this is usually ignored. In this guide, a line starting with \$ designates a command. Do not include the \$ as its merely a symbol to designate a command. Running lines will not have \$ as its indented to be one line of code.
@@ -28,23 +31,27 @@ You must get an SSH client to access the server for setting up ODK Aggregate. Fo
 \noindent
 The command for linux or mac users, they can use Terminal and use this command:
 \begin{lstlisting}[language=bash]
-  $  ssh root@[EnterYourIp]   # SSH with root as user
-  #  replace [EnterYourIp] with the given IP address
+# SSH with root as user
+	$  ssh root@[EnterYourIp]   
+#  replace [EnterYourIp] with the given IP address
 \end{lstlisting}
 
 From a fresh installation, the first prompt when accessing the server will be to change your password. Choose a good strong password for the root username and have it written down.  After setting the password, preform any upgrades and install sudo which allows a normal user to have elevated privileges and install nano, a text editor. This may be already installed but some distributions might not have them. To do this, follow these commands.
 
 \begin{lstlisting}[language=bash]
-  $  apt update            # Use the apt package manager and update repository
-  $  apt upgrade -y        # Preform any upgrades
-  $  apt dist-upgrade -y   # Distribution upgrades
-  $  apt install sudo nano # Install the sudo and nano packages
+# Use the apt package manager and update repository
+	$  apt update            
+# Preform  upgrades
+	$  apt upgrade -y        
+	$  apt dist-upgrade -y   
+# Install the sudo and nano packages
+	$  apt install sudo nano 
 \end{lstlisting}
 
 Next, we will set a separate username. The \emph{root} user is only used to administer the server.  Choose any name as you see fit and something you can remember. For our example, for the case of this guide, \emph{dummy} will be the username.
 
 \begin{lstlisting}[language=bash]
-  $  adduser dummy
+	$  adduser dummy
 \end{lstlisting}
 
 You will be prompted to create a password. When asked for name and other user information, hit ``Enter'' to leave it blank. This does not need to be filled out.
@@ -52,28 +59,33 @@ You will be prompted to create a password. When asked for name and other user in
 Here, we will also assign this new user as a sudo user. This will enable the new user to have elevated privileges. This will allow to run command lines with root access if ``sudo'' is run before the line of command. Be cautious with commands with sudo.
 
 \begin{lstlisting}[language=bash]
-  $  usermod -a -G sudo dummy # Add the user dummy to sudo group
+# Add the user dummy to sudo group
+	$  usermod -a -G sudo dummy 
 \end{lstlisting}
 
 Its highly advisable to setup a pubic/private \gls{rsa} key pair for more secure login setup. This prevents unauthorized access to the server and prevents the basic brute-force attacks. Here are the steps necessary to secure the server against malicious attacks. We will also setup a firewall called ufw (Uncomplicated Firewall) which is very simple to setup and secure your server. We will also generate a key-pair for this user. You can have a passphrase which is an additional layer of security, or leave it blank. When generated, the public key will be located at \path{/home/dummy/.ssh/id_rsa.pub}. Follow this command:
 
 \begin{lstlisting}[language=bash]
-  $  su dummy             # Switch out from root and change the user to dummy
-  $  sudo apt install ufw # Install uncomplicated firewall
-  $  sudo ufw allow 22    # Allow SSH ports
-  $  sudo ufw allow 8080  # Allow aggregate server
-  $  sudo ufw allow 5432  # Allow PostgreSQL server
-  $  ssh-keygen           # Generate the keys for SSH
+# Switch out from root and change the user to dummy
+	$  su dummy             
+# Install uncomplicated firewall
+	$  sudo apt install ufw 
+# Allow SSH ports, aggregate and PostGreSQL ports
+	$  sudo ufw allow 22    
+	$  sudo ufw allow 8080  
+	$  sudo ufw allow 5432  
+# Generate the keys for SSH
+	$  ssh-keygen           
 \end{lstlisting}
 
 Next, we will move the generate public key to the authorized key folder. We will also limit the permissions of the authorized keys for only the user dummy to access, install putty tools and use it to convert the private key for windows client to use:
 
 \begin{lstlisting}[language=bash]
-  $  sudo mv ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys
-  $  chmod 600 ~/.ssh/authorized_keys
-  $  sudo apt install putty-tools
-  $  cd ~/.ssh
-  $  puttygen id_rsa -o id_rsa.ppk
+	$  sudo mv ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys
+	$  chmod 600 ~/.ssh/authorized_keys
+	$  sudo apt install putty-tools
+	$  cd ~/.ssh
+	$  puttygen id_rsa -o id_rsa.ppk
 \end{lstlisting}
 
 Next, you have to retrieve the converted key file from the server to your own local machine. With windows, I recommend using WinSCP for secure file transfer \url{https://winscp.net/eng/index.php}. When prompted, enter the IP address in host name, port 22, and enter the new username and password (dummy). In WinSCP, hidden files are not shown by default. Hit Ctrl+Alt+H to show hidden files. On the right side panel, you will find the servers directory. The left side is the local computer's directory. Here we can transfer files between the machines securely. On the right side, locate .ssh folder and find the id\_rsa.ppk file and download it to your document folder. Simply double-click the file to download it to your local machine.
@@ -83,31 +95,31 @@ This file can be pre-loaded int PuTTy. Double click the id\_rsa.ppk file, open u
 Next, we will disable login by password which only allows users with the key file to access the server. This secures the server as it prevents malicious bots from brute-force attacks:
 
 \begin{lstlisting}[language=bash]
-  $  sudo nano /etc/ssh/sshd_config
+	$  sudo nano /etc/ssh/sshd_config
 \end{lstlisting}
 
 The command will open up \emph{nano} text editor. Scroll down the config file by pressing the down arrow key. Find the line that contains
 
 \begin{lstlisting}
-  >    PermitRootLogin yes
+	PermitRootLogin yes
 \end{lstlisting}
 
 Change it to:
 
 \begin{lstlisting}[language=bash]
-  >    PermitRootLogin no
+	PermitRootLogin no
 \end{lstlisting}
 
 Scroll all the way to the end and find the line containing:
 
 \begin{lstlisting}[language=bash]
-  >    PasswordAuthentication yes
+	PasswordAuthentication yes
 \end{lstlisting}
 
 And change it to:
 
 \begin{lstlisting}[language=bash]
-  >    PasswordAuthenticion no
+	PasswordAuthenticion no
 \end{lstlisting}
 
 Make sure there is no \# in the beginning of the changed lines. Exit nano text editor by pressing ``Ctrl+X''. Press ``Y'' to save file and hit ``Enter'' to write file.
@@ -115,17 +127,17 @@ Make sure there is no \# in the beginning of the changed lines. Exit nano text e
 Next restart ssh:
 
 \begin{lstlisting}[language=bash]
-  $  sudo service ssh restart
+	$  sudo service ssh restart
 \end{lstlisting}
 
 Next, you will install ODK Aggregate. ODK Aggregate is a Java web applet that handles the data and stores into a database. The web applet is hosted as a website and can be accessed through any web browser. On the host machine, we will need to setup tomcat server that hosts ODK Aggregate along with an SQL server. PostgreSQL is used as we can also extend this to work with spatial data and be accessible from QGIS. As of writing this guide, ODK Aggregate is version 1.5.0. You may need to find the current version. Go to \url{https://github.com/opendatakit/aggregate}. If the version is different than 1.5.0, change the link following after the ``wget'' command.
 
 \begin{lstlisting}
-  $  sudo apt install tomcat8 unzip
-  $  wget https://github.com/opendatakit/aggregate/releases/download/v1.5.0/ODK-Aggregate-v1.5.0-Linux-x64.run.zip
-  $  unzip ODK-Aggregate-v1.5.0-Linux-x64.run.zip
-  $  chmod +x ODK-Aggregate-v1.5.0-Linux-x64.run
-  $  ./ODK-Aggregate-v1.5.0-Linux-x64.run
+	$  sudo apt install tomcat8 unzip
+	$  wget https://github.com/opendatakit/aggregate/releases/download/v1.5.0/ODK-Aggregate-v1.5.0-Linux-x64.run.zip
+	$  unzip ODK-Aggregate*.zip
+	$  chmod +x ODK-Aggregate*.run
+	$  ./ODK-Aggregate*.run
 \end{lstlisting}
 
 You will see a prompt when the ODK Aggregate Setup Wizard appears. Follow these steps:
@@ -153,68 +165,70 @@ You will see a prompt when the ODK Aggregate Setup Wizard appears. Follow these 
 
 Next, you must setup PostgreSQL:
 \begin{lstlisting}
-  $  echo deb http://apt.postgresql.org/pub/repos/apt/stretch-pgdg main | sudo tee -a /etc/apt/sources.list
-  $  wget --quiet -O https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-  $  sudo apt update
-  $  sudo apt install postgresql-9.4
+	$  echo deb http://apt.postgresql.org/pub/repos/apt/stretch-pgdg main | sudo tee -a /etc/apt/sources.list
+	$  wget --quiet -O https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+	$  sudo apt update
+	$  sudo apt install postgresql-9.4
 \end{lstlisting}
 
 Next you need to create postgres as a username and setup a password. Here you will be switching into \emph{psql} command prompt to set things up. Once you are done, you will exit \emph{psql} by typing $\backslash$q which will lead into the regular bash home directory. Follow these command:
 
 \begin{lstlisting}[language=bash]
-  $  sudo -u postgres psql postgres #  This will log you into psql command prompt.
-    % postgres=# \password postgres
-    % postgres=# \q
-  $                                 #  Back to bash command prompt
+	$  sudo -u postgres psql postgres #  This will log you into psql command prompt.
+# Now you are in psql
+    	 \password postgres
+# Exit psql
+    	 \q
 \end{lstlisting}
 
 Now you must set up the configuration of PostgreSQL to allow remote connections. You will edit the \path{/etc/postgreql/9.4/main/pg_hba.conf} file and the \path{/etc/postgresql/main/postgresql.conf}:
 
 \begin{lstlisting}[language=bash]
-  $  sudo nano /etc/postgresql/9.4/main/pg_hba.conf
+	$  sudo nano /etc/postgresql/9.4/main/pg_hba.conf
 \end{lstlisting}
 
 Change the line that has this:
 \begin{lstlisting}[language=bash]
-  >    local   all    all      peer
+	local   all    all      peer
 \end{lstlisting}
 \noindent
 To this:
 \begin{lstlisting}[language=bash]
-  >    local   all    all      md5
+	local   all    all      md5
 \end{lstlisting}
 
 Also add this line at the very end of the file:
 \begin{lstlisting}[language=bash]
-  >   host   all     all      0.0.0.0/0 md5
+	host   all     all      0.0.0.0/0 md5
 \end{lstlisting}
 
 Then exit by pressing ``Ctrl+X'', then hit ``Y'' to confirm, then hit ``Enter''. Lets edit the other file:
 
 \begin{lstlisting}[language=bash]
-  $  sudo nano /etc/postgresql/9.4/main/postgresql.conf
+	$ sudo nano /etc/postgresql/9.4/main/postgresql.conf
 \end{lstlisting}
 
 Find this line:
 \begin{lstlisting}[language=bash]
-  >    #listen_addresses = 'localhost'
+	#listen_addresses = 'localhost'
 \end{lstlisting}
 
 Replace it with this, note the removal of  \# at the beginning of the line:
 
 \begin{lstlisting}[language=bash]
-  >    listen_addresses = '*'
+	listen_addresses = '*'
 \end{lstlisting}
 
 
 Now you will run the SQL configuration file generated from ODK Aggregate to setup the database in PostgreSQL. This will create the user \emph{odk\_user} and the database and schema \emph{odk\_prod}. Once this is done, you will restart PostgreSQL and have the database online.
 
 \begin{lstlisting}[language=bash]
-  $  sudo -u postgres psql postgres
-      % postgres=# \cd '/home/dummy/ODK/ODK\ Aggregate'
-      % postgres=# \i create_db_and_user.sql
-      % postgres=# \q
-  $  sudo systemctl restart postgresql
+	$ sudo -u postgres psql postgres
+# Now you are in psql. Change directory and run the setup
+	\cd '/home/dummy/ODK/ODK\ Aggregate'
+        \i create_db_and_user.sql
+        \q
+	$  sudo systemctl restart postgresql
 \end{lstlisting}
 
 
@@ -222,9 +236,9 @@ ODK Aggregate run file from the previous step generated a .war file that needs t
 
 
 \begin{lstlisting}[language=bash]
-  $ cd $HOME/ODK/ODK\ Aggregate/
-  $ sudo cp ODKAggregate.war /var/lib/tomcat8/webapps
-  $ sudo service apache restart
+	$ cd $HOME/ODK/ODK\ Aggregate/
+	$ sudo cp ODKAggregate.war /var/lib/tomcat8/webapps
+	$ sudo service apache restart
 \end{lstlisting}
 
 Now you should have the ODK Aggregate server running. You can simply access the server by going to your web browser on your local computer and access it by replacing your given ip address of the server in this form: \url{http://xxx.xxx.xxx.xxx:8080/ODKAggregate} Log into your super user login and click ``Site Admin''. Here you can add more users to administer the site or be a data collector. Site administrators have the ability to create more users and have all other power as a data collector. For a simple user who is just collecting data, you can have them set as ``Data Collector'' and not be able to change any data that has already been collected. Next, we must create a form for the data collectors to use.
