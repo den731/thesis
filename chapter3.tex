@@ -57,7 +57,7 @@ Barplots of \emph{16s rRNA} and \emph{mcyE} results for each month of:
 	\vspace*{-15mm}
 	\caption{
 Barplots of chloraphyll and phycocyanin	for each month of:
-(A) July with missing data from Bear, Cadillac, Codlwater, Deer, Houghton, Intermediate, Little Glen, Lake Margareth, Platte, Sanford, Silver, Wixom and West Twin Lake. 
+(A) July with missing data from Bear, Cadillac, Coldwater, Deer, Houghton, Intermediate, Little Glenn, Lake Margarethe, Platte, Sanford, Silver, Wixom and West Twin Lake. 
 (B) August,
 (C) September with missing data from Lake Paradise, and
 (D) October. 
@@ -72,12 +72,15 @@ Barplots of chloraphyll and phycocyanin	for each month of:
 
 \section{Statistical Modeling}
 
-In our correlation matrix analysis, we observed a few relationships that may be meaningful. The correlation matrix analysis shows significant association using Pearson's product moment ($\alpha>0.05$) and arranged by the anglular order of eigenvectors and identified few correlated variables (see \ref{matrix}, and see \ref{fig:matrixfull} for the full correlation values). In predicting \gls{MC}, the full model will include turbidity, watershed area, orthophosphate and phycocyanin. For predicting the \emph{16s rRNA}, we include chloraphyll, turbidity, temperature, lake to watershed ratio, average precipitation 30 days prior and forest land use.
+In our correlation matrix analysis, we observed a few relationships  . The correlation matrix analysis shows significant association using Pearson's product moment ($\alpha>0.05$) and arranged by the anglular order of eigenvectors and identified few correlated variables (see \ref{matrix}, and see \ref{fig:matrixfull} for the full correlation values). In predicting \gls{mc}, the full model will include turbidity, watershed area, orthophosphate and phycocyanin. For predicting the \emph{16s rRNA}, we include chloraphyll, turbidity, temperature, lake to watershed ratio, average precipitation 30 days prior and forest land use.
 
 % We found turbidity positively correlated with orthophosphate, total phosphorus, total Kejldahl nitrogen, water temperature, phycocyaninin and chloraphyll. Chlorophyll is positively correlated with \emph{mcye}, phycocyanin, \emph{16S rRNA}, total Kejldahl nitrogen and orthophosphate. Conductance was found to have negative relationship with precipitation. Developed land-use is positively correlated with nitrate+nitrite, total nitrogen and conductance. Watershed area was positive correlated with Zebra mussel mass. Agriculture had a positive relationship with nitrate+nitrite, Forest land-use had negative correlation with total Kejldahl nitrogen, total nitrogen, conductivity, ammonia, nitrate+nitrite and total nitrogen to total phosphorus ratio.Precipitation had negative correlation with total nitrogen, orthophosphate and conductivity.
 
 %Proper way to assess collinearity by linear regression? A caused by B and B caused by A?
- From our best subset analysis with the largest subset size of 3 (nvmax=3),  orthophosphate, \emph{mcyE}, turbidity, max depth,  lake area to watershed ratio, barren land-use and precipitation 3 days prior to sampling were frequently chosen  predictor variables for MC concentration (see figure \ref{subset}). With our model selection from our data, $log10$(Orthophosphate) was shown to be positively correlated with $log10$(turbidity) from our exploratory analysis, with a simple linear regression analysis, the relationship is slightly significant ($\beta=0.57$, $F_{{1,26}}=3.13$, $p=0.08$). The regression did have outliers, with the two data points removed the relationship is significant ($\beta=0.17$, $F_{{1,25}}$, $p=0.01$) (see \ref{fig:plot1}). We avoid including either $log10$(orthophosphate) or $log10$(turbidity) in our models together.
+A subset analysis was done on the full model including the variables chosen which was found to be significant from the correlation matrix. The best subset analysis is done with the largest subset size of 3 (nvmax=3) and 5 subsets of each size to record (nbest=5). (see figure \ref{subset}). 
+
+
+With our model selection from our data, $log10$(Orthophosphate) was shown to be positively correlated with $log10$(turbidity) from our exploratory analysis, with a simple linear regression analysis, the relationship is slightly significant ($\beta=0.57$, $F_{{1,26}}=3.13$, $p=0.08$). The regression did have outliers, with the two data points removed the relationship is significant ($\beta=0.17$, $F_{{1,25}}$, $p=0.01$) (see \ref{fig:plot1}). We avoid including either $log10$(orthophosphate) or $log10$(turbidity) in our models together.
 %All other variables did not have any significant correlations with eachother.
 %From backward stepwise regression, eliminated  contained 3 variables, orthophosphate, max depth and turbidity.
 With $log10$(\emph{mcyE}) as a single predictor in a linear mixed model shown to have a significant relationship with $log10$(MC), however we are missing data from July ($N=91$) which does not allow us to use the full dataset ($\beta=0.15$, $F_{{1,72}}$, $p=0.002$).
@@ -86,7 +89,7 @@ We found $log10$(turbidity) as the best single predictor. The relationship was s
 
 For predicting the $log10$(\emph{16s rRNA}) gene copies, chloraphyll, agriculture land-use and average temperature 3 and 30 days prior to sampling and precipitation 5 days before sampling were investigated for building our model (see figure \ref{subset2}). Precipitation and temperature data did not have significant relationship and was eliminated from the model. Agriculture percent land-use found to be the best predictor for \emph{16s rRNA} ($\beta=0.70$, $F_{{1,26}}=5.10$, $p=0.03$)(figure \ref{fig:agriculture})
 
-\subsection{\emph{A Priori} Hypothesis Test}
+\section{\emph{A Priori} Hypothesis Test}
 
 In my hypothesis, I expected developed land-use percentage to have a positive influence on MC concentrations. Developed land-use percentage plotted had a slight positive effect with $log10$(MC) concentration , however the relationship was not significant  ($\beta=0.59$, $F_{{1,27}}=1.75$ , $p=0.20$)(see figure \ref{fig:developed}) . There were no significant relationship with developed land-use percentage in predicting $log10$(\emph{16s rRNA}) gene copies ($\beta=0.48$, $F_{{1,25}}=1.75$ , $p=0.27$). However, developed land-use had a positive significant relationship with log10(nitrate+nitrite) ($\beta=0.75$, $F_{{1,27}}=1.08$, $p=0.018$).
 
@@ -97,28 +100,28 @@ With the surveyed lakes, 17 out of 29 had Zebra mussels found in the month of Oc
 
 
 \begin{sidewaysfigure}[!hp]
-
-  \includegraphics[width=0.9\textwidth]{matrix}
-  \vspace*{-15mm}
-  \caption{
+	\includegraphics[width=0.9\textwidth]{matrix}
+	\vspace*{-15mm}
+	\caption{
   Correlation matrix with calculated Pearson coefficient in the lower triangle, and a graphical representation of coefficient value in the upper triangle. Each pair was tested for association between paired variables with Pearson's product moment correlation with relationships not shown if $\alpha>0.05$. Data matrix was arranged by the angular order of the eigenvectors.}
-  \label{matrix}
+	\label{matrix}
 \end{sidewaysfigure}
 
 
 \begin{figure}[!ht]
-  \includegraphics[angle=90,height=8cm, width=\textwidth]{Subset}
-  \caption{Subset regression analysis with MC Sum from LC-MS/MS as response variable. Each row is a model. Variable is included in the model it is represented as a black rectangle. The BIC is plotted on the y axis where the lowest value is higher up on the axis.}
-  \label{subset}
+	\includegraphics[ width=\textwidth]{subset2}
+  	\vspace*{-15mm}
+	\caption{Subset regression analysis with MC Sum from LC-MS/MS as response variable. Each row is a model. Variable is included in the model it is represented as a black rectangle. The BIC is plotted on the y axis where the lowest value is higher up on the axis.}
+	\label{subset}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=\textwidth, height=11cm]{figures/plot1}
-\caption{
+\begin{figure} 
+	\includegraphics[width=\textwidth, height=11cm]{figures/plot1}
+	\caption{
 (A): Positive relationship with average $log10$(OP) with average $log10(turb)$ ($\beta=0.57$, $F_{{1,26}}=3.13$, $p=0.08$).
 (B): With two outliers removed, the relationship between $log10(OP)$ and $log10(turb)$ was signifigant  ($\beta=0.17$, $F_{{1,25}}$, $p=0.01$).
 }
-\label{fig:plot1}
+	\label{fig:plot1}
 \end{figure}
 
 \begin{figure}
@@ -131,7 +134,7 @@ Turbidity is our best predictor variable for MC. Orthophosphate is nearly signif
 \end{figure}
 
 \begin{figure}[!ht]
-  \includegraphics[angle=90,height=8cm, width=\textwidth]{Subset1}
+  \includegraphics[ width=\textwidth]{subset3}
   \caption{Best Subset: \emph{16s rRNA} Gene copies as response variable}
   \label{subset2}
 \end{figure}
