@@ -1,29 +1,35 @@
-%---------------------------------
 \section{Introduction}
-%---------------------------------
 
 # Harmful Algal Blooms
 
+\begin{columns}
+\column{0.5\textwidth}
 
-- Increase in primary productivity and growth of microspopic algae and cyanobacteria
-- Toxin-producing genera
-- Decrease biodiversity
-- Anoxic environment
+\begin{itemize}
+\item Increase in primary productivity and 
+\item growth of microspopic algae and cyanobacteria
+\item Toxin-producing genera
+\item Decrease biodiversity
+\item Anoxic environment
+\end{itemize}
 
+\column{0.5\textwidth}
 \begin{figure}
-\centering
 \includegraphics[scale=0.2]{../figures/cyano.png}
 \end{figure}
+\end{columns}
 
-# Harm
+# Toxicity
+
 
 - Irritant
-  - Lipolysacharides
+  - Lipolysacharides\footcite{moore_richard_cyanobacterial_1993}
+
 - Toxins
-  - Microcystin and nodularin
-  - Cylindrospermopsin
-  - Anatoxin \footcite{meyer_prerequisites_2017}
-  - Saxitoxin \footcite{fontanillo_synthesis_2016}
+  - Microcystin and nodularin \textsuperscript{1}
+  - Cylindrospermopsin \footcite{dittmann_cyanobacterial_2012}
+  - Anatoxin \footcite{codd_cyanobacterial_1999}
+  - Saxitoxin \textsuperscript{1}
 
 
 # Law and Regulation
@@ -35,18 +41,12 @@
   - "More like guidelines"
 
 
-
 # Objectives
 
-%---------------------------------
-\section{Research Survey}
-%---------------------------------
 
-\subsection{Goals}
 
 - a
 - b
-
 
 
 # Surveyed Lakes
@@ -56,7 +56,6 @@
 
 # Methods
 
-\subsection{Methods}
 
 # Water Sampling
 
@@ -66,9 +65,9 @@
 - Analyzed ASAP
 
 
-# Nutrient Analysis
+# Analysis
 
-- Coloremetric 
+# Coloremetric 
 - jflsd
 
 
@@ -79,25 +78,20 @@
 
 # ELISA
 
-- a
+- Enzyme-linked immunosorben assay
+![ELISA](elisa.jpg){width = "80%"}
 
 
 # Geospatial Analysis
 
 - a
 
-%---------------------------------
-\section{Results}
-%---------------------------------
 
 # Results
 
 - a
 
 
-%---------------------------------
-\section{Discussion}
-%---------------------------------
 
 # Could we predict HABs?
 
@@ -105,9 +99,6 @@
 
 
 
-%---------------------------------
-\section{Conclusion}
-%---------------------------------
 
 - a
 
