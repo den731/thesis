@@ -74,9 +74,9 @@ In our correlation matrix analysis, we observed a few relationships  . The corre
 % We found turbidity positively correlated with orthophosphate, total phosphorus, total Kejldahl nitrogen, water temperature, phycocyaninin and chloraphyll. Chlorophyll is positively correlated with \emph{mcye}, phycocyanin, \emph{16S rRNA}, total Kejldahl nitrogen and orthophosphate. Conductance was found to have negative relationship with precipitation. Developed land-use is positively correlated with nitrate+nitrite, total nitrogen and conductance. Watershed area was positive correlated with Zebra mussel mass. Agriculture had a positive relationship with nitrate+nitrite, Forest land-use had negative correlation with total Kejldahl nitrogen, total nitrogen, conductivity, ammonia, nitrate+nitrite and total nitrogen to total phosphorus ratio.Precipitation had negative correlation with total nitrogen, orthophosphate and conductivity.
 
 %Proper way to assess collinearity by linear regression? A caused by B and B caused by A?
-A subset analysis was done on the full model including the variables  which was correlated with our response variable. The best subset analysis is done with the largest subset size of 3 (nvmax=3) and 5 subsets of each size to record (nbest=5) (see figure \ref{subset} and \ref{fig:subset2}).
+A subset analysis was done on the full model including the variables  which was correlated with our response variable. The best subset analysis is done with the largest subset size of 3 (nvmax=3) and 5 subsets of each size to record (nbest=5) (see figure \ref{fig:subset} and \ref{fig:subset2}).
 
-Both in subset analysis and backward stepwise regression found models including turbidity and watershed area to be  the best model for predicting total $log10$\gls{mc}. In a linear mixed model, $log10$turbidity and $log10$watershed area were signifigant predictors ($\beta=0.32$, $F_{{1,103}}$, $p=0.004$, and $\beta=0.22$, $F_{{1,26}}$, $p=0.044$). With turbidity as a single predictor variable had a signifigant effect on total $log10$\gls{mc} ($\beta=0.29$, $F_{{1,107}}$, $p=0.01$) however $log10$watershed area did not ($\beta=0.19$, $F_{{1,27}}$, $p=0.10$). However, $log10$watershed area did explain the residuals of the model with turbidity as a single predictor (see figure \ref{fig:residuals}). The inclusion of $log10$watershed area in our model did have a signifigant decrease in the residual sum of squares ($p=0.0017$). 
+Both in subset analysis and backward stepwise regression found models including turbidity and watershed area to be  the best model for predicting total $log10$ (\gls{mc}). In a linear mixed model, $log10$(turbidity) and $log10$(watershed area) were signifigant predictors when included together ($\beta=0.32$, $F_{{1,103}}$, $p=0.004$, and $\beta=0.22$, $F_{{1,26}}$, $p=0.044$). With $log10$(turbidity) as a single predictor variable had a signifigant effect on total $log10$\gls{mc} ($\beta=0.29$, $F_{{1,107}}$, $p=0.01$), however $log10$watershed area did not ($\beta=0.19$, $F_{{1,27}}$, $p=0.10$).  $log10$watershed area did explain the residuals of the model with turbidity as a single predictor (see figure \ref{fig:residuals}). The inclusion of $log10$watershed area in our model did have a signifigant decrease in the residual sum of squares when tested with partial F-test ($p=0.0017$). In a simple linear regression, both turbidity and watershed area as single predictors were signifigant in predicting $log10$ (\gls{mc}) (see figure \ref{fig:plot2}).
 
 %With our model selection from our data, $log10$(Orthophosphate) was shown to be positively correlated with $log10$(turbidity) from our exploratory analysis, with a simple linear regression analysis, the relationship is slightly significant ($\beta=0.57$, $F_{{1,26}}=3.13$, $p=0.08$). The regression did have outliers, with the two data points removed the relationship is significant ($\beta=0.17$, $F_{{1,25}}$, $p=0.01$) (see \ref{fig:plot1}). We avoid including either $log10$(orthophosphate) or $log10$(turbidity) in our models together.
 %All other variables did not have any significant correlations with eachother.
@@ -89,7 +89,7 @@ Both in subset analysis and backward stepwise regression found models including 
 
 \section{\emph{A Priori} Hypothesis Test}
 
-In my hypothesis, I expected developed land-use percentage to have a positive influence on MC concentrations. Developed land-use percentage plotted had a slight positive effect with $log10$(MC) concentration , however the relationship was not significant  ($\beta=0.59$, $F_{{1,27}}=1.75$ , $p=0.20$)(see figure \ref{fig:developed}) . There were no significant relationship with developed land-use percentage in predicting $log10$(\emph{16s rRNA}) gene copies ($\beta=0.48$, $F_{{1,25}}=1.75$ , $p=0.27$). However, developed land-use had a positive significant relationship with log10(nitrate+nitrite) ($\beta=0.75$, $F_{{1,27}}=1.08$, $p=0.018$).
+In my hypothesis, I expected developed land-use percentage to have a positive influence on MC concentrations. Developed land-use percentage plotted had a slight positive effect with $log10$(MC) concentration , however the relationship was not significant  ($\beta=0.59$, $F_{{1,27}}=1.75$ , $p=0.20$)(see figure \ref{fig:developed}) . There were no significant relationship with developed land-use percentage in predicting $log10$(\emph{16s rRNA}) gene copies ($\beta=0.48$, $F_{{1,25}}=1.75$ , $p=0.27$). However, developed land-use had a positive significant relationship with log10(nitrate+nitrite) ($\beta=0.75$, $F_{{1,27}}=1.08$, $p=0.018$). 
 
 Forest land-use percentage had a significant negative relationship with $log10$(\emph{16s rRNA}) gene copies ($\beta=-1.42$, $F_{{1,25}}=7.08$, $p=0.013$)(see figure \ref{fig:forest}). Albiet, forest land use did not have a significant effect on $log10$(MC) concentrations ($\beta=-0.34$, $F_{{1,26}}=0.32$, $p=0.57$).
 
@@ -110,55 +110,67 @@ With the surveyed lakes, 17 out of 29 had Zebra mussels found in the month of Oc
 	\includegraphics[ width=\textwidth]{subset2}
   	\vspace*{-15mm}
 	\caption{Subset regression analysis with MC Sum from LC-MS/MS as response variable. Each row is a model. Variable is included in the model it is represented as a black rectangle. The BIC is plotted on the y axis where the lowest value is higher up on the axis.}
-	\label{subset}
-\end{figure}
-
-\begin{figure} 
-	\includegraphics[width=\textwidth, height=11cm]{figures/plot1}
-	\caption{
-(A): Positive relationship with average $log10$(OP) with average $log10(turb)$ ($\beta=0.57$, $F_{{1,26}}=3.13$, $p=0.08$).
-(B): With two outliers removed, the relationship between $log10(OP)$ and $log10(turb)$ was signifigant  ($\beta=0.17$, $F_{{1,25}}$, $p=0.01$).
-}
-	\label{fig:plot1}
-\end{figure}
-
-\begin{figure}
-\includegraphics[width=\textwidth, height=11cm]{figures/plot2}
-\caption{
-(A): Positive relationship between average $log10$(MC) with average $log10(turb)$ ($\beta=0.55$, $F_{{1,27}}=5.90$, $p=0.02$)
-(B): Positive relationship between average $log10(MC)$ and average  $log10$(OP) ($\beta=0.35$, $F_{{1,26}}=3.13$, $p=0.07$). 
-Turbidity is our best predictor variable for MC. Orthophosphate is nearly significant predictor}
-\label{fig:plot2}
+	\label{fig:subset}
 \end{figure}
 
 \begin{figure}[!ht]
   \includegraphics[ width=\textwidth]{subset3}
   \caption{Best Subset: \emph{16s rRNA} Gene copies as response variable}
-  \label{subset2}
+  \label{fig:subset2}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{figures/residual}
+	\caption{Residual plot of $log10$(MC) $\sim$ $log10$(turbidity) and $log10$(Watershed area).}
+	\label{fig:residuals}
+\end{figure}
+
+%\begin{figure} 
+%	\includegraphics[width=\textwidth, height=11cm]{figures/plot1}
+%	\caption{
+%(A): Positive relationship with average $log10$(OP) with average $log10(turb)$ ($\beta=0.57$, $F_{{1,26}}=3.13$, $p=0.08$).
+%(B): With two outliers removed, the relationship between $log10(OP)$ and $log10(turb)$ was signifigant  ($\beta=0.17$, $F_{{1,25}}$, $p=0.01$).
+%}
+%	\label{fig:plot1}
+%\end{figure}
+
+\begin{figure}
+\includegraphics[width=\textwidth, height=11cm]{figures/plot2}
+\caption{
+(A): Positive relationship between average $log10$(MC) with average $log10$(turb) ($\beta=0.55$, $F_{{1,27}}=5.90$, $p=0.02$)
+(B): Positive relationship between average $log10$(MC) and average  $log10$(Watershed Area) ($\beta=0.31$, $F_{{1,27}}=4.88$, $p=0.03$). 
+}
+\label{fig:plot2}
 \end{figure}
 
 
 
 
 \begin{figure}
-\includegraphics[width=\textwidth]{figures/developed}
-\caption{A slight positive relationship between $log10(MC)$ and developed land use. ($\beta=-0.59$, $F_{{1,27}}=1.75$, $p=0.20$)}
-\label{fig:developed}
+	\includegraphics[width=\textwidth]{figures/developed}
+	\caption{
+A slight positive relationship between $log10(MC)$ and developed land use. ($\beta=-0.59$, $F_{{1,27}}=1.75$, $p=0.20$)
+}
+	\label{fig:developed}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=\textwidth]{figures/forest}
-\caption{A negative relationship between $log10(MC)$ and forest land use. ($\beta=-1.42$, $F_{{1,25}}=7.08$, $p=0.013$)}
-\label{fig:forest}
+	\includegraphics[width=\textwidth]{figures/forest}
+	\caption{
+A negative relationship between $log10(MC)$ and forest land use. ($\beta=-1.42$, $F_{{1,25}}=7.08$, $p=0.013$)
+}
+	\label{fig:forest}
 \end{figure}
 
 
 
 
 \begin{figure}[!ht]
-  \includegraphics[width=\textwidth]{figures/Agriculture}
-  \caption{Positive relationship between percent agriculture land-use and $log10$(\emph{16s rRNA}) ($\beta=0.70$, $F_{{1,26}}=5.10$, $p=0.03$)}
-  \label{fig:agriculture}
+	\includegraphics[width=\textwidth]{figures/Agriculture}
+	\caption{
+Positive relationship between percent agriculture land-use and $log10$(\emph{16s rRNA}) ($\beta=0.70$, $F_{{1,26}}=5.10$, $p=0.03$)
+}
+	\label{fig:agriculture}
 \end{figure}
 \clearpage
 
