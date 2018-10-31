@@ -10,7 +10,7 @@
 \item growth of microspopic algae and cyanobacteria
 \item Toxin-producing genera
 \item Decrease biodiversity
-\item Anoxic environment
+\item Anoxic environment \footnote{Test}
 \end{itemize}
 
 \column{0.5\textwidth}
@@ -31,6 +31,14 @@
   - Anatoxin \footcite{codd_cyanobacterial_1999}
   - Saxitoxin \textsuperscript{1}
 
+# Exposure Route
+
+- Direct contact
+- Aerosols
+- Ingestion
+  - Seafood/Fish
+  - Drinking water
+  - Algal supplements
 
 # Law and Regulation
 
@@ -43,11 +51,12 @@
 
 # Objectives
 
-
+- 
 
 - a
-- b
+- 
 
+\section{Methods}
 
 # Surveyed Lakes
 
@@ -68,17 +77,24 @@
 # Analysis
 
 # Coloremetric 
+
 - jflsd
 
 
 # LC-MS/MS
 
-- a
+- Freeze/Thaw 
+- Filter
+
+# SPATT
+
+- Solid phase adsorbtion toxin tracking
+- Similiar to the stationary phase
 
 
 # ELISA
 
-- Enzyme-linked immunosorben assay
+- Enzyme-linked immunosorbent assay
 ![ELISA](elisa.jpg){width = "80%"}
 
 
@@ -86,6 +102,7 @@
 
 - a
 
+\section{Results}
 
 # Results
 
