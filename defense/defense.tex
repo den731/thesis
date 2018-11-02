@@ -366,6 +366,7 @@
 	\begin{itemize}
 		\item Enzyme-Linked Immunosorbant Assay
 		\item Abraxxis\textsuperscript{a}
+		\item Meausures total microcystin
 	\end{itemize}
 	\column{0.5\textwidth}
 	\begin{figure}
@@ -394,6 +395,21 @@
 	\begin{figure}
 		\includegraphics[width=\textwidth]{10.png}
 	\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Stats}
+	\begin{itemize}
+		\item Averaged the compiled data by each lake
+		\item $log10$ transformed right skewed variables
+		\item Program-R \textsuperscript{a}
+			\begin{itemize}
+				\item Best subset linear regression analyses \textsuperscript{b}
+				\item Simple linear regression 
+			\end{itemize}
+	\end{itemize}
+	\footcitetext{r_core_team_r:_2018}
+	\footcitetext{miller_leaps:_2017}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
@@ -445,21 +461,27 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Comparison}
-	\begin{figure}
-		\includegraphics[width=\textwidth, height=\textheight]{../figures/responsecombine.eps}
-	\end{figure}
-\end{frame}
+	\frametitle{Statistical test}
+	\begin{itemize}
+		\item Did not find signifigant association between urbanization and harmful algal bloom
+		\item QPCR is not an effective tool for detecting cyanotoxins or habs
+		\item Turbidity and watershed area was found signifigant
+		\item $log10$(turb) ($\beta=0.55$, $F_{{1,27}}=5.90$, $p=0.02$)
+		\item $log10$(Watershed Area) ($\beta=0.31$, $F_{{1,27}}=4.88$, $p=0.03$
+			\begin{itemize} 
+				\item Algae may scatter the light
+			\end{itemize}
+	\end{itemize}
+	\end{frame}
 
-<++>
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Environmental Drivers}
-\begin{frame}
-	\frametitle{Land-Use}
-		
-\end{frame}
-
-
+	\begin{frame} 
+		\frametitle{Turbidity} 
+		\begin{figure} 
+			\includegraphics[width=\textwidth, height=0.8\textheight]{../figures/plot2.eps}
+		\end{figure}
+	\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
@@ -475,26 +497,7 @@
 	
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-	\frametitle{Lesson learned}
 
-	\begin{itemize}
-		\item Survey is too broad 
-			\begin{itemize}
-				\item Focus on fewer lakes
-			\end{itemize}
-		\item Take more samples at each lake 
-			\begin{itemize}
-				\item Samples at different depths 
-				\item Frequent sampling 
-				\item 
-			\end{itemize}
-		\item "All models are false"
-	\end{itemize}
-
-	
-
-\end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -540,99 +543,3 @@ Thank You
 
 \end{frame}
 
-
-
-\begin{frame}
-	\frametitle{Congener Stats-Grab}
-
-\resizebox{4in}{!}{
-
-\begin{table}
-   \tiny
-   \begin{tabular}{@{\extracolsep{2pt}}lccccccc}
-   \\[-1.8ex]\hline
-   \hline \\[-1.8ex]
-   Statistic & \multicolumn{1}{c}{N} &           
-    \multicolumn{1}{c}{Mean} & \multicolumn{
-   1}{c}{St. Dev.} & \multicolumn{1}{c}{Min} &   
-    \multicolumn{1}{c}{Pctl(25)} & \
-   \multicolumn{1}{c}{Pctl(75)} &                 
-    \multicolumn{1}{c}{Max} \\
-  \hline \\[-1.8ex]
-  Nodularin & 114 & 0.0003 & 0.002 & 0.000 & 0. 
-    000 & 0.000 & 0.021 \\
-  {[D-Asp3]}MC-RR & 114 & 0.006 & 0.028 & 0.000 
-    & 0.000 & 0.000 & 0.255 \\
-  MC-RR & 114 & 0.185 & 0.855 & 0.000 & 0.000 & 
-    0.018 & 8.552 \\
-  MC-YR & 114 & 0.046 & 0.202 & 0.000 & 0.000 & 
-    0.000 & 1.799 \\
-  MC-HtyR & 114 & 0.002 & 0.012 & 0.000 & 0.000 
-    & 0.000 & 0.107 \\
-  MC-LR & 114 & 0.142 & 0.447 & 0.000 & 0.000 & 
-    0.087 & 3.570 \\
-  {[D-Asp3]}MC-LR & 114 & 0.027 & 0.107 & 0.000 
-    & 0.000 & 0.000 & 0.902 \\
- MC-HilR & 114 & 0.004 & 0.019 & 0.000 & 0.000 
-    & 0.000 & 0.150 \\
-  MC-WR & 114 & 0.005 & 0.029 & 0.000 & 0.000 & 
-    0.000 & 0.302 \\
- MC-LA & 114 & 0.088 & 0.196 & 0.000 & 0.005 & 
-    0.105 & 1.729 \\
-  MC-LY & 114 & 0.0004 & 0.002 & 0.000 & 0.000  
-    & 0.000 & 0.024 \\
- MC-LW & 114 & 0.000 & 0.000 & 0.000 & 0.000 & 
-    0.000 & 0.000 \\
-  MC-LF & 114 & 0.0002 & 0.001 & 0.000 & 0.000  
-    & 0.000 & 0.012 \\
-  MC Sum from LC MS/MS  & 114 & 0.505 & 1.580 & 
-    0.000 & 0.018 & 0.266 & 14.857
-   \\
-  MC from ELISA & 115 & 0.747 & 1.784 & 0 & 0 & 
-    0.6 & 15 \\
-  \hline \\[-1.8ex]
-  \multicolumn{8}{r}{Values are expressed       
-    as($\mu$g of MC*${L^{-1}}$)} \\
-  \end{tabular}
-
-  \end{table}
-}
-\end{frame}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}
-	\frametitle{SPATT-Table}
-	\resizebox{4in}{!}{
-
-\begin{table}  	
-\tiny 
-\begin{tabular}{@{\extracolsep{5pt}}lccccccc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
-Statistic & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Pctl(25)} & \multicolumn{1}{c}{Pctl(75)} & \multicolumn{1}{c}{Max} \\ 
-\hline \\[-1.8ex] 
-{[D-Asp3]}MC-RR & 91 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
-MC-RR & 91 & 5 & 37 & 0 & 0 & 0 & 346 \\ 
-Nodularin & 91 & 0 & 1 & 0 & 0 & 0 & 5 \\ 
-MC-YR & 91 & 0 & 1 & 0 & 0 & 0 & 5 \\ 
-MC-HtyR & 91 & 0 & 0 & 0 & 0 & 0 & 1 \\ 
-MC-LR & 91 & 12 & 40 & 0 & 0 & 6 & 272 \\ 
-{[D-Asp3]}MC-LR & 91 & 2 & 10 & 0 & 0 & 0 & 92 \\ 
-MC-HilR & 91 & 0 & 0 & 0 & 0 & 0 & 2 \\ 
-MC-WR & 91 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
-MC-LA & 91 & 18 & 69 & 0 & 1 & 9 & 466 \\ 
-MC-LY & 91 & 0 & 0 & 0 & 0 & 0 & 3 \\ 
-MC-LW & 91 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
-MC-LF & 91 & 0 & 0 & 0 & 0 & 0 & 1 \\ 
-MC Sum from LC MS/MS & 91 & 36 & 109 & 0 & 3 & 16 & 737 \\ 
-MC from ELISA & 60 & 112 & 257 & 0 & 11 & 69 & 1,050 \\ 
-\hline \\[-1.8ex] 
-\multicolumn{8}{r}{Values are expressed as (ng of MC / gram of resin)} \\ 
-\end{tabular} 
-\end{table} 	
-}
-
-\end{frame}
