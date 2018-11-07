@@ -16,11 +16,11 @@
 \bookmarksfalse
 
 % Class options
-\DeclareOption{palatino}{
+\DeclareOption{default}{
 	\palatinotrue
 }
 
-\DeclareOption{bookman}{
+\DeclareOption{default}{
 	\bookmantrue
 }
 
@@ -41,24 +41,24 @@
 \RequirePackage[explicit]{titlesec}
 \RequirePackage{titletoc}
 \RequirePackage{tocloft}
-\RequirePackage[htt]{hyphenat} %Modified 7/24/18 by Hamzah A. From [none] to [htt] to fix word wrap problem.
+\RequirePackage[none]{hyphenat}
 \RequirePackage[nonumberlist, nopostdot]{glossaries}
 \RequirePackage{booktabs}
 \RequirePackage{amsmath}
-%\RequirePackage{amsfonts}
-%\RequirePackage{amssymb}
+\RequirePackage{amsfonts}
+\RequirePackage{amssymb}
 \RequirePackage{indentfirst}
 \RequirePackage{caption}
 \RequirePackage{subcaption}
 \RequirePackage{rotating}
 \RequirePackage[all]{nowidow}
 \RequirePackage{fancyhdr}
-%\RequirePackage[english]{babel}
+\RequirePackage[english]{babel}
 \RequirePackage{blindtext}
 \RequirePackage[normalem]{ulem}
 \blindmathtrue
 
-\ifbookmarks
+\ifbookmarks	
 	\RequirePackage[bookmarks, hidelinks, bookmarksopen, bookmarksnumbered,]{hyperref}
 \fi
 
@@ -89,18 +89,18 @@
 	\clearpage
 	\thispagestyle{empty}
 	\vspace*{10pt}
-	\begin{center}
+	\begin{center}	
 		\begin{large}
 			\vspace{-23pt}\thesistitle\\ \vfill
-
+			
 			\ifdissertation DISSERTATION \else THESIS \fi FOR THE DEGREE OF \\
-
+			
 			\MakeUppercase{\degreename}\vfill
-
+			
 			\MakeUppercase{\studentname}\vfill
-
+			
 			OAKLAND UNIVERSITY\vspace{32pt}
-
+			
 			\the\year
 		\end{large}
 	\end{center}
@@ -113,22 +113,22 @@
 	\clearpage
 	\begin{center}
 	\thesistitle\vspace{2pc}
-
+	
 	by\vspace{2pc}
 
 	\MakeUppercase{\studentname}\vspace{3pc}
-
+	
 	A \ifdissertation dissertation \else thesis \fi submitted in partial fulfillment of the\\
 	requirements for the degree of\vspace{2pc}
-
+	
 	\MakeUppercase{\degreename}\vspace{3pc}
-
+	
 	\the\year\vspace{2pc}
-
+	
 	Oakland University\\
 	Rochester, Michigan\vspace{4pc}
 	\end{center}
-
+	
 \noindent \ifdissertation Doctoral \else Thesis \fi Advisory Committee: \vspace*{\baselineskip}
 
 \noindent\CommitteeChair, Ph.D., Chair \\
@@ -140,11 +140,11 @@
 
 \newcommand{\GrizzCopyrightPage}{
 	\thispagestyle{plain}
-
+	
   \vspace*{\fill}
   \begin{center}
-  	\ccLogo\ by \studentname, \the\year \\ %\copyright removed
-		No rights reserved
+  	\copyright\ by \studentname, \the\year \\
+		All rights reserved
   \end{center}
   \vspace*{\fill}
   \newpage
@@ -171,12 +171,12 @@
 		\vspace*{-0.07in}
 		{ACKNOWLEDGMENTS}\vspace{2pc}
 		\phantomsection
-		\addcontentsline{toc}{chapter}{ACKNOWLEDGMENTS}
-	\end{center}
-
+		\addcontentsline{toc}{chapter}{ACKNOWLEDGMENTS}	
+	\end{center}	
+	
 	\doublespacing
 	\input{acknowledgements}
-
+	
 	\singlespacing
 	\vspace{3\baselineskip}
 	\hfill \makebox[0.5\linewidth]{\studentname\hfill}
@@ -184,25 +184,25 @@
 }
 
 \newcommand{\GrizzAbstractPage}{
-	\pagestyle{plain}
+	\pagestyle{plain}	
 	\begin{center}
 		\vspace*{-0.07in}
 		{ABSTRACT}\vspace{2pc}
 		\phantomsection
-		\addcontentsline{toc}{chapter}{ABSTRACT}
-
+		\addcontentsline{toc}{chapter}{ABSTRACT}	
+		
 		\thesistitle \vspace{1pc}
-
+		
 		by \vspace{1pc}
-
+		
 		\studentname \vspace{1pc}
 	\end{center}
-
+	
 	\noindent Adviser: \CommitteeChair, Ph.D.\vspace{2pc}
-
+			
 	\doublespacing
 	\input{abstract}
-
+	
 	\singlespacing
 	\newpage
 }
@@ -229,7 +229,7 @@
 	{\normalfont\filright}
 	{\thesubsection~\uline{#1}}
 	{0em}
-	{\vspace*{-0.5pc}}
+	{\vspace*{-0.5pc}}	
 %}
 
 \titleformat
@@ -237,7 +237,7 @@
 	{\normalfont}
 	{\thesubsubsection~}
 	{0em}
-	{\uline{#1}}
+	{\uline{#1}}	
 
 % add section numbering to the 4th level
 \setcounter{secnumdepth}{4}
@@ -255,14 +255,17 @@
 \cftsetrmarg{2in}
 
 % Chapter formatting in TOC
+
 \renewcommand{\cftchapindent}{0pt}
 \renewcommand{\cftchapnumwidth}{0pt}
+%\renewcommand{\thechapter}{\NUMBERstring{chapter}}
+%Last update use this one and try to change Zero to the number of the chapter, for each chapter at beginning of each page we can change it from the main file 
+%\renewcommand{\cftchappresnum}{\MakeUppercase{chapter} \NUMBERstring{chapter}}
 \renewcommand{\cftchappresnum}{\MakeUppercase{chapter}~}
 \renewcommand{\cftchapaftersnumb}{\nopagebreak \\}
 \renewcommand{\cftchapfont}{\normalfont}
 \renewcommand{\cftchappagefont}{\normalfont}
 \renewcommand{\cftbeforechapskip}{1pc}
-
 % Section formatting in TOC
 \renewcommand{\cftsecindent}{0.88in}
 \renewcommand{\cftsecnumwidth}{0.37in}
@@ -280,8 +283,8 @@
 \renewcommand{\cftsubsecfont}{\normalfont}
 \renewcommand{\cftsubsecpagefont}{\normalfont}
 \renewcommand{\cftbeforesubsecskip}{1pc}
-
-% List of figures
+  
+% List of figures 
 \renewcommand{\listfigurename}{LIST OF FIGURES}
 \renewcommand{\cftloftitlefont}{\hfill\normalfont\MakeUppercase}
 \renewcommand{\cftafterloftitle}{\hfill}
@@ -319,7 +322,7 @@
                       \addcontentsline{toc}{chapter}{#1}%
                     \fi
                     \chaptermark{#1}%
-%						These lines are commented out to not put space
+%						These lines are commented out to not put space                    
 %                    \addtocontents{lof}{\protect\addvspace{10\p@}}
 %                    \addtocontents{lot}{\protect\addvspace{10\p@}}
                     \if@twocolumn
@@ -332,18 +335,17 @@
 % Glossary
 \newglossarystyle{grizz_glossary}{
 \renewcommand{\glossaryname}{\vspace*{0.2in}LIST OF ABBREVIATIONS}
- % put the glossary in the tabular environment:
- \renewenvironment{theglossary}%
-   {\noindent\begin{longtable}{p{1.13in}p{4.37in}}}{\end{longtable}}%
- % have nothing after \begin{theglossary}:
- \renewcommand*{\glossaryheader}{}%
- % have nothing between glossary groups:
- \renewcommand*{\glsgroupheading}[1]{}%
- \renewcommand*{\glsgroupskip}{}%
-
- \renewcommand*{\glossaryentryfield}[5]{
+ % put the glossary in the tabular environment:  
+ \renewenvironment{theglossary}%  
+   {\noindent\begin{longtable}{p{1.13in}p{4.37in}}}{\end{longtable}}%  
+ % have nothing after \begin{theglossary}:  
+ \renewcommand*{\glossaryheader}{}%  
+ % have nothing between glossary groups:  
+ \renewcommand*{\glsgroupheading}[1]{}%  
+ \renewcommand*{\glsgroupskip}{}%  
+ \renewcommand*{\glossaryentryfield}[5]{  
  		\glstarget{##1}{##2}\hfill & ##3\hfill \vspace{12pt}\\
- }
+ }   
 }
 
 % Fancy header styles
@@ -407,11 +409,11 @@
 
 % References
 \renewcommand{\bibname}{\vspace*{36pt}REFERENCES}
-
+ 
 % Appendices
 \newcommand{\StartGrizzAppendices}{
 	\setcounter{chapter}{0}
-	\renewcommand\thefigure{\Alph{chapter}.\arabic{figure}}
+	\renewcommand\thefigure{\Alph{chapter}.\arabic{figure}}	
 	\renewcommand\theequation{\Alph{chapter}.\arabic{equation}}
 	\renewcommand\thesection{\Alph{chapter}.\arabic{section}}
 }
@@ -432,7 +434,7 @@
 \phantomsection
 \addcontentsline{toc}{section}{\protect\makebox[0.3in][l]{\Alph{appendixnumber}.} #1}
 \vspace*{\fill}\begin{center} APPENDIX~\Alph{appendixnumber} \\ \MakeUppercase{#1}\end{center} \vspace*{\fill}\newpage
-}
+} 
 
 % Custom section to get A.x section numbering
 \newcommand{\GrizzAppendixSection}[1]{
@@ -442,7 +444,6 @@
 \addcontentsline{toc}{subsection}{\protect\makebox[0.45in][l]{\Alph{appendixnumber}.\arabic{appendixsectionnumber}.} #1}
 \section*{#1}
 }
-
 
 
 \endinput
