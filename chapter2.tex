@@ -2,9 +2,9 @@
 \section{Survey Study of Michigan Inland Lakes} 
 As a grantee of \gls{mdeq}, our main objective is to develop a predictive model. We address the challenge by assessing land use information and collected cyanotoxin data and investigate statistical relationship that potentially drives \gls{hab}. For the summer of 2017, a total of 29 inland lakes were sampled. Prior to sampling, permission of riparian owner was obtained for lakes which did not have public access. Sample surveying began in the month of June 2017 until October 2017. Each month, every lake one was sampled once. Sampling locations were chosen from known list of lakes reported with \gls{hab} given by Aaron Parker from \gls{mdeq} and existing collaborative partners with different lake associations. In addition, we also chose lakes that are reasonably close to I-75 expressway for the ease of transportation. See figure \ref{fig:overview} for a map of our lakes sites and for more detail, see table \ref{tab:Surveyed Lakes}.
 
-Cyanotoxins were analyzed primarily by \gls{lcmsms}. For \gls{mc}, 12 different congeners along with nodularin were identified and quantified by \gls{lcmsms}. Total \gls{mc} is the sum of the 12 congeners and nodularin analyzed by \gls{lcmsms} measured in the sample. In parallel, \gls{elisa} was used to quantify total \gls{mc} and nodularins.  we compared the results of total \gls{mc} from both \gls{lcmsms} and \gls{elisa} and assessed the agreement between the two. Cylindrospermopsin and Anatoxin-a were also analyzed with \gls{lcmsms}. In addition, we also used \gls{qpcr} which detects and quantifies \emph{16s rRNA}, \emph{mcyE/nadF}, \emph{sxtA}, and \emph{cyrA} gene. The \emph{16s rRNA} gene is a common gene in \gls{qpcr} to uniquely identify bacterial phylogeny and taxonomy \cite{janda_16s_2007}.  The \emph{mcyE/nadF}, \emph{sxtA} and \emph{cyrA} are gene clusters responsible of synthesizing \gls{mc}, nodularin, saxitoxin-a and cylindrospermonsin. A commercial kit from Phytoxigene Inc. \footnote{Phytoxigene Inc. Diagnostic Technology, 7 Narabang Way, Belrose 2085. Australia.} is used for \gls{qpcr} which contains the neccessary primers and probes.  
-
 At the beginning of our survey, a constructed sampler string was installed at each lake. The sampler was constructed by the Dr. Raffel's team, which consisted of 3 gray PVC plates and placed at each sampling location for the purpose of collecting zebra mussels (see figure \ref{fig:samplerr}). The stack of three square PVC plates were  15 cm,20 cm, and 25 cm in diameter which gives them a total surface area of 0.23 m$^2$ per sampler. In addition, each sampler string included a slotted PVC pipe, seperated into two halves and capped on either end to hold SPATT. This was a beta test of a new method for monitoring toxins. Sampler strings were either hung beneath riparian owner's dock or from a labeled float, with the SPATT samplers and zebra mussel samplers suspended aproximately 20 cm and 30 cm below the surface, respectively. HOBO\texttrademark pendant temperature and light loggers were attached to the sampling string at the level of the SPATT sampler. In October, we collected the samplers and scraped all mussels into a glass mason jar for analysis of biomass, after the juvenile mussel settlement (August to September) had ended.
+
+Cyanotoxins were analyzed primarily by \gls{lcmsms}. For \gls{mc}, 12 different congeners along with nodularin were identified and quantified by \gls{lcmsms}. Total \gls{mc} is the sum of the 12 congeners and nodularin analyzed by \gls{lcmsms} measured in the sample. In parallel, \gls{elisa} was used to quantify total \gls{mc} and nodularins.  we compared the results of total \gls{mc} from both \gls{lcmsms} and \gls{elisa} and assessed the agreement between the two. Cylindrospermopsin and Anatoxin-a were also analyzed with \gls{lcmsms}. In addition, we also used \gls{qpcr} which detects and quantifies \emph{16s rRNA}, \emph{mcyE/nadF}, \emph{sxtA}, and \emph{cyrA} gene. The \emph{16s rRNA} gene is a common gene in \gls{qpcr} to uniquely identify bacterial phylogeny and taxonomy \cite{janda_16s_2007}.  The \emph{mcyE/nadF}, \emph{sxtA} and \emph{cyrA} are gene clusters responsible of synthesizing \gls{mc}, nodularin, saxitoxin-a and cylindrospermonsin. A commercial kit from Phytoxigene Inc. \footnote{Phytoxigene Inc. Diagnostic Technology, 7 Narabang Way, Belrose 2085. Australia.} is used for \gls{qpcr} which contains the neccessary primers and probes.  
 
 We analyzed different water parameters we hypothesized should lead be key drivers of \gls{hab}. Upon arrival at each lake we measured pH, conductance and dissolved oxygen. A portable nephelometer and flurometer was used to measure turbidity, chloraphyl-a and phycocyanin. Dissolved nitrate+nitrite, orthophosphate, ammonia, total phosphorus and nitrogen were analyzed colorimetrically on the collected water samples. Land use for each lake's watershed was calculated using \gls{gis} software. Data was compiled for statistical analysis.
 
@@ -13,6 +13,14 @@ We analyzed different water parameters we hypothesized should lead be key driver
 \caption{Map of Sampled Lake Sites in Michigan.}
 \label{fig:overview}
 \end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth, height=18cm]{figures/samplers}
+\caption{Picture of the constructed sampler installed at each lake. HOBO Pendant is attached with a secure carabiner. SPATT PVC holders and Zebra mussel sampler is shown.}
+\label{fig:samplerr}
+\end{figure}
+
 
 \begin{sidewaystable}
 \caption{Geographic information of sampling points at each  surveyed lakes. }
@@ -58,13 +66,6 @@ Wixom Lake & WIX & Gladwin & -84.3537506311 & 43.8276751177 & 04080201001442 \\ 
 \end{center}
 \end{sidewaystable}
 
-
-\begin{figure}[!h]
-\centering
-\includegraphics[width=\textwidth, height=18cm]{figures/samplers}
-\caption{Picture of the constructed sampler installed at each lake. HOBO Pendant is attached with a secure carabiner. SPATT PVC holders and Zebra mussel sampler is shown.}
-\label{fig:samplerr}
-\end{figure}
 
 \subsection{Water Sampling} \label{sampling}
 
@@ -147,12 +148,12 @@ Precipitation data were retrieved from the \gls{ghcn} database from \gls{noaa} \
 \subsection{Statistical Analysis}
 
 Each analytical measurement was compiled and organized by each sampling event. We have data sampled from Lake Superior, Lake St. Clair and Lake Erie, however with my discussions with Dr. Szlag and Dr. Raffel, we decided to exclude them in our analysis.  Their unique geology and lake morphology did not fit our focus on inland lakes.
-Data manipulation and analysis was done in Program R, a statistical computing language \cite{r_core_team_r:_2018}. The ``dplyr'' package was primarily used for data cleaning, compiling and preparation to have our dataset ready for statistical analysis \cite{wickham_dplyr:_2017}. We also used other packages with program R to for additional tools to rearrange our data matrix \cite{robinson_broom:_2018}, display our graphs\cite{wickham_ggplot2:_2009,schloerke_ggally:_2017, garnier_viridis:_2018, wei_r_2017} and create statistical summary tables \cite{leifeld_texreg:_2013,  wickham_tidyverse:_2017, zhu_kableextra:_2018, hlavac_stargazer:_2018, robinson_broom:_2018} for exploratory analysis.
+Data manipulation and analysis was done in Program R, a statistical computing language \cite{r_core_team_r:_2018}. The ``dplyr'' package was primarily used for data cleaning, compiling and preparation to have our dataset ready for statistical analysis \cite{wickham_dplyr:_2017}. We also used other packages with program R to for additional tools to rearrange our data matrix \cite{robinson_broom:_2018}, display our graphs\cite{wickham_ggplot2:_2009,schloerke_ggally:_2017, garnier_viridis:_2018, wei_r_2017} and create statistical summary tables \cite{leifeld_texreg:_2013,  wickham_tidyverse:_2017, zhu_kableextra:_2018, hlavac_stargazer:_2018, robinson_broom:_2018} for exploratory analysis.\footnote{Source file and data is available at \url{https://gitlab.com/numenra/rhab}}
 
 The requirements for building our model using linear regression assumes the distribution of explanatory and response variables to follow a normal distribution \cite{bates_fitting_2015,crawley_r_2007}. The compiled dataset contained in total of 115 observations from the 29 inland lakes.
 From our collected dataset, we assessed each variable's distribution and $log10$-transformed right-skewed variables to improve normality. In order to solve the problem of data values that are zero, we added the corresponding minimum detection limit first, then applied a log transformation. See table \ref{tab:variables} for details of which variable was transformed and the shortened variable name.
 
-For building our candidate models, a best subset linear regression analyses was used to find good predictors that can potentially explain our response variables using the ``leaps'' package from R \cite{miller_leaps:_2017}. With the best variables from the regression subset, a combination of forward and backward step-wise regression was preformed to further refine the best fit model. Variables were tested with F-test testing for type II  using simple linear regression using the ``car'' package \cite{kenward_method_1987, car}. Measurements from each lake is a factor that may contribute as a random effect. This can be an issue where measurements from each lake is pseudo-replicated \cite{eisenhart_assumptions_1947}. Best subset and correlation matrix analysis was therefore conducted on an averaged dataset based on each lake which works around this issue. A visual inspection of the residual plots is done to check if the models deviate from homoscedasticity.  
+For building our candidate models, a best subset linear regression analyses was used to find good predictors that can potentially explain our response variables using the ``leaps'' package from R \cite{miller_leaps:_2017}. With the best variables from the regression subset, variables were sequentially added or removed with a combination of forward and backward step-wise regression was preformed to further refine the best fit model. Variables were sequentially tested with Type II error F-test using the ``car'' package \cite{kenward_method_1987, car}. Measurements from each lake is a factor that may contribute as a random effect. This can be an issue where measurements from each lake is pseudo-replicated \cite{eisenhart_assumptions_1947}. Best subset and correlation matrix analysis was therefore conducted on an averaged dataset based on each lake which works around this issue. A visual inspection of the residual plots is done to check if the models deviate from homoscedasticity.  
 
 %The linear mixed effect models were built on the full dataset as this accounts for the variance of each of our lake site\cite{crawley_r_2007}. The library package ``lme4'' is used to run the linear mixed model function (lmer) \cite{bates_fitting_2015}. Each non-nested models are rank by the lowest \gls{aic} being our best model.
 
@@ -166,7 +167,7 @@ For building our candidate models, a best subset linear regression analyses was 
 \hline
 \endfirsthead
 \multicolumn{3}{c}%
-{{\bfseries \tablename\ \thetable{}  }} \\
+{{ \tablename\ \thetable{} \ continued  }} \\
 \hline
 \multicolumn{1}{l}{Measured Variable (Units)} &
 \multicolumn{1}{l}{Shortened Code Name} &
