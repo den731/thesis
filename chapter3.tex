@@ -27,7 +27,7 @@ Barplots of MC and their congeners analyzed by LC-MS/MS from grab sample for eac
 \end{figure}
 
 
-\begin{figure}[!h] 
+\begin{figure}[p] 
 	\includegraphics[width=\textwidth]{figures/spatter}
 	\vspace*{-15mm}
 	\caption{Barplots of MC and their congeners analyzed by LC-MS/MS from deployed SPATT. Concentration is shown for each month of:
@@ -38,7 +38,7 @@ Barplots of MC and their congeners analyzed by LC-MS/MS from grab sample for eac
 \end{figure}
 
 
-\begin{figure}[!h]
+\begin{figure}[p]
 	\includegraphics[width=\textwidth]{figures/gene}
 	\vspace*{-15mm}
 	\caption{
@@ -67,15 +67,25 @@ Barplots of \emph{16s rRNA} and \emph{mcyE} results for each month of:
 
 \section{Statistical Modeling}
 
-In our correlation matrix analysis with omitting non-significant correlation ($\alpha>0.05$) we identified few correlelated relationships with \gls{lcmsms} (see \ref{matrix}, and see \ref{fig:matrixfull} for the full correlation values). Turbidity, watershed area, orthophosphate and phycocyanin were shown to be correlated with \gls{mc}.
+\subsubsection{Exploratory Analysis}
+In our correlation matrix analysis with omitting non-significant correlation ($\alpha>0.05$) we identified few correlelated relationships with \gls{lcmsms} (see \ref{matrix}, and see \ref{fig:matrixfull} for the full correlation values). Turbidity, watershed area, orthophosphate and phycocyanin were shown to be correlated with \gls{mc}. Watershed area, water land use, precipitation and forest land use were shown to be negatively correlated with \emph{16s rRNA}. Using best subset analysis found models including turbidity, orthophosphate and pH to be good variables for predicting  $log10$ (\gls{mc}).  
 %The best subset analysis is done with the largest subset size of 3 (nvmax=3) and 5 subsets of each size to record (nbest=5) (see figure \ref{fig:subset} and \ref{fig:subset2}).
+
+
+\begin{sidewaysfigure}[!hp]
+	\includegraphics[width=0.9\textwidth]{matrix}
+	\vspace*{-15mm}
+	\caption{
+  Correlation matrix with calculated Pearson coefficient in the lower triangle, and a graphical representation of coefficient value in the upper triangle. Relationships not shown if $\alpha>0.05$. Data matrix was arranged by the angular order of the eigenvectors.}
+	\label{matrix}
+\end{sidewaysfigure}
+
 
 
 %For predicting the \emph{16s rRNA}, we include chloraphyll, turbidity, temperature, lake to watershed ratio, average precipitation 30 days prior and forest land use. A subset analysis was done on the full model including the variables  which was correlated with our response variable. % We found turbidity positively correlated with orthophosphate, total phosphorus, total Kejldahl nitrogen, water temperature, phycocyaninin and chloraphyll. Chlorophyll is positively correlated with \emph{mcye}, phycocyanin, \emph{16S rRNA}, total Kejldahl nitrogen and orthophosphate. Conductance was found to have negative relationship with precipitation. Developed land-use is positively correlated with nitrate+nitrite, total nitrogen and conductance. Watershed area was positive correlated with Zebra mussel mass. Agriculture had a positive relationship with nitrate+nitrite, Forest land-use had negative correlation with total Kejldahl nitrogen, total nitrogen, conductivity, ammonia, nitrate+nitrite and total nitrogen to total phosphorus ratio.Precipitation had negative correlation with total nitrogen, orthophosphate and conductivity.
 
 %Proper way to assess collinearity by linear regression? A caused by B and B caused by A?
-
-Both in subset analysis and backward stepwise regression found models including turbidity and watershed area to be a good model for predicting total $log10$ (\gls{mc}). In a linear mixed model, $log10$(turbidity) and $log10$(watershed area) were signifigant predictors when included together ($\beta=0.32$, $F_{{1,103}}$, $p=0.004$, and $\beta=0.22$, $F_{{1,26}}$, $p=0.044$). With $log10$(turbidity) as a single predictor variable had a signifigant effect on total $log10$\gls{mc} ($\beta=0.29$, $F_{{1,107}}$, $p=0.01$), however $log10$watershed area did not ($\beta=0.19$, $F_{{1,27}}$, $p=0.10$).  $log10$watershed area did explain the residuals of the model with turbidity as a single predictor (see figure \ref{fig:residuals}). The inclusion of $log10$watershed area in our model did have a signifigant decrease in the residual sum of squares when tested with partial F-test ($p=0.0017$). In a simple linear regression, both turbidity and watershed area as single predictors were signifigant in predicting $log10$ (\gls{mc}) (see figure \ref{fig:plot2}). Since $log10$ (watershed area) was not signifigant in explaining $log10$ MC, we disregarded as a predictor variable.
+In the process of refining our model, $log10$(turbidity) and $log10$(watershed area) were signifigant predictors when included together ($\beta=0.32$, $F_{{1,103}}$, $p=0.004$, and $\beta=0.22$, $F_{{1,26}}$, $p=0.044$). With $log10$(turbidity) as a single predictor variable had a signifigant effect on total $log10$\gls{mc} ($\beta=0.29$, $F_{{1,107}}$, $p=0.01$), however $log10$watershed area did not ($\beta=0.19$, $F_{{1,27}}$, $p=0.10$).  $log10$watershed area did explain the residuals of the model with turbidity as a single predictor (see figure \ref{fig:residuals}). The inclusion of $log10$watershed area in our model did have a signifigant decrease in the residual sum of squares when tested with partial F-test ($p=0.0017$). In a simple linear regression, both turbidity and watershed area as single predictors were signifigant in predicting $log10$ (\gls{mc}) (see figure \ref{fig:plot2}). 
 
 %With our model selection from our data, $log10$(Orthophosphate) was shown to be positively correlated with $log10$(turbidity) from our exploratory analysis, with a simple linear regression analysis, the relationship is slightly significant ($\beta=0.57$, $F_{{1,26}}=3.13$, $p=0.08$). The regression did have outliers, with the two data points removed the relationship is significant ($\beta=0.17$, $F_{{1,25}}$, $p=0.01$) (see \ref{fig:plot1}). We avoid including either $log10$(orthophosphate) or $log10$(turbidity) in our models together.
 %All other variables did not have any significant correlations with eachother.
@@ -96,21 +106,13 @@ With the surveyed lakes, 17 out of 29 had Zebra mussels found in the month of Oc
 
 
 
-\begin{sidewaysfigure}[!hp]
-	\includegraphics[width=0.9\textwidth]{matrix}
-	\vspace*{-15mm}
-	\caption{
-  Correlation matrix with calculated Pearson coefficient in the lower triangle, and a graphical representation of coefficient value in the upper triangle. Each pair was tested for association between paired variables with Pearson's product moment correlation with relationships not shown if $\alpha>0.05$. Data matrix was arranged by the angular order of the eigenvectors.}
-	\label{matrix}
-\end{sidewaysfigure}
 
-
-\begin{figure}[!ht]
-	\includegraphics[ width=\textwidth]{subset2}
-  	\vspace*{-15mm}
-	\caption{Subset regression analysis with MC Sum from LC-MS/MS as response variable. Each row is a model. Variable is included in the model it is represented as a black rectangle. The BIC is plotted on the y axis where the lowest value is higher up on the axis.}
-	\label{fig:subset}
-\end{figure}
+%\begin{figure}[!ht]
+%	\includegraphics[ width=\textwidth]{subset2}
+%  	\vspace*{-15mm}
+%	\caption{Subset regression analysis with MC Sum from LC-MS/MS as response variable. Each row is a model. Variable is included in the model it is represented as a black rectangle. The BIC is plotted on the y axis where the lowest value is higher up on the axis.}
+%	\label{fig:subset}
+%\end{figure}
 
 %\begin{figure}[!ht]
 %  \includegraphics[ width=\textwidth]{subset3}
@@ -184,22 +186,16 @@ In my first hypothesis, I tested if disturbance from developed land is associate
 Much of the southern lakes were vastly dominated by developed land such as Belleville, Ore, Brighton, Ford and Bogie Lake. 
 
 
-Orthophosphate was shown to be slightly significant in predicting \gls{lcmsms}. 
+Orthophosphate was shown to be significant in predicting \gls{lcmsms}. This was more apparent with lakes with high levels of \gls{mc}, in particular with Brighton lake. However, there was an instance of high orthophosphate levels in Stoney Lake but this was probably due to the lake level manually dropped in October
 %The bioavailability of phosphorus is pH dependent, where most is available between when in alkaline conditions with a pH$>$8 \cite{lucas_relationships_1961}.
 Mostly all of our sampled lakes were mostly alkaline conditions averaging around 8.53$\pm$0.37 pH ranging from 7.44 to 9.94. Lakes that had levels above the health advisory levels did have pH that were above 8. Lake Paradise, Brighton %%% REVISE THIS TODO
 
 %Wixom lake is very unique, it has the largest watershed amongst all our surveyed lake and has visually one of the largest extent
 
 
-Comparing the average results from SPATT to the grab sample, we identified a major difference (see \ref{fig:spattbox}). When average concentration of MC from SPATT and grab sample is ordered by latitude, we found the relative magnitude of MC to be higher found in the upper latitude of Michigan compared to regular grab sample. In our grab sample, Brighton, Pontiac, Wixom Lake and Lake Cadillac had high average MC with notable \gls{hab}.
+Comparing the average results from SPATT to the grab sample, we identified a major difference (see \ref{fig:spattbox}). When average concentration of MC from SPATT and grab sample is ordered by latitude, we found the relative magnitude of MC to be higher found in the upper latitude of Michigan compared to regular grab sample. In our grab sample, Brighton, Pontiac, Wixom Lake and Lake Cadillac had high average of MC with notable \gls{hab}, however Brighton and Pontiac Lake were not detected relatively. The SPATT also detected relatively high amounts of \gls{mc} which our grab samples did not detect, in particular with Lake Paradise, Wixom and Cadillac. 
 
 The results from SPATT seemed to suggest the lakes we found to have low microcystin from our grab sample missed other \gls{hab}. When lakes were ordered by latitude, it also suggest lakes found in the upper latitude of Michigan may have had higher frequency of \gls{hab} that we missed. Although we speculate some other factors that explains the higher magnitude of microcystin. We started to observe  some biofilm to accumulate on the SPATT bags. The biofilm was more notable in lakes that had significant blooms such as Brighton, Pontiac, and Wixom Lake. Initially we did not expect this would effect the capacity of the SPATT, but this data may suggest this. Dispatching the SPATT bags more often could prevent biofilm to encase and clog the Nitex mesh bag. Another approach to prevent biofilm to accumulate is to wrap each SPATT bags in copper wire to prevent growth but still allow toxins to adsorb onto the resin. Another factor that could possibly be the issue is the fact that extracellular cyanotoxins is degraded when exposed to sunlight. In our grab samples, we would be measuring low levels of cyanotoxins, but the SPATTs would be measuring the accumulation of extracellular cyanotoxins. This could also be creating the descrepancy between the SPATT and the grab results. 
-
-\begin{figure}[!h]
-	\includegraphics[width=\textwidth]{figures/compare}
-	\caption{TODO}
-	\label{fig:compare}
-\end{figure}
 
 
 
@@ -213,8 +209,24 @@ Microcystin measured from SPATTS compared to grab sample: and Grab Samples. Aver
 
 
 
+\gls{mc} is a widespread source water and recreational water problem. Analysis of MC is complicated by the large number of congners. \gls{lcmsms} is limited to known congeners with commercial sources. The ADDA ELISA is not congener independent \cite{he_varied_2017}. When \gls{lcmsms} and ELISA are compared in our grab samples, there are discprenancies between the two. Analysis from ELISA tends to be report higher values than \gls{lcmsms}. The difference is more apparent in the month of September and October, where the difference can be quite large (see figure \ref{fig:compare}). The ELISA generally presents a higher result than \gls{lcmsms}. This is in part due to the detection limit and reportable limits being much higher for the ELISA, 0.15 and 0.1 $\mu$g/L. However, our analysis in the month of August had good agreement between \gls{lcmsms} and ELISA. 
 
-When \gls{lcmsms} and ELISA are compared in our grab samples, there are discprenancies between the two. Analysis from ELISA tends to be report higher values than \gls{lcmsms}. The difference is more apparent in the month of September and October, where the difference can be quite large (see figure \ref{fig:compare}). The ELISA generally presents a higher result than \gls{lcmsms}. This is in part due to the detection limit and reportable limits being much higher for the ELISA, 0.15 and 0.1 $\mu$g/L. However, our analysis in the month of August had good agreement between \gls{lcmsms} and ELISA.  
+We ran a correlation matrix analysis on the \gls{mc} variants and found congeners with arginine (R) containing groups to be correlated with all other congener with arginine groups (see figure \ref{fig:congenermatrix}). \gls{mcla} did not correlate with no other congener. We also tested if the discrepancy between the ELISA and \gls{lcmsms} by taking their difference and also including in the correlation matrix but did not find any associations. 
+
+\begin{figure}[!h]
+	\includegraphics[width=\textwidth]{figures/compare}
+	\caption{Barplots of MC analyzed by LC-MS/MS and ELISA. Concentrations are shown for the month of: (A) July, (B) August, (C) September and (D) October}
+	\label{fig:compare}
+\end{figure}
+
+
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{figures/congener_matrix}
+	\caption{Correlation matrix of MC congeners}
+	\label{fig:congenermatrix}
+\end{figure}
+
 
 
 %Dissolved oxygen averaged around 12.98$\pm$20.8 mg/L of \ch{O2}.
