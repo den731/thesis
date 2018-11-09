@@ -1,0 +1,9 @@
+# Fdb version 3
+["pdflatex"] 1541738837 "acknowledgements.tex" "acknowledgements.pdf" "acknowledgements" 1541738836
+  "/usr/share/texmf-dist/web2c/texmf.cnf" 1536122179 33301 a3134070eacafb10b1f371612ce2650d ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1536269991 7908118 b3725f0b461032fb6fe690a9513d6b63 ""
+  "acknowledgements.aux" 1541738836 8 a94a2480d3289e625eea47cd1b285758 ""
+  "acknowledgements.tex" 1541738443 1160 ddbb5c710665750a42aebd2e3654bb90 ""
+  (generated)
+  "acknowledgements.pdf"
+  "acknowledgements.log"
