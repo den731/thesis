@@ -113,7 +113,7 @@ $(\frac{\text{ng of MC}}{\text{g of resin per day}}) =(\frac{\text{$\mu$g of MC}
 
 \subsection{Enzyme-Linked Immunosorbant Assay}
 
-A commercial Microcystin/Nodularins ADDA ELISA kit was used from Abraxis to analyze total microcystin\footnote{https://www.abraxiskits.com/products/algal-toxins/}. The analysis uses a polyclonal antibody which specifically binds to the ADDA moiety found in MC. However it does not distinguish between different congeners and the given results are provided in terms of MC-LR equivalence. The analysis followed the recommended guidelines provided by the EPA \cite{usepa_method_2016}. In preparation for loading the plate,  100 $\mu$L of standards, controls, blanks and samples are aliquoted into a separate sterile 96-well plate. To minimize assay drift caused by slow plate loading, a multi-channel pipettor was used to load the standards, controls, blanks and samples to the final 96-well plate. The assay procedures were carried out and read by a Synergy H1 microplate reader from Biotek.
+A commercial Microcystin/Nodularins ADDA ELISA kit was used from Abraxis to analyze total MC\footnote{https://www.abraxiskits.com/products/algal-toxins/}. The analysis uses a polyclonal antibody which specifically binds to the ADDA moiety found in MC. However it does not distinguish between different congeners and the given results are provided in terms of MC-LR equivalence. The analysis followed the recommended guidelines provided by the EPA \cite{usepa_method_2016}. In preparation for loading the plate,  100 $\mu$L of standards, controls, blanks and samples are aliquoted into a separate sterile 96-well plate. To minimize assay drift caused by slow plate loading, a multi-channel pipettor was used to load the standards, controls, blanks and samples to the final 96-well plate. The assay procedures were carried out and read by a Synergy H1 microplate reader from Biotek.
 
 \subsection{Quantitative Polymerase Chain Reaction}
 
@@ -153,9 +153,8 @@ Data manipulation and analysis was done in Program R, a statistical computing la
 The requirements for building our model using linear regression assumes the distribution of explanatory and response variables to follow a normal distribution \cite{bates_fitting_2015,crawley_r_2007}. The compiled dataset contained in total of 115 observations from the 29 inland lakes.
 From our collected dataset, we assessed each variable's distribution and $log10$-transformed right-skewed variables to improve normality. In order to solve the problem of data values that are zero, we added the corresponding minimum detection limit first, then applied a log transformation. See table \ref{tab:variables} for details of which variable was transformed and the shortened variable name.
 
-For building our candidate models, a best subset linear regression analyses was used to find good predictors that can potentially explain our response variables using the ``leaps'' package from R \cite{miller_leaps:_2017}. With the best variables from the regression subset, variables were sequentially added or removed with a combination of forward and backward step-wise regression was preformed to further refine the best fit model. Variables were sequentially tested with Type II error F-test using the ``car'' package \cite{kenward_method_1987, car}. Measurements from each lake is a factor that may contribute as a random effect. This can be an issue where measurements from each lake is pseudo-replicated \cite{eisenhart_assumptions_1947}. Best subset and correlation matrix analysis was therefore conducted on an averaged dataset based on each lake which works around this issue. A visual inspection of the residual plots is done to check if the models deviate from homoscedasticity.  
+For selecting our candidate models, a best subset linear regression analyses was used to find good predictor variables that can potentially explain our response variables using the ``leaps'' package from R \cite{miller_leaps:_2017}. With the best variables from the regression subset, step-wise regression was preformed to further refine the best fit model. Variables were forwardly added and tested with Type II error F-test using the ``car'' package \cite{kenward_method_1987, fox_r_2011}. Measurements from each lake is a factor that may contribute as a random effect. This can be an issue where measurements from each lake is pseudo-replicated \cite{eisenhart_assumptions_1947}. Best subset and correlation matrix analysis was therefore conducted on an averaged dataset based on each lake which works around this issue. A visual inspection of the residual plots is done to check if the models deviate from homoscedasticity.  
 
-%The linear mixed effect models were built on the full dataset as this accounts for the variance of each of our lake site\cite{crawley_r_2007}. The library package ``lme4'' is used to run the linear mixed model function (lmer) \cite{bates_fitting_2015}. Each non-nested models are rank by the lowest \gls{aic} being our best model.
 
 
 
@@ -167,7 +166,7 @@ For building our candidate models, a best subset linear regression analyses was 
 \hline
 \endfirsthead
 \multicolumn{3}{c}%
-{{ \tablename\ \thetable{} \ continued  }} \\
+{{ \tablename\ \thetable{} \ -- \ continued  }} \\
 \hline
 \multicolumn{1}{l}{Measured Variable (Units)} &
 \multicolumn{1}{l}{Shortened Code Name} &
@@ -177,47 +176,47 @@ For building our candidate models, a best subset linear regression analyses was 
 \endfoot
 \hline
 \endlastfoot
-Total microcysin of all 12 congeners ($\mu$g/L) & SUM &  $log10$(SUM+0.03) \\ \\
-Cyano \emph{16s rRNA} gene copies (cp/L) & X16SRNA &  $log10$(X16SRNA+45) \\ \\
-\emph{mcyE} gene copies (cp/L) & MCYE &  $log10$(MCYE+45) \\ \\
-Ortho-P (mg-P/L) & OP & $log10$(OP+0.003) \\ \\
-Nitrate/Nitrite (mg-N/L) & NO3 &  $log10$(NO3+0.04) \\ \\
-Ammonia (mg-N/L) & NH3 & $log10$(NH3+0.006) \\ \\
-Total nitrogen (mg-N/L) & TN & $log10$(TN+0.116) \\ \\
-Total Kjeldahl nitrogen (mg-N/L) & TKN & $log10$(TKN+0.07) \\ \\
-Total phosphorus (mg-P/L) & TP & $log10$(TP+0.002) \\ \\
-Total nitrogen to total phosphorus ratio & TNTP &  None \\ \\
-Measured pH of Lake & pH & None \\ \\
-Dissolved oxygen (mg/L) & DO &  $log10$(do+0.01) \\ \\
-Conductance (uS/cm) & conduc &  $log10$(conduc+0.01) \\ \\
-Turbidity (NTU) & turb &  $log10$(turb+0.01) \\ \\
-Chloraphyll-a (RFU) & chloro & $log10$(chloro+0.01) \\ \\
-Phycocyanin (RFU) & phyco &  $log10$(phyco+0.01) \\ \\
-Maximum depth of lake (meters) &   Max\_Depth &  None \\ \\
-Lake area (sq Km) & LkArea & $log10$(LkArea+1) \\ \\
-Watershed Area (sq Km) &  WtWhArea & $log10$(WtWhArea+1) \\ \\
-Lake area to watershed area ratio & LkWshRatio &  $log10$(LkWshRatio+1) \\ \\
-Water Land-Use (\%) & Water &  None \\ \\
-Developed Land-Use  (\%) & Developed & None \\ \\
-Barren Land-Use (\%) & Barren & None \\ \\
-Forest Land-Use (\%) & Fores & None \\ \\
-Shrubs Land-Use (\%) & Shrubs & None \\ \\
-Herbaceous Land-Use (\%) & Herbaceous  & None \\ \\
-Agriculture Land-Use (\%) & Agriculture & None \\ \\
-Wetlands Land-Use (\%) & Wetlands & None \\ \\
-Average precipitation 3 days prior (mm) & precip3 &  $log10$(precip3+1) \\ \\
-Average precipitation 5 days prior (mm)  & precip5 & $log10$(precip5+1) \\ \\
-Average precipitation 7 days prior (mm) & precip7 &  $log10$(precip7+1) \\ \\
-Average precipitation 30 days prior (mm) & precip30 &  $log10$(precip30+1) \\ \\
-Water temperature at time of sampling (Celcius) & wtemp & None \\ \\
-Average temperature 3 days prior from GHCN (Celcius) & temp3&  None \\ \\
-Average temperature 5 days prior from GHCN (Celcius) & temp5 & None \\ \\
-Average temperature 7 days prior  from GHCN (Celcius) &  temp7 & None \\ \\
-Average temperature 30 days prior from GHCN (Celcius) & temp30 &  None \\ \\
-Average Temperature from Hobo pendant 30 days prior (Celcius) & hobotemp & None \\ \\
-Average light intensity from Hobo pendant days prior (lux) & hobolight & $log10$(hobolight+1) \\ \\
-Zebra mussel Mass (grams) & MusselMass &  $log10$(MusselMass+1) \\ \\
-Zebra mussel (counts) &  MusselNum & $log10$(MusselNum+1) \\ \\
+Total microcysin of all 12 congeners ($\mu$g/L) & SUM &  $log10$(SUM+0.03) \\
+Cyano \emph{16s rRNA} gene copies (cp/L) & X16SRNA &  $log10$(X16SRNA+45) \\
+\emph{mcyE} gene copies (cp/L) & MCYE &  $log10$(MCYE+45) \\
+Ortho-P (mg-P/L) & OP & $log10$(OP+0.003) \\
+Nitrate/Nitrite (mg-N/L) & NO3 &  $log10$(NO3+0.04) \\
+Ammonia (mg-N/L) & NH3 & $log10$(NH3+0.006) \\
+Total nitrogen (mg-N/L) & TN & $log10$(TN+0.116) \\ 
+Total Kjeldahl nitrogen (mg-N/L) & TKN & $log10$(TKN+0.07) \\ 
+Total phosphorus (mg-P/L) & TP & $log10$(TP+0.002) \\ 
+Total nitrogen to total phosphorus ratio & TNTP &  None \\ 
+Measured pH of Lake & pH & None \\ 
+Dissolved oxygen (mg/L) & DO &  $log10$(do+0.01) \\ 
+Conductance (uS/cm) & conduc &  $log10$(conduc+0.01) \\ 
+Turbidity (NTU) & turb &  $log10$(turb+0.01) \\ 
+Chloraphyll-a (RFU) & chloro & $log10$(chloro+0.01) \\ 
+Phycocyanin (RFU) & phyco &  $log10$(phyco+0.01) \\ 
+Maximum depth of lake (meters) &   Max\_Depth &  None \\ 
+Lake area (sq Km) & LkArea & $log10$(LkArea+1) \\ 
+Watershed Area (sq Km) &  WtWhArea & $log10$(WtWhArea+1) \\ 
+Lake area to watershed area ratio & LkWshRatio &  $log10$(LkWshRatio+1) \\ 
+Water Land-Use (\%) & Water &  None \\ 
+Developed Land-Use  (\%) & Developed & None \\ 
+Barren Land-Use (\%) & Barren & None \\ 
+Forest Land-Use (\%) & Fores & None \\ 
+Shrubs Land-Use (\%) & Shrubs & None \\ 
+Herbaceous Land-Use (\%) & Herbaceous  & None \\ 
+Agriculture Land-Use (\%) & Agriculture & None \\ 
+Wetlands Land-Use (\%) & Wetlands & None \\ 
+Average precipitation 3 days prior (mm) & precip3 &  $log10$(precip3+1) \\ 
+Average precipitation 5 days prior (mm)  & precip5 & $log10$(precip5+1) \\ 
+Average precipitation 7 days prior (mm) & precip7 &  $log10$(precip7+1) \\ 
+Average precipitation 30 days prior (mm) & precip30 &  $log10$(precip30+1) \\ 
+Water temperature at time of sampling (Celcius) & wtemp & None \\ 
+Average temperature 3 days prior from GHCN (Celcius) & temp3&  None \\ 
+Average temperature 5 days prior from GHCN (Celcius) & temp5 & None \\ 
+Average temperature 7 days prior  from GHCN (Celcius) &  temp7 & None \\ 
+Average temperature 30 days prior from GHCN (Celcius) & temp30 &  None \\ 
+Average Temperature from Hobo pendant 30 days prior (Celcius) & hobotemp & None \\ 
+Average light intensity from Hobo pendant days prior (lux) & hobolight & $log10$(hobolight+1) \\ 
+Zebra mussel Mass (grams) & MusselMass &  $log10$(MusselMass+1) \\ 
+Zebra mussel (counts) &  MusselNum & $log10$(MusselNum+1) \\ 
 \hline
 \end{longtable}
 
