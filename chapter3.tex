@@ -68,7 +68,7 @@ Barplots of \emph{16s rRNA} and \emph{mcyE} results for each month of:
 
 \section{Statistical Modeling}
 
-In our correlation matrix analysis with omitting non-significant correlation ($\alpha>0.05$) we identified few correlated relationships with \gls{lcmsms} (see \ref{matrix}, and see \ref{fig:matrixfull} for the full correlation values). Turbidity, watershed area, orthophosphate and phycocyanin were shown to be correlated with \gls{mc}. Watershed area, water land use, precipitation and forest land use were shown to be negatively correlated with \emph{16s rRNA}. Using best subset analysis found models including turbidity, orthophosphate and pH to be good variables for predicting  $log10$ (\gls{mc}).  
+In our correlation matrix analysis with omitting non-significant correlation ($\alpha>0.05$) we identified few correlated relationships with \gls{lcmsms} (see \ref{matrix}, and see \ref{fig:matrixfull} for the full correlation values). Turbidity, watershed area, orthophosphate and phycocyanin were shown to be correlated with \gls{mc}. Watershed area, water land-use, precipitation and forest land-use were shown to be negatively correlated with \emph{16s rRNA}. Using best subset analysis found models including turbidity, orthophosphate and pH to be good variables for predicting  $log10$ (\gls{mc}).  
 %The best subset analysis is done with the largest subset size of 3 (nvmax=3) and 5 subsets of each size to record (nbest=5) (see figure \ref{fig:subset} and \ref{fig:subset2}).
 
 
@@ -129,11 +129,39 @@ In the process of refining our model, $log10$(turbidity) and $log10$(watershed a
 
 \section{\emph{A Priori} Hypothesis Test}
 
-In my hypothesis, I expected developed land-use percentage to have a positive influence on MC concentrations. Developed land-use percentage plotted had a slight positive effect with $log10$(MC) concentration , however the relationship was not significant  ($\beta=0.59$, $F_{{1,27}}=1.75$ , $p=0.20$)(see figure \ref{fig:developed}). There were no significant relationship with developed land-use percentage in predicting $log10$(\emph{16s rRNA}) gene copies ($\beta=0.48$, $F_{{1,25}}=1.75$ , $p=0.27$). Developed land-use did not have a significant relationship in predicting orthophosphate ($\beta=0.37$, $F_{{1,27}}=2.60$ , $p=0.11$), ammonia ($\beta=0.33$, $F_{{1,27}}=0.75$ , $p=0.39$), total phosphorus  ($\beta=0.33$, $F_{{1,27}}=0.75$ , $p=0.39$) and total nitrogen ($\beta=0.48$, $F_{{1,25}}=1.75$ , $p=0.27$) However, developed land-use had a positive significant relationship with log10(nitrate+nitrite) ($\beta=0.75$, $F_{{1,27}}=1.08$, $p=0.018$). 
+In my hypothesis, I expected developed land-use percentage to have a positive influence on MC concentrations. Developed land-use percentage plotted had a slight positive effect with $log10$(MC) concentration , however the relationship was not significant  ($\beta=0.59$, $F_{{1,27}}=1.75$ , $p=0.20$)(see figure \ref{fig:developed}).
+\begin{figure}[!hp]
+	\includegraphics[width=\textwidth]{figures/developed}
+	\caption{
+A slight positive relationship between $log10(MC)$ and developed land-use. ($\beta=-0.59$, $F_{{1,27}}=1.75$, $p=0.20$)
+}
+	\label{fig:developed}
+\end{figure}
+There were no significant relationship with developed land-use percentage in predicting $log10$(\emph{16s rRNA}) gene copies ($\beta=0.48$, $F_{{1,25}}=1.75$ , $p=0.27$). Developed land-use did not have a significant relationship in predicting orthophosphate ($\beta=0.37$, $F_{{1,27}}=2.60$ , $p=0.11$), ammonia ($\beta=0.33$, $F_{{1,27}}=0.75$ , $p=0.39$), total phosphorus  ($\beta=0.33$, $F_{{1,27}}=0.75$ , $p=0.39$) and total nitrogen ($\beta=0.48$, $F_{{1,25}}=1.75$ , $p=0.27$) However, developed land-use had a positive significant relationship with log10(nitrate+nitrite) ($\beta=0.75$, $F_{{1,27}}=1.08$, $p=0.018$). 
 
-Forest land-use percentage had a significant negative relationship with $log10$(\emph{16s rRNA}) gene copies ($\beta=-1.42$, $F_{{1,25}}=7.08$, $p=0.013$)(see figure \ref{fig:forest}). However, forest land use did not have a significant effect on $log10$(MC) concentrations ($\beta=-0.34$, $F_{{1,26}}=0.32$, $p=0.57$).
+Forest land-use percentage had a significant negative relationship with $log10$(\emph{16s rRNA}) gene copies ($\beta=-1.42$, $F_{{1,25}}=7.08$, $p=0.013$)(see figure \ref{fig:forest}). However, forest land-use did not have a significant effect on $log10$(MC) concentrations ($\beta=-0.34$, $F_{{1,26}}=0.32$, $p=0.57$). Agriculture land-use had a signifigant positive relationship with $log10$(\emph{16s rRNA}) ($\beta=0.70$, $F_{{1,26}}=5.10$, $p=0.03$)(see figure \ref{fig:agriculture})
 
 With the surveyed lakes, 17 out of 29 had Zebra mussels found in the month of October. The average MC concentrations with  of Zebra mussles present was 0.568 $\mu$g/L, and absent with 0.305 $\mu$g/L. Using a two sample Student's t-test, we fail to reject the null where difference of the mean is greater than 0 ($t=1.14$, $df=107$, $p=0.13$). We also did not find any significant relationship with the mussel counts and mass with predicting MC concentration.
+
+
+\begin{figure}[p]
+	\includegraphics[width=\textwidth]{figures/forest}
+	\caption{
+A negative relationship between $log10(MC)$ and forest land-use. ($\beta=-1.42$, $F_{{1,25}}=7.08$, $p=0.013$)
+}
+	\label{fig:forest}
+\end{figure}
+
+
+
+
+\begin{figure}[p]
+	\includegraphics[width=\textwidth]{figures/Agriculture}
+	\caption{
+Positive relationship between percent agriculture land-use and $log10$(\emph{16s rRNA}) ($\beta=0.70$, $F_{{1,26}}=5.10$, $p=0.03$)
+}
+	\label{fig:agriculture}
+\end{figure}
 
 
 
@@ -162,38 +190,11 @@ With the surveyed lakes, 17 out of 29 had Zebra mussels found in the month of Oc
 
 
 
-\begin{figure}[p]
-	\includegraphics[width=\textwidth]{figures/developed}
-	\caption{
-A slight positive relationship between $log10(MC)$ and developed land use. ($\beta=-0.59$, $F_{{1,27}}=1.75$, $p=0.20$)
-}
-	\label{fig:developed}
-\end{figure}
-
-\begin{figure}[p]
-	\includegraphics[width=\textwidth]{figures/forest}
-	\caption{
-A negative relationship between $log10(MC)$ and forest land use. ($\beta=-1.42$, $F_{{1,25}}=7.08$, $p=0.013$)
-}
-	\label{fig:forest}
-\end{figure}
-
-
-
-
-\begin{figure}[p]
-	\includegraphics[width=\textwidth]{figures/Agriculture}
-	\caption{
-Positive relationship between percent agriculture land-use and $log10$(\emph{16s rRNA}) ($\beta=0.70$, $F_{{1,26}}=5.10$, $p=0.03$)
-}
-	\label{fig:agriculture}
-\end{figure}
-
 
 
 \section{Discussions}
 
-In my first hypothesis, I tested if disturbance from developed land is associated with \gls{hab} and if it has an affect on nutrient concentration.  From our data, we did not find a significant relationship between developed land use and MC concentrations or \emph{16s rRNA}. However, we did find developed land use having some effect with nitrate+nitrite. We did observe some relationship between land use and nutrient concentrations from the correlation matrix, but the associations were not significant.
+In my first hypothesis, I tested if disturbance from developed land is associated with \gls{hab} and if it has an affect on nutrient concentration.  From our data, we did not find a significant relationship between developed land-use and MC concentrations or \emph{16s rRNA}. However, we did find developed land-use having some effect with nitrate+nitrite. We did observe some relationship between land-use and nutrient concentrations from the correlation matrix, but the associations were not significant.
 
 Identifying turbidity could help predicting at risk lakes. Turbidity can be an indicator of other parameters such as the stability of the riparian zone and disturbances which could lead to a rise in MC concentrations \cite{taranu_predicting_2017}. Although, it is a questionable relationship as cyanobacterial cells could scatter light which gets read as turbidity. Another interesting finding was that the lake's watershed area had a positive relationship with MC. This could be due to how the catchment area could influence the hydrology of the lake. Some suggests the watershed to lake ratio, which has an effect on water residence times could play an effect on MC concentrations \cite{taranu_predicting_2017, fraterrigo_influence_2008}. 
 
@@ -201,12 +202,7 @@ Orthophosphate was shown to be significant in predicting \gls{lcmsms}. There wer
 
 In other studies, many have emphasized nutrients to be a limiting factor in \gls{hab} growth.  which is long believed to be a useful parameter to measure. Cultured study done by Hee-Mock Oh et al. found relationship the growth rate limited by the ratio of nitrogen to phosphorus ratio \cite{oh_microcystin_2000}. In our survey, we did not observe total nitrogen to total phosphorus to have an association. However, mesocosm experiments do not necessary translate to real world scenarios, but do provide some insight. Orthophosphorus does seem to be a good indicator for our survey. 
 
-Comparing the average results from SPATT to the grab sample, we identified a major difference (see \ref{fig:spattbox}). When average concentration of MC from SPATT and grab sample is ordered by latitude, we found the relative magnitude of MC to be higher found in the upper latitude of Michigan compared to regular grab sample. In our grab sample, Brighton, Pontiac, Wixom Lake and Lake Cadillac had high average of MC with notable \gls{hab}, however Brighton and Pontiac Lake were not detected relatively. The SPATT also detected relatively high amounts of \gls{mc} which our grab samples did not detect, in particular with Lake Paradise, Wixom and Cadillac. 
-
-The results from SPATT seemed to suggest the lakes we found to have low MC from our grab sample missed other \gls{hab}. When lakes were ordered by latitude, it also suggest lakes found in the upper latitude of Michigan may have had higher frequency of \gls{hab} that we missed. Although we speculate some other factors that explains the higher magnitude of MC. We started to observe  some biofilm to accumulate on the SPATT bags. The biofilm was more notable in lakes that had significant blooms such as Brighton, Pontiac, and Wixom Lake. Initially we did not expect this would effect the capacity of the SPATT, but this data may suggest this. Dispatching the SPATT bags more often could prevent biofilm to encase and clog the Nitex mesh bag. Another approach to prevent biofilm to accumulate is to wrap each SPATT bags in copper wire to prevent growth but still allow toxins to adsorb onto the resin. Another factor that could possibly be the issue is the fact that extracellular cyanotoxins is degraded when exposed to sunlight. In our grab samples, we would be measuring low levels of cyanotoxins, but the SPATTs would be measuring the accumulation of extracellular cyanotoxins. This could also be creating the discrepancy between the SPATT and the grab results. 
-
-
-
+Comparing the average results from SPATT to the grab sample, we identified a major difference (see \ref{fig:spattbox}). 
 \begin{figure}[p]
 \includegraphics[width=\textwidth]{figures/spatttboxplotlake}
 \caption{
@@ -214,18 +210,22 @@ The results from SPATT seemed to suggest the lakes we found to have low MC from 
 }
 \label{fig:spattbox}
 \end{figure}
+When average concentration of MC from SPATT and grab sample is ordered by latitude, we found the relative magnitude of MC to be higher found in the upper latitude of Michigan compared to regular grab sample. In our grab sample, Brighton, Pontiac, Wixom Lake and Lake Cadillac had high average of MC with notable \gls{hab}, however Brighton and Pontiac Lake were not detected relatively. The SPATT also detected relatively high amounts of \gls{mc} which our grab samples did not detect, in particular with Lake Paradise, Wixom and Cadillac. 
+
+The results from SPATT seemed to suggest the lakes we found to have low MC from our grab sample missed other \gls{hab}. When lakes were ordered by latitude, it also suggest lakes found in the upper latitude of Michigan may have had higher frequency of \gls{hab} that we missed. Although we speculate some other factors that explains the higher magnitude of MC. We started to observe  some biofilm to accumulate on the SPATT bags. The biofilm was more notable in lakes that had significant blooms such as Brighton, Pontiac, and Wixom Lake. Initially we did not expect this would effect the capacity of the SPATT, but this data may suggest this. Dispatching the SPATT bags more often could prevent biofilm to encase and clog the Nitex mesh bag. Another approach to prevent biofilm to accumulate is to wrap each SPATT bags in copper wire to prevent growth but still allow toxins to adsorb onto the resin. Another factor that could possibly be the issue is the fact that extracellular cyanotoxins is degraded when exposed to sunlight. In our grab samples, we would be measuring low levels of cyanotoxins, but the SPATTs would be measuring the accumulation of extracellular cyanotoxins. This could also be creating the discrepancy between the SPATT and the grab results. 
 
 
 
-\gls{mc} is a widespread source water and recreational water problem. Analysis of MC is complicated by the large number of congners. \gls{lcmsms} is limited to known congeners with commercial sources. The ADDA ELISA is not congener independent \cite{he_varied_2017}. When \gls{lcmsms} and ELISA are compared in our grab samples, there are discprenancies between the two. Analysis from ELISA tends to be report higher values than \gls{lcmsms}. The difference is more apparent in the month of September and October, where the difference can be quite large (see figure \ref{fig:compare}). The ELISA generally presents a higher result than \gls{lcmsms}. This is in part due to the detection limit and reportable limits being much higher for the ELISA, 0.15 and 0.1 $\mu$g/L. However, our analysis in the month of August had good agreement between \gls{lcmsms} and ELISA. 
 
-We ran a correlation matrix analysis on the \gls{mc} variants and found congeners with arginine (R) containing groups to be correlated with all other congener with arginine groups (see figure \ref{fig:congenermatrix}). \gls{mcla} did not correlate with no other congener. We also tested if the discrepancy between the ELISA and \gls{lcmsms} by taking their difference and also including in the correlation matrix but did not find any associations. 
-
+\gls{mc} is a widespread source water and recreational water problem. Analysis of MC is complicated by the large number of congners. \gls{lcmsms} is limited to known congeners with commercial sources. The ADDA ELISA is not congener independent \cite{he_varied_2017}. When \gls{lcmsms} and ELISA are compared in our grab samples, there are discprenancies between the two. Analysis from ELISA tends to be report higher values than \gls{lcmsms}. The difference is more apparent in the month of September and October, where the difference can be quite large (see figure \ref{fig:compare}). 
 \begin{figure}[p]
 	\includegraphics[width=\textwidth]{figures/compare}
 	\caption{Barplots of MC analyzed by LC-MS/MS and ELISA. Concentrations are shown for the month of: (Figure A) July, (Figure B) August, (Figure C) September and (Figure D) October}
 	\label{fig:compare}
 \end{figure}
+The ELISA generally presents a higher result than \gls{lcmsms}. This is in part due to the detection limit and reportable limits being much higher for the ELISA, 0.15 and 0.1 $\mu$g/L. However, our analysis in the month of August had good agreement between \gls{lcmsms} and ELISA. 
+
+We ran a correlation matrix analysis on the \gls{mc} variants and found congeners with arginine (R) containing groups to be correlated with all other congener with arginine groups (see figure \ref{fig:congenermatrix}). \gls{mcla} did not correlate with no other congener. We also tested if the discrepancy between the ELISA and \gls{lcmsms} by taking their difference and also including in the correlation matrix but did not find any associations. 
 
 
 
