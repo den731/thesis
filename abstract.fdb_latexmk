@@ -1,0 +1,11 @@
+# Fdb version 3
+["pdflatex"] 1541758873 "abstract.tex" "abstract.pdf" "abstract" 1541758873
+  "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1536122179 3332 103109f5612ad95229751940c61aada0 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1536122179 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
+  "/usr/share/texmf-dist/web2c/texmf.cnf" 1536122179 33301 a3134070eacafb10b1f371612ce2650d ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1536269991 7908118 b3725f0b461032fb6fe690a9513d6b63 ""
+  "abstract.aux" 1541758809 8 a94a2480d3289e625eea47cd1b285758 ""
+  "abstract.tex" 1541758872 1100 9c853e50dd82ae20a0d4261b8132d823 ""
+  (generated)
+  "abstract.log"
+  "abstract.pdf"
