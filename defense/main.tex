@@ -7,15 +7,18 @@
 \usepackage[style=authortitle]{biblatex}
 \addbibresource{../references.bib}
 \setbeamertemplate{bibliography item}{\insertbiblabel}
-
-
+\setbeamerfont{itemize/enumerate body}{size=\small}
+\beamertemplatenavigationsymbolsempty
 \title{Harmful Algal Blooms} 
 \author{Hamzah D. Ansari} 
 \institute{Oakland University} 
 \date{\today} 
 \def\tightlist{}
-
 \begin{document}
+\renewcommand{\footnotesize}{\tiny}
+
+
+\let\thefootnote\relax\footnote{}
 
 \begin{frame} 
 \titlepage

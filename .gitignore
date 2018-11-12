@@ -15,6 +15,7 @@
 *.bbl
 *.blg
 *.doc
+*.docx
 main.synctex.gz
 main.glg
 main.gls

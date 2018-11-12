@@ -1,46 +1,75 @@
-% Class options:
-% 3 font choices currently:
-%  - Times New Roman (default)
-%  - Palantino ('palantino')
-%  - Bookman ('bookman')
-% Dissertation or Thesis:
-%  - Thesis (default)
-%  - Dissertation ('dissertation')
-% Include bookmarks in compilied pdf
-%  - No bookmarks (default)
-%  - Bookmarks ('bookmarks')
+%\documentclass[dissertation, bookmarks]{grizz_thesis}
+\documentclass[dissertation]{grizz_thesis}
+% Define custom macros here
+\def\ihat{\hat{\imath}}
+\def\jhat{\hat{\jmath}}
+\def\khat{\hat{k}}
 
-\documentclass[dissertation, bookmarks]{grizz_thesis}
 
-% Uncomment this to only compile a subset of the document.  List each of the separate include
-% files with a comma
-%\includeonly{front_matter, chapter1, chapter2}
+%\includeonly{front_matter}
 
 % Add extra packages here
-
-%\usepackage[no-math]{fontspec}
-\usepackage{ccicons}
+\usepackage{amsmath}
+\usepackage{verbatim}
+\usepackage{array}
+%\usepackage{graphicx}
+\usepackage{mathtools}
+\graphicspath{ {../img/} }
+\usepackage[font=scriptsize]{caption}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage{placeins}
+%\usepackage{subcaption}
+\usepackage{amssymb}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proof}{Proof}
+\usepackage{cancel}
+%\usepackage{amsfonts}
+\usepackage{pdflscape}
+%\usepackage{amsmath}
+%\usepackage{algorithm}
+\usepackage{algorithmic,amsmath}
+\usepackage{glossaries}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{xpatch}
+\usepackage{fmtcount}
+\usepackage{titlesec}
+\usepackage[utf8]{inputenc}
+\usepackage{afterpage}
+\usepackage{pdflscape}
+% Optional packages added by Hamzah
 \usepackage{chemformula}
-\usepackage{graphics}
-\usepackage{listings}
 \usepackage{longtable}
 \usepackage{lscape}
-\usepackage{chemexec}
+\usepackage{listings}
 
-%\usepackage[table]{xcolor}
-%\usepackage[left]{lineno} % Line numbers
-% Uncomment this to force a particular year in the preliminary pages
-% If left commented out, the current year will be used instead
-%\year=2015 
+\titleformat{\chapter}[block]{\Huge\bfseries\lsstyle}{\chaptername~\Numberstring{chapter}:}{0.333em}{}
+%Control space before and after section and subsections {left margin} {space before} {Space after}
+\titlespacing*{\section}
+{0pt}{5pt}{10pt}
+\titlespacing*{\subsection}
+{0pt}{5pt}{10pt}
+%Setup caption font size to 12pt
+\usepackage{caption}
+\DeclareCaptionFont{twelvept}{\fontsize{12pt}{12pt}\selectfont #1}
+\captionsetup{font=twelvept, labelfont=md, textfont=md}
+%change font for all document to Time new romans 
+\usepackage[T1]{fontenc}
+\usepackage{newtxmath,newtxtext}
+%table left align
+\captionsetup[table]{labelsep=space, 
+         justification=raggedright, singlelinecheck=off}
+\usepackage{threeparttable}
+%Set font to time new roman
+\usepackage{times}
+%\usepackage{fontspec}
+%\setmainfont{Times New Roman}
 
-% Define custom macros here
-%\def\ihat{\hat{\imath}}
-%\def\jhat{\hat{\jmath}}
-%\def\khat{\hat{k}}
-
-
-
-% Add all abbreviations here - Necessary for LIST OF ABBREVIATIONS
+% Uncomment this to force a different year in the preliminary pages
+\year=2018
+%List all abbreviation here 
 \newacronym{hab}{HABs}{Harmful Algal Blooms}
 \newacronym{chab}{cHABs}{Cyanobacterial Harmful Algal Blooms}
 \newacronym{epa}{USEPA}{United States Environmental Protection Agency}
@@ -65,9 +94,9 @@
 \newacronym{mcla}{MC-LA}{Microcystin-LA}
 \newacronym{mclr}{MC-LR}{Microcystin-LR}
 \newacronym{mcrr}{MC-RR}{Microcystin-RR}
-\newacronym{mcly}{MC-RR}{Microcystin-LY}
-\newacronym{mcyr}{MC-LR}{Microcystin-YR}
-\newacronym{mclf}{MC-LR}{Microcystin-LF}
+\newacronym{mcly}{MC-LY}{Microcystin-LY}
+\newacronym{mcyr}{MC-YR}{Microcystin-YR}
+\newacronym{mclf}{MC-LF}{Microcystin-LF}
 \newacronym{who}{WHO}{World Health Organization}
 \newacronym{dmeasp}{D-MeAsp}{D-erythro$\beta$-methylaspatric acid}
 \newacronym{adda}{ADDA}{3-amino-9-methoxy-10-phenyl-2,6,8-trimethyl-deca-4,6-dienoic acid}
@@ -80,21 +109,82 @@
 \newacronym{grass}{GRASS}{Geographic Resources Analysis Support System}
 \newacronym{gis}{GIS}{Geographic Information System}
 \newacronym{elisa}{ELISA}{Enzyme-linked Immunosorbent Assay}
-\newacronym{bic}{BIC}{Bayesian Information Criterion}
+\newacronym{aic}{AIC}{Akaike Information Criterion}
 \newacronym{tsq}{TSQ}{Triple-Stage Quadrupole}
 \newacronym{odk}{ODK}{Open Data Kit}
 \newacronym{vps}{VPS}{Virtual Private Server}
 \newacronym{rsa}{RSA}{Rivest-Shamir-Adleman}
 
+%Example to use it in the text( \acrshort{os} )
+%================================================
+
+%\makeglossaries
+%\newacronym{os}{OS}{Operating System}
+
+%============= Added code to change chapter number in TOC
+% https://tex.stackexchange.com/questions/384026/special-format-for-chapter-title
+\makeatletter
+\newcommand{\inletters}[1]{\ifcase \csname c@#1\endcsname
+  zero\or ONE\or TWO\or THREE\or FOUR\or FIVE\or SIX\or SEVEN\or
+  EIGHT\or NINE\or TEN %complete here if you have more than 10 chapters 
+  \else ??\fi} 
+%\renewcommand{\cftchappresnum}{\MakeUppercase{chapter}~}
+\renewcommand{\@makechapterhead}[1]{\vspace*{50\p@}%
+  {\parindent\z@ \raggedright \normalfont\Huge\bfseries
+    \ifnum \c@secnumdepth>\m@ne \@chapapp~\inletters{chapter} \fi
+     #1\par\nobreak\vskip 40\p@}}
+
+\def\@chapter[#1]#2{\ifnum \c@secnumdepth >\m@ne
+    \refstepcounter{chapter}%
+    \typeout{\@chapapp\space\thechapter.}%
+    \addcontentsline{toc}{chapter}%
+    {\MakeUppercase{\@chapapp~\inletters{chapter}}\newline #1}% <-- modification
+  \else
+    \addcontentsline{toc}{chapter}{#1}%
+  \fi
+  \chaptermark{#1}%
+  \addtocontents{lof}{\protect\addvspace{10\p@}}%
+  \addtocontents{lot}{\protect\addvspace{10\p@}}%
+  \if@twocolumn
+    \@topnewpage[\@makechapterhead{#2}]%
+  \else
+    \@makechapterhead{#2}%
+    \@afterheading
+  \fi}
+\makeatother
+
+
+%No Bold for subsubsubsection title
+\titleformat{\paragraph}[runin]
+  {\normalfont\normalsize\mdseries}{\theparagraph \space}{0em}{~#1}
+%spacing before and after paragraph title
+\titlespacing*{\paragraph}{0pt}{0ex plus 1ex minus 0ex}{1ex plus 0ex}
+
+%add new line after subsubsection 
+\makeatletter
+\def\subsubsection{\@startsection{subsubsection}{2}%
+  \z@{.5\linespacing\@plus.7\linespacing}{.3\linespacing}%
+  {\normalfont\mdseries}}
+\makeatother
+
+%Reduce space after algorithm sudcode 
+\usepackage{etoolbox}
+%\begin{algorithm}
+%	\caption{Batch Script Workflow}
+%	\label{alg:batch}
+%	\begin{algorithmic}[1]
+\BeforeBeginEnvironment{algorithm}{\vskip-10ex}
+\AfterEndEnvironment{algorithm}{\vskip-10ex}
+%==================== End of added code 
 \begin{document}
-% Word wrapping on linux commands
 
-\lstset{
-basicstyle=\small\ttfamily,
-columns=flexible,
-breaklines=true
-}
 
+% Word wrapping for listing package
+%\lstset{
+%	basicstyle=\small\ttfamily,
+%	columns=flexible,
+%	breaklines=true
+%}
 
 % Figure relative path
 \graphicspath{{./figures/}}
@@ -102,11 +192,9 @@ breaklines=true
 \def\thesistitle{Environmental Drivers of Harmful Algal Blooms in Michigan Inland Lakes}
 \def\studentname{Hamzah Danyal Ansari}
 \def\degreename{Master of Science in Chemistry}
-\def\CommitteeChair{----}
-\def\AdvisorOne{----}
-\def\AdvisorTwo{----}
-\def\AdvisorThree{----}
-
+\def\CommitteeChair{David C. Szlag}
+\def\AdvisorOne{Thomas Raffel}
+\def\AdvisorTwo{Linda Schweitzer}
 %%% Start preliminary pages
 %------------------------------------------
 % Formatting code -- DO NOT EDIT
@@ -123,9 +211,10 @@ breaklines=true
 	[\vspace*{3pc}]
 %------------------------------------------
 
-\GrizzCoverPage
+%\GrizzCoverPage
 \include{front_matter}
 \include{lists}
+
 
 %%% Start main body
 %------------------------------------------
@@ -138,42 +227,41 @@ breaklines=true
 	{\chapter}
 	[display]
 	{\normalfont\filcenter\singlespacing}
-	{\vspace{0.77in}\MakeUppercase{\chaptertitlename~\thechapter}}
+	%\renewcommand{\thechapter}{\NUMBERstring{chapter}}
+	%{\vspace{0.77in}\MakeUppercase{\chaptertitlename~\NUMBERstring{chapter}}}
+	{\MakeUppercase{\chaptertitlename~\NUMBERstring{chapter}}}
 	{1pc}
 	{#1}
-	[\vspace*{2pc}]
+	%Space after Chapter header in each page 
+	[\vspace*{1pc}]
 \doublespacing
 
-% Equation spacing - adjust if necessary
+% Equation spacing
 \setlength{\abovedisplayskip}{0.5pc}
 \setlength{\belowdisplayskip}{0.5pc}
 \setlength{\abovedisplayshortskip}{0pc}
 \setlength{\belowdisplayshortskip}{0.5pc}
-%------------------------------------------
+%-------------------------------------------
 
-% Include each separate chapter source file here
-
-%\linenumbers
+%\input{chapter1/example1}
 \include{chapter1}
 \include{chapter2}
 \include{chapter3}
 \include{chapter4}
 
-% The \StartGrizzAppendices command switches the formatting for the
-% remainder of the document -- Leave this alone
 \StartGrizzAppendices
-
-% Include each separate appendix source file here
 \include{tables}
-%\include{spatts}
-%\include{atlas}
-\include{atlas1}
-\include{odk}
+\include{atlas}
+
+
+%\addcontentsline{toc}{chapter}{REFERENCES}
+%\singlespacing
+%\bibliography{FinalRef.bib}
+
 % References -- DO NOT EDIT
 \phantomsection
 \addcontentsline{toc}{chapter}{REFERENCES}
 \singlespacing
 \renewcommand{\bibname}{\vspace*{36pt}REFERENCES}
 \bibliography{references}
-
-\end{document}
+\end{document} 
